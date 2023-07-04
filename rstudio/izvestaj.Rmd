@@ -302,6 +302,10 @@ dataset.clustering.summary <- dataset.clustering %>% filter(year>=2018 & year<=2
   group_by(year)
 
 colnames(dataset.clustering)
+
+
+
+
 ```
 
 ### K-means
