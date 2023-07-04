@@ -1,0 +1,1839 @@
+23/06/28 20:23:50 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+23/06/28 20:23:51 INFO SparkContext: Running Spark version 2.4.3
+23/06/28 20:23:51 INFO SparkContext: Submitted application: sparklyr
+23/06/28 20:23:51 INFO SecurityManager: Changing view acls to: rstudio
+23/06/28 20:23:51 INFO SecurityManager: Changing modify acls to: rstudio
+23/06/28 20:23:51 INFO SecurityManager: Changing view acls groups to: 
+23/06/28 20:23:51 INFO SecurityManager: Changing modify acls groups to: 
+23/06/28 20:23:51 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(rstudio); groups with view permissions: Set(); users  with modify permissions: Set(rstudio); groups with modify permissions: Set()
+23/06/28 20:23:51 INFO Utils: Successfully started service 'sparkDriver' on port 36075.
+23/06/28 20:23:51 INFO SparkEnv: Registering MapOutputTracker
+23/06/28 20:23:51 INFO SparkEnv: Registering BlockManagerMaster
+23/06/28 20:23:51 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/06/28 20:23:51 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/06/28 20:23:51 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-666fc73c-fbe7-4a5f-8038-fe8a722dc1d5
+23/06/28 20:23:51 INFO MemoryStore: MemoryStore started with capacity 912.3 MB
+23/06/28 20:23:51 INFO SparkEnv: Registering OutputCommitCoordinator
+23/06/28 20:23:51 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/06/28 20:23:51 INFO SparkUI: Bound SparkUI to 127.0.0.1, and started at http://localhost:4040
+23/06/28 20:23:51 INFO SparkContext: Added JAR file:/usr/local/lib/R/site-library/sparklyr/java/sparklyr-2.4-2.11.jar at spark://localhost:36075/jars/sparklyr-2.4-2.11.jar with timestamp 1687983831605
+23/06/28 20:23:51 INFO Executor: Starting executor ID driver on host localhost
+23/06/28 20:23:51 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 44515.
+23/06/28 20:23:51 INFO NettyBlockTransferService: Server created on localhost:44515
+23/06/28 20:23:51 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/06/28 20:23:51 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, localhost, 44515, None)
+23/06/28 20:23:51 INFO BlockManagerMasterEndpoint: Registering block manager localhost:44515 with 912.3 MB RAM, BlockManagerId(driver, localhost, 44515, None)
+23/06/28 20:23:51 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, localhost, 44515, None)
+23/06/28 20:23:51 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, localhost, 44515, None)
+23/06/28 20:23:52 INFO SharedState: loading hive config file: file:/home/rstudio/spark/spark-2.4.3-bin-hadoop2.7/conf/hive-site.xml
+23/06/28 20:23:52 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir ('file:/home/rstudio/spark-warehouse/').
+23/06/28 20:23:52 INFO SharedState: Warehouse path is 'file:/home/rstudio/spark-warehouse/'.
+23/06/28 20:23:52 INFO StateStoreCoordinatorRef: Registered StateStoreCoordinator endpoint
+23/06/28 20:23:55 INFO CodeGenerator: Code generated in 263.146277 ms
+23/06/28 20:23:58 INFO SparkContext: Starting job: collect at utils.scala:44
+23/06/28 20:23:58 INFO DAGScheduler: Got job 0 (collect at utils.scala:44) with 1 output partitions
+23/06/28 20:23:58 INFO DAGScheduler: Final stage: ResultStage 0 (collect at utils.scala:44)
+23/06/28 20:23:58 INFO DAGScheduler: Parents of final stage: List()
+23/06/28 20:23:58 INFO DAGScheduler: Missing parents: List()
+23/06/28 20:23:58 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[4] at map at utils.scala:41), which has no missing parents
+23/06/28 20:23:58 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 6.0 KB, free 912.3 MB)
+23/06/28 20:23:58 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 3.4 KB, free 912.3 MB)
+23/06/28 20:23:58 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on localhost:44515 (size: 3.4 KB, free: 912.3 MB)
+23/06/28 20:23:58 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1161
+23/06/28 20:23:58 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[4] at map at utils.scala:41) (first 15 tasks are for partitions Vector(0))
+23/06/28 20:23:58 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks
+23/06/28 20:23:58 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, executor driver, partition 0, PROCESS_LOCAL, 7893 bytes)
+23/06/28 20:23:58 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+23/06/28 20:23:58 INFO Executor: Fetching spark://localhost:36075/jars/sparklyr-2.4-2.11.jar with timestamp 1687983831605
+23/06/28 20:23:58 INFO TransportClientFactory: Successfully created connection to localhost/127.0.0.1:36075 after 16 ms (0 ms spent in bootstraps)
+23/06/28 20:23:58 INFO Utils: Fetching spark://localhost:36075/jars/sparklyr-2.4-2.11.jar to /tmp/spark-a8b5c49b-3ca7-4a00-bfeb-a16f5072f439/userFiles-0a998a7f-be2b-496e-b88b-7868b464986d/fetchFileTemp7563976753459773758.tmp
+23/06/28 20:23:58 INFO Executor: Adding file:/tmp/spark-a8b5c49b-3ca7-4a00-bfeb-a16f5072f439/userFiles-0a998a7f-be2b-496e-b88b-7868b464986d/sparklyr-2.4-2.11.jar to class loader
+23/06/28 20:23:58 INFO CodeGenerator: Code generated in 12.206964 ms
+23/06/28 20:23:58 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 970 bytes result sent to driver
+23/06/28 20:23:58 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 191 ms on localhost (executor driver) (1/1)
+23/06/28 20:23:58 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+23/06/28 20:23:58 INFO DAGScheduler: ResultStage 0 (collect at utils.scala:44) finished in 0.307 s
+23/06/28 20:23:58 INFO DAGScheduler: Job 0 finished: collect at utils.scala:44, took 0.349605 s
+23/06/28 20:23:58 INFO ContextCleaner: Cleaned accumulator 23
+23/06/28 20:23:58 INFO ContextCleaner: Cleaned accumulator 5
+23/06/28 20:23:58 INFO ContextCleaner: Cleaned accumulator 17
+23/06/28 20:23:58 INFO ContextCleaner: Cleaned accumulator 0
+23/06/28 20:23:58 INFO ContextCleaner: Cleaned accumulator 16
+23/06/28 20:23:58 INFO ContextCleaner: Cleaned accumulator 25
+23/06/28 20:23:58 INFO ContextCleaner: Cleaned accumulator 8
+23/06/28 20:23:58 INFO ContextCleaner: Cleaned accumulator 18
+23/06/28 20:23:58 INFO ContextCleaner: Cleaned accumulator 1
+23/06/28 20:23:58 INFO ContextCleaner: Cleaned accumulator 15
+23/06/28 20:23:58 INFO ContextCleaner: Cleaned accumulator 3
+23/06/28 20:23:58 INFO ContextCleaner: Cleaned accumulator 22
+23/06/28 20:23:58 INFO ContextCleaner: Cleaned accumulator 4
+23/06/28 20:23:58 INFO ContextCleaner: Cleaned accumulator 10
+23/06/28 20:23:58 INFO BlockManagerInfo: Removed broadcast_0_piece0 on localhost:44515 in memory (size: 3.4 KB, free: 912.3 MB)
+23/06/28 20:23:58 INFO ContextCleaner: Cleaned accumulator 9
+23/06/28 20:23:58 INFO ContextCleaner: Cleaned accumulator 24
+23/06/28 20:23:58 INFO ContextCleaner: Cleaned accumulator 13
+23/06/28 20:23:58 INFO ContextCleaner: Cleaned accumulator 7
+23/06/28 20:23:58 INFO ContextCleaner: Cleaned accumulator 6
+23/06/28 20:23:58 INFO ContextCleaner: Cleaned accumulator 12
+23/06/28 20:23:58 INFO ContextCleaner: Cleaned accumulator 20
+23/06/28 20:23:58 INFO ContextCleaner: Cleaned accumulator 14
+23/06/28 20:23:58 INFO ContextCleaner: Cleaned accumulator 19
+23/06/28 20:23:58 INFO ContextCleaner: Cleaned accumulator 11
+23/06/28 20:23:58 INFO ContextCleaner: Cleaned accumulator 21
+23/06/28 20:23:58 INFO ContextCleaner: Cleaned accumulator 2
+23/06/28 20:23:59 INFO FileSourceStrategy: Pruning directories with: 
+23/06/28 20:23:59 INFO FileSourceStrategy: Post-Scan Filters: (length(trim(value#22, None)) > 0)
+23/06/28 20:23:59 INFO FileSourceStrategy: Output Data Schema: struct<value: string>
+23/06/28 20:23:59 INFO FileSourceScanExec: Pushed Filters: 
+23/06/28 20:23:59 INFO CodeGenerator: Code generated in 7.353345 ms
+23/06/28 20:23:59 INFO CodeGenerator: Code generated in 14.980407 ms
+23/06/28 20:23:59 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 279.8 KB, free 912.0 MB)
+23/06/28 20:23:59 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 23.8 KB, free 912.0 MB)
+23/06/28 20:23:59 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on localhost:44515 (size: 23.8 KB, free: 912.3 MB)
+23/06/28 20:23:59 INFO SparkContext: Created broadcast 1 from csv at NativeMethodAccessorImpl.java:0
+23/06/28 20:23:59 INFO FileSourceScanExec: Planning scan with bin packing, max size: 134217728 bytes, open cost is considered as scanning 4194304 bytes.
+23/06/28 20:23:59 INFO SparkContext: Starting job: csv at NativeMethodAccessorImpl.java:0
+23/06/28 20:23:59 INFO DAGScheduler: Got job 1 (csv at NativeMethodAccessorImpl.java:0) with 1 output partitions
+23/06/28 20:23:59 INFO DAGScheduler: Final stage: ResultStage 1 (csv at NativeMethodAccessorImpl.java:0)
+23/06/28 20:23:59 INFO DAGScheduler: Parents of final stage: List()
+23/06/28 20:23:59 INFO DAGScheduler: Missing parents: List()
+23/06/28 20:23:59 INFO DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[8] at csv at NativeMethodAccessorImpl.java:0), which has no missing parents
+23/06/28 20:23:59 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 8.8 KB, free 912.0 MB)
+23/06/28 20:23:59 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 4.5 KB, free 912.0 MB)
+23/06/28 20:23:59 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on localhost:44515 (size: 4.5 KB, free: 912.3 MB)
+23/06/28 20:23:59 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1161
+23/06/28 20:23:59 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[8] at csv at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+23/06/28 20:23:59 INFO TaskSchedulerImpl: Adding task set 1.0 with 1 tasks
+23/06/28 20:23:59 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1, localhost, executor driver, partition 0, PROCESS_LOCAL, 8299 bytes)
+23/06/28 20:23:59 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+23/06/28 20:23:59 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 0-134217728, partition values: [empty row]
+23/06/28 20:23:59 INFO CodeGenerator: Code generated in 8.064054 ms
+23/06/28 20:23:59 INFO LineRecordReader: Found UTF-8 BOM and skipped it
+23/06/28 20:23:59 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 1494 bytes result sent to driver
+23/06/28 20:23:59 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 60 ms on localhost (executor driver) (1/1)
+23/06/28 20:23:59 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+23/06/28 20:23:59 INFO DAGScheduler: ResultStage 1 (csv at NativeMethodAccessorImpl.java:0) finished in 0.073 s
+23/06/28 20:23:59 INFO DAGScheduler: Job 1 finished: csv at NativeMethodAccessorImpl.java:0, took 0.078681 s
+23/06/28 20:23:59 INFO FileSourceStrategy: Pruning directories with: 
+23/06/28 20:23:59 INFO FileSourceStrategy: Post-Scan Filters: 
+23/06/28 20:23:59 INFO FileSourceStrategy: Output Data Schema: struct<value: string>
+23/06/28 20:23:59 INFO FileSourceScanExec: Pushed Filters: 
+23/06/28 20:23:59 INFO CodeGenerator: Code generated in 7.714863 ms
+23/06/28 20:23:59 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 279.8 KB, free 911.7 MB)
+23/06/28 20:23:59 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 23.8 KB, free 911.7 MB)
+23/06/28 20:23:59 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on localhost:44515 (size: 23.8 KB, free: 912.2 MB)
+23/06/28 20:23:59 INFO SparkContext: Created broadcast 3 from csv at NativeMethodAccessorImpl.java:0
+23/06/28 20:23:59 INFO FileSourceScanExec: Planning scan with bin packing, max size: 134217728 bytes, open cost is considered as scanning 4194304 bytes.
+23/06/28 20:23:59 INFO SparkContext: Starting job: csv at NativeMethodAccessorImpl.java:0
+23/06/28 20:23:59 INFO DAGScheduler: Got job 2 (csv at NativeMethodAccessorImpl.java:0) with 16 output partitions
+23/06/28 20:23:59 INFO DAGScheduler: Final stage: ResultStage 2 (csv at NativeMethodAccessorImpl.java:0)
+23/06/28 20:23:59 INFO DAGScheduler: Parents of final stage: List()
+23/06/28 20:23:59 INFO DAGScheduler: Missing parents: List()
+23/06/28 20:23:59 INFO DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[13] at csv at NativeMethodAccessorImpl.java:0), which has no missing parents
+23/06/28 20:23:59 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 13.5 KB, free 911.7 MB)
+23/06/28 20:23:59 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 7.2 KB, free 911.7 MB)
+23/06/28 20:23:59 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on localhost:44515 (size: 7.2 KB, free: 912.2 MB)
+23/06/28 20:23:59 INFO SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:1161
+23/06/28 20:23:59 INFO DAGScheduler: Submitting 16 missing tasks from ResultStage 2 (MapPartitionsRDD[13] at csv at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+23/06/28 20:23:59 INFO TaskSchedulerImpl: Adding task set 2.0 with 16 tasks
+23/06/28 20:23:59 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 2, localhost, executor driver, partition 0, PROCESS_LOCAL, 8299 bytes)
+23/06/28 20:23:59 INFO TaskSetManager: Starting task 1.0 in stage 2.0 (TID 3, localhost, executor driver, partition 1, PROCESS_LOCAL, 8299 bytes)
+23/06/28 20:23:59 INFO TaskSetManager: Starting task 2.0 in stage 2.0 (TID 4, localhost, executor driver, partition 2, PROCESS_LOCAL, 8299 bytes)
+23/06/28 20:23:59 INFO TaskSetManager: Starting task 3.0 in stage 2.0 (TID 5, localhost, executor driver, partition 3, PROCESS_LOCAL, 8299 bytes)
+23/06/28 20:23:59 INFO TaskSetManager: Starting task 4.0 in stage 2.0 (TID 6, localhost, executor driver, partition 4, PROCESS_LOCAL, 8299 bytes)
+23/06/28 20:23:59 INFO TaskSetManager: Starting task 5.0 in stage 2.0 (TID 7, localhost, executor driver, partition 5, PROCESS_LOCAL, 8299 bytes)
+23/06/28 20:23:59 INFO TaskSetManager: Starting task 6.0 in stage 2.0 (TID 8, localhost, executor driver, partition 6, PROCESS_LOCAL, 8299 bytes)
+23/06/28 20:23:59 INFO TaskSetManager: Starting task 7.0 in stage 2.0 (TID 9, localhost, executor driver, partition 7, PROCESS_LOCAL, 8299 bytes)
+23/06/28 20:23:59 INFO Executor: Running task 0.0 in stage 2.0 (TID 2)
+23/06/28 20:23:59 INFO Executor: Running task 1.0 in stage 2.0 (TID 3)
+23/06/28 20:23:59 INFO Executor: Running task 2.0 in stage 2.0 (TID 4)
+23/06/28 20:23:59 INFO Executor: Running task 6.0 in stage 2.0 (TID 8)
+23/06/28 20:23:59 INFO Executor: Running task 4.0 in stage 2.0 (TID 6)
+23/06/28 20:23:59 INFO Executor: Running task 3.0 in stage 2.0 (TID 5)
+23/06/28 20:23:59 INFO Executor: Running task 5.0 in stage 2.0 (TID 7)
+23/06/28 20:23:59 INFO Executor: Running task 7.0 in stage 2.0 (TID 9)
+23/06/28 20:23:59 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 0-134217728, partition values: [empty row]
+23/06/28 20:23:59 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 268435456-402653184, partition values: [empty row]
+23/06/28 20:23:59 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 671088640-805306368, partition values: [empty row]
+23/06/28 20:23:59 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 536870912-671088640, partition values: [empty row]
+23/06/28 20:23:59 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 134217728-268435456, partition values: [empty row]
+23/06/28 20:23:59 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 805306368-939524096, partition values: [empty row]
+23/06/28 20:23:59 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 402653184-536870912, partition values: [empty row]
+23/06/28 20:23:59 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 939524096-1073741824, partition values: [empty row]
+23/06/28 20:23:59 INFO LineRecordReader: Found UTF-8 BOM and skipped it
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 28
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 55
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 43
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 33
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 39
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 53
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 32
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 48
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 44
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 36
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 30
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 54
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 26
+23/06/28 20:24:00 INFO BlockManagerInfo: Removed broadcast_1_piece0 on localhost:44515 in memory (size: 23.8 KB, free: 912.3 MB)
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 41
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 49
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 50
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 29
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 35
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 47
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 34
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 46
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 51
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 40
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 42
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 52
+23/06/28 20:24:00 INFO BlockManagerInfo: Removed broadcast_2_piece0 on localhost:44515 in memory (size: 4.5 KB, free: 912.3 MB)
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 38
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 37
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 31
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 45
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 27
+23/06/28 20:24:00 INFO ContextCleaner: Cleaned accumulator 56
+23/06/28 20:24:09 INFO Executor: Finished task 4.0 in stage 2.0 (TID 6). 1944 bytes result sent to driver
+23/06/28 20:24:09 INFO TaskSetManager: Starting task 8.0 in stage 2.0 (TID 10, localhost, executor driver, partition 8, PROCESS_LOCAL, 8299 bytes)
+23/06/28 20:24:09 INFO Executor: Running task 8.0 in stage 2.0 (TID 10)
+23/06/28 20:24:09 INFO TaskSetManager: Finished task 4.0 in stage 2.0 (TID 6) in 9440 ms on localhost (executor driver) (1/16)
+23/06/28 20:24:09 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 1073741824-1207959552, partition values: [empty row]
+23/06/28 20:24:09 INFO Executor: Finished task 6.0 in stage 2.0 (TID 8). 1901 bytes result sent to driver
+23/06/28 20:24:09 INFO TaskSetManager: Starting task 9.0 in stage 2.0 (TID 11, localhost, executor driver, partition 9, PROCESS_LOCAL, 8299 bytes)
+23/06/28 20:24:09 INFO Executor: Running task 9.0 in stage 2.0 (TID 11)
+23/06/28 20:24:09 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 1207959552-1342177280, partition values: [empty row]
+23/06/28 20:24:09 INFO TaskSetManager: Finished task 6.0 in stage 2.0 (TID 8) in 10098 ms on localhost (executor driver) (2/16)
+23/06/28 20:24:09 INFO Executor: Finished task 7.0 in stage 2.0 (TID 9). 1901 bytes result sent to driver
+23/06/28 20:24:09 INFO TaskSetManager: Starting task 10.0 in stage 2.0 (TID 12, localhost, executor driver, partition 10, PROCESS_LOCAL, 8299 bytes)
+23/06/28 20:24:09 INFO TaskSetManager: Finished task 7.0 in stage 2.0 (TID 9) in 10120 ms on localhost (executor driver) (3/16)
+23/06/28 20:24:09 INFO Executor: Running task 10.0 in stage 2.0 (TID 12)
+23/06/28 20:24:09 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 1342177280-1476395008, partition values: [empty row]
+23/06/28 20:24:09 INFO Executor: Finished task 3.0 in stage 2.0 (TID 5). 1901 bytes result sent to driver
+23/06/28 20:24:09 INFO TaskSetManager: Starting task 11.0 in stage 2.0 (TID 13, localhost, executor driver, partition 11, PROCESS_LOCAL, 8299 bytes)
+23/06/28 20:24:09 INFO TaskSetManager: Finished task 3.0 in stage 2.0 (TID 5) in 10227 ms on localhost (executor driver) (4/16)
+23/06/28 20:24:09 INFO Executor: Running task 11.0 in stage 2.0 (TID 13)
+23/06/28 20:24:09 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 1476395008-1610612736, partition values: [empty row]
+23/06/28 20:24:10 INFO Executor: Finished task 5.0 in stage 2.0 (TID 7). 1901 bytes result sent to driver
+23/06/28 20:24:10 INFO TaskSetManager: Starting task 12.0 in stage 2.0 (TID 14, localhost, executor driver, partition 12, PROCESS_LOCAL, 8299 bytes)
+23/06/28 20:24:10 INFO TaskSetManager: Finished task 5.0 in stage 2.0 (TID 7) in 10422 ms on localhost (executor driver) (5/16)
+23/06/28 20:24:10 INFO Executor: Running task 12.0 in stage 2.0 (TID 14)
+23/06/28 20:24:10 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 1610612736-1744830464, partition values: [empty row]
+23/06/28 20:24:10 INFO Executor: Finished task 0.0 in stage 2.0 (TID 2). 1944 bytes result sent to driver
+23/06/28 20:24:10 INFO TaskSetManager: Starting task 13.0 in stage 2.0 (TID 15, localhost, executor driver, partition 13, PROCESS_LOCAL, 8299 bytes)
+23/06/28 20:24:10 INFO Executor: Running task 13.0 in stage 2.0 (TID 15)
+23/06/28 20:24:10 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 2) in 10529 ms on localhost (executor driver) (6/16)
+23/06/28 20:24:10 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 1744830464-1879048192, partition values: [empty row]
+23/06/28 20:24:10 INFO Executor: Finished task 2.0 in stage 2.0 (TID 4). 1944 bytes result sent to driver
+23/06/28 20:24:10 INFO TaskSetManager: Starting task 14.0 in stage 2.0 (TID 16, localhost, executor driver, partition 14, PROCESS_LOCAL, 8299 bytes)
+23/06/28 20:24:10 INFO Executor: Running task 14.0 in stage 2.0 (TID 16)
+23/06/28 20:24:10 INFO TaskSetManager: Finished task 2.0 in stage 2.0 (TID 4) in 10617 ms on localhost (executor driver) (7/16)
+23/06/28 20:24:10 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 1879048192-2013265920, partition values: [empty row]
+23/06/28 20:24:10 INFO Executor: Finished task 1.0 in stage 2.0 (TID 3). 1901 bytes result sent to driver
+23/06/28 20:24:10 INFO TaskSetManager: Starting task 15.0 in stage 2.0 (TID 17, localhost, executor driver, partition 15, PROCESS_LOCAL, 8299 bytes)
+23/06/28 20:24:10 INFO TaskSetManager: Finished task 1.0 in stage 2.0 (TID 3) in 11230 ms on localhost (executor driver) (8/16)
+23/06/28 20:24:10 INFO Executor: Running task 15.0 in stage 2.0 (TID 17)
+23/06/28 20:24:10 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 2013265920-2139729213, partition values: [empty row]
+23/06/28 20:24:24 INFO Executor: Finished task 8.0 in stage 2.0 (TID 10). 1901 bytes result sent to driver
+23/06/28 20:24:24 INFO TaskSetManager: Finished task 8.0 in stage 2.0 (TID 10) in 15915 ms on localhost (executor driver) (9/16)
+23/06/28 20:24:25 INFO Executor: Finished task 11.0 in stage 2.0 (TID 13). 1944 bytes result sent to driver
+23/06/28 20:24:25 INFO TaskSetManager: Finished task 11.0 in stage 2.0 (TID 13) in 15269 ms on localhost (executor driver) (10/16)
+23/06/28 20:24:25 INFO Executor: Finished task 15.0 in stage 2.0 (TID 17). 1901 bytes result sent to driver
+23/06/28 20:24:25 INFO TaskSetManager: Finished task 15.0 in stage 2.0 (TID 17) in 14405 ms on localhost (executor driver) (11/16)
+23/06/28 20:24:25 INFO Executor: Finished task 9.0 in stage 2.0 (TID 11). 1901 bytes result sent to driver
+23/06/28 20:24:25 INFO TaskSetManager: Finished task 9.0 in stage 2.0 (TID 11) in 15762 ms on localhost (executor driver) (12/16)
+23/06/28 20:24:25 INFO Executor: Finished task 10.0 in stage 2.0 (TID 12). 1901 bytes result sent to driver
+23/06/28 20:24:25 INFO TaskSetManager: Finished task 10.0 in stage 2.0 (TID 12) in 15907 ms on localhost (executor driver) (13/16)
+23/06/28 20:24:25 INFO Executor: Finished task 12.0 in stage 2.0 (TID 14). 1901 bytes result sent to driver
+23/06/28 20:24:25 INFO TaskSetManager: Finished task 12.0 in stage 2.0 (TID 14) in 15655 ms on localhost (executor driver) (14/16)
+23/06/28 20:24:25 INFO Executor: Finished task 13.0 in stage 2.0 (TID 15). 1901 bytes result sent to driver
+23/06/28 20:24:25 INFO TaskSetManager: Finished task 13.0 in stage 2.0 (TID 15) in 15719 ms on localhost (executor driver) (15/16)
+23/06/28 20:24:26 INFO Executor: Finished task 14.0 in stage 2.0 (TID 16). 1901 bytes result sent to driver
+23/06/28 20:24:26 INFO TaskSetManager: Finished task 14.0 in stage 2.0 (TID 16) in 15743 ms on localhost (executor driver) (16/16)
+23/06/28 20:24:26 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+23/06/28 20:24:26 INFO DAGScheduler: ResultStage 2 (csv at NativeMethodAccessorImpl.java:0) finished in 26.366 s
+23/06/28 20:24:26 INFO DAGScheduler: Job 2 finished: csv at NativeMethodAccessorImpl.java:0, took 26.371189 s
+23/06/28 20:24:26 WARN Utils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.debug.maxToStringFields' in SparkEnv.conf.
+23/06/28 20:24:26 INFO FileSourceStrategy: Pruning directories with: 
+23/06/28 20:24:26 INFO FileSourceStrategy: Post-Scan Filters: 
+23/06/28 20:24:26 INFO FileSourceStrategy: Output Data Schema: struct<ID: string, Country: string, VFN: string, Mp: string, Mh: string ... 36 more fields>
+23/06/28 20:24:26 INFO FileSourceScanExec: Pushed Filters: 
+23/06/28 20:24:26 INFO CodeGenerator: Code generated in 16.264977 ms
+23/06/28 20:24:26 INFO CodeGenerator: Code generated in 12.493885 ms
+23/06/28 20:24:26 INFO CodeGenerator: Code generated in 43.324131 ms
+23/06/28 20:24:26 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 279.8 KB, free 911.7 MB)
+23/06/28 20:24:26 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 23.8 KB, free 911.7 MB)
+23/06/28 20:24:26 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on localhost:44515 (size: 23.8 KB, free: 912.2 MB)
+23/06/28 20:24:26 INFO SparkContext: Created broadcast 5 from sql at NativeMethodAccessorImpl.java:0
+23/06/28 20:24:26 INFO FileSourceScanExec: Planning scan with bin packing, max size: 134217728 bytes, open cost is considered as scanning 4194304 bytes.
+23/06/28 20:24:26 INFO SparkContext: Starting job: sql at NativeMethodAccessorImpl.java:0
+23/06/28 20:24:26 INFO DAGScheduler: Registering RDD 21 (sql at NativeMethodAccessorImpl.java:0)
+23/06/28 20:24:26 INFO DAGScheduler: Got job 3 (sql at NativeMethodAccessorImpl.java:0) with 1 output partitions
+23/06/28 20:24:26 INFO DAGScheduler: Final stage: ResultStage 4 (sql at NativeMethodAccessorImpl.java:0)
+23/06/28 20:24:26 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 3)
+23/06/28 20:24:26 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 3)
+23/06/28 20:24:26 INFO DAGScheduler: Submitting ShuffleMapStage 3 (MapPartitionsRDD[21] at sql at NativeMethodAccessorImpl.java:0), which has no missing parents
+23/06/28 20:24:26 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 53.1 KB, free 911.6 MB)
+23/06/28 20:24:26 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 20.5 KB, free 911.6 MB)
+23/06/28 20:24:26 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on localhost:44515 (size: 20.5 KB, free: 912.2 MB)
+23/06/28 20:24:26 INFO SparkContext: Created broadcast 6 from broadcast at DAGScheduler.scala:1161
+23/06/28 20:24:26 INFO DAGScheduler: Submitting 16 missing tasks from ShuffleMapStage 3 (MapPartitionsRDD[21] at sql at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+23/06/28 20:24:26 INFO TaskSchedulerImpl: Adding task set 3.0 with 16 tasks
+23/06/28 20:24:26 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 18, localhost, executor driver, partition 0, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:24:26 INFO TaskSetManager: Starting task 1.0 in stage 3.0 (TID 19, localhost, executor driver, partition 1, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:24:26 INFO TaskSetManager: Starting task 2.0 in stage 3.0 (TID 20, localhost, executor driver, partition 2, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:24:26 INFO TaskSetManager: Starting task 3.0 in stage 3.0 (TID 21, localhost, executor driver, partition 3, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:24:26 INFO TaskSetManager: Starting task 4.0 in stage 3.0 (TID 22, localhost, executor driver, partition 4, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:24:26 INFO TaskSetManager: Starting task 5.0 in stage 3.0 (TID 23, localhost, executor driver, partition 5, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:24:26 INFO TaskSetManager: Starting task 6.0 in stage 3.0 (TID 24, localhost, executor driver, partition 6, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:24:26 INFO TaskSetManager: Starting task 7.0 in stage 3.0 (TID 25, localhost, executor driver, partition 7, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:24:26 INFO Executor: Running task 0.0 in stage 3.0 (TID 18)
+23/06/28 20:24:26 INFO Executor: Running task 2.0 in stage 3.0 (TID 20)
+23/06/28 20:24:26 INFO Executor: Running task 6.0 in stage 3.0 (TID 24)
+23/06/28 20:24:26 INFO Executor: Running task 5.0 in stage 3.0 (TID 23)
+23/06/28 20:24:26 INFO Executor: Running task 7.0 in stage 3.0 (TID 25)
+23/06/28 20:24:26 INFO Executor: Running task 1.0 in stage 3.0 (TID 19)
+23/06/28 20:24:26 INFO Executor: Running task 3.0 in stage 3.0 (TID 21)
+23/06/28 20:24:26 INFO Executor: Running task 4.0 in stage 3.0 (TID 22)
+23/06/28 20:24:26 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 805306368-939524096, partition values: [empty row]
+23/06/28 20:24:26 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 402653184-536870912, partition values: [empty row]
+23/06/28 20:24:26 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 536870912-671088640, partition values: [empty row]
+23/06/28 20:24:26 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 134217728-268435456, partition values: [empty row]
+23/06/28 20:24:26 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 0-134217728, partition values: [empty row]
+23/06/28 20:24:26 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 671088640-805306368, partition values: [empty row]
+23/06/28 20:24:26 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 268435456-402653184, partition values: [empty row]
+23/06/28 20:24:26 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 939524096-1073741824, partition values: [empty row]
+23/06/28 20:24:26 INFO CodeGenerator: Code generated in 26.558001 ms
+23/06/28 20:24:26 INFO LineRecordReader: Found UTF-8 BOM and skipped it
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 67
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 63
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 58
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 82
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 68
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 80
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 69
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 86
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 78
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 60
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 88
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 64
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 71
+23/06/28 20:24:27 INFO BlockManagerInfo: Removed broadcast_3_piece0 on localhost:44515 in memory (size: 23.8 KB, free: 912.2 MB)
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 79
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 70
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 81
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 72
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 66
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 85
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 65
+23/06/28 20:24:27 INFO BlockManagerInfo: Removed broadcast_4_piece0 on localhost:44515 in memory (size: 7.2 KB, free: 912.3 MB)
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 62
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 75
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 74
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 73
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 83
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 76
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 61
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 59
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 84
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 57
+23/06/28 20:24:27 INFO ContextCleaner: Cleaned accumulator 77
+23/06/28 20:25:12 INFO MemoryStore: Block rdd_16_4 stored as values in memory (estimated size 41.7 MB, free 870.2 MB)
+23/06/28 20:25:12 INFO BlockManagerInfo: Added rdd_16_4 in memory on localhost:44515 (size: 41.7 MB, free: 870.5 MB)
+23/06/28 20:25:12 INFO CodeGenerator: Code generated in 12.470268 ms
+23/06/28 20:25:12 INFO CodeGenerator: Code generated in 193.807064 ms
+23/06/28 20:25:12 INFO Executor: Finished task 4.0 in stage 3.0 (TID 22). 1957 bytes result sent to driver
+23/06/28 20:25:12 INFO TaskSetManager: Starting task 8.0 in stage 3.0 (TID 26, localhost, executor driver, partition 8, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:25:12 INFO Executor: Running task 8.0 in stage 3.0 (TID 26)
+23/06/28 20:25:12 INFO TaskSetManager: Finished task 4.0 in stage 3.0 (TID 22) in 46191 ms on localhost (executor driver) (1/16)
+23/06/28 20:25:12 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 1073741824-1207959552, partition values: [empty row]
+23/06/28 20:25:15 INFO MemoryStore: Block rdd_16_3 stored as values in memory (estimated size 40.4 MB, free 829.8 MB)
+23/06/28 20:25:15 INFO BlockManagerInfo: Added rdd_16_3 in memory on localhost:44515 (size: 40.4 MB, free: 830.1 MB)
+23/06/28 20:25:15 INFO Executor: Finished task 3.0 in stage 3.0 (TID 21). 1914 bytes result sent to driver
+23/06/28 20:25:15 INFO TaskSetManager: Starting task 9.0 in stage 3.0 (TID 27, localhost, executor driver, partition 9, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:25:15 INFO Executor: Running task 9.0 in stage 3.0 (TID 27)
+23/06/28 20:25:15 INFO TaskSetManager: Finished task 3.0 in stage 3.0 (TID 21) in 48552 ms on localhost (executor driver) (2/16)
+23/06/28 20:25:15 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 1207959552-1342177280, partition values: [empty row]
+23/06/28 20:25:15 INFO MemoryStore: Block rdd_16_7 stored as values in memory (estimated size 44.5 MB, free 785.3 MB)
+23/06/28 20:25:15 INFO BlockManagerInfo: Added rdd_16_7 in memory on localhost:44515 (size: 44.5 MB, free: 785.6 MB)
+23/06/28 20:25:15 INFO Executor: Finished task 7.0 in stage 3.0 (TID 25). 1914 bytes result sent to driver
+23/06/28 20:25:15 INFO TaskSetManager: Starting task 10.0 in stage 3.0 (TID 28, localhost, executor driver, partition 10, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:25:15 INFO Executor: Running task 10.0 in stage 3.0 (TID 28)
+23/06/28 20:25:15 INFO TaskSetManager: Finished task 7.0 in stage 3.0 (TID 25) in 48741 ms on localhost (executor driver) (3/16)
+23/06/28 20:25:15 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 1342177280-1476395008, partition values: [empty row]
+23/06/28 20:25:15 INFO MemoryStore: Block rdd_16_6 stored as values in memory (estimated size 39.9 MB, free 745.4 MB)
+23/06/28 20:25:15 INFO BlockManagerInfo: Added rdd_16_6 in memory on localhost:44515 (size: 39.9 MB, free: 745.8 MB)
+23/06/28 20:25:15 INFO Executor: Finished task 6.0 in stage 3.0 (TID 24). 1914 bytes result sent to driver
+23/06/28 20:25:15 INFO TaskSetManager: Starting task 11.0 in stage 3.0 (TID 29, localhost, executor driver, partition 11, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:25:15 INFO TaskSetManager: Finished task 6.0 in stage 3.0 (TID 24) in 49047 ms on localhost (executor driver) (4/16)
+23/06/28 20:25:15 INFO Executor: Running task 11.0 in stage 3.0 (TID 29)
+23/06/28 20:25:15 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 1476395008-1610612736, partition values: [empty row]
+23/06/28 20:25:16 INFO MemoryStore: Block rdd_16_5 stored as values in memory (estimated size 40.6 MB, free 704.8 MB)
+23/06/28 20:25:16 INFO BlockManagerInfo: Added rdd_16_5 in memory on localhost:44515 (size: 40.6 MB, free: 705.1 MB)
+23/06/28 20:25:16 INFO Executor: Finished task 5.0 in stage 3.0 (TID 23). 1914 bytes result sent to driver
+23/06/28 20:25:16 INFO TaskSetManager: Starting task 12.0 in stage 3.0 (TID 30, localhost, executor driver, partition 12, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:25:16 INFO Executor: Running task 12.0 in stage 3.0 (TID 30)
+23/06/28 20:25:16 INFO TaskSetManager: Finished task 5.0 in stage 3.0 (TID 23) in 49505 ms on localhost (executor driver) (5/16)
+23/06/28 20:25:16 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 1610612736-1744830464, partition values: [empty row]
+23/06/28 20:25:18 INFO MemoryStore: Block rdd_16_2 stored as values in memory (estimated size 50.7 MB, free 654.1 MB)
+23/06/28 20:25:18 INFO BlockManagerInfo: Added rdd_16_2 in memory on localhost:44515 (size: 50.7 MB, free: 654.4 MB)
+23/06/28 20:25:18 INFO Executor: Finished task 2.0 in stage 3.0 (TID 20). 1914 bytes result sent to driver
+23/06/28 20:25:18 INFO TaskSetManager: Starting task 13.0 in stage 3.0 (TID 31, localhost, executor driver, partition 13, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:25:18 INFO TaskSetManager: Finished task 2.0 in stage 3.0 (TID 20) in 51452 ms on localhost (executor driver) (6/16)
+23/06/28 20:25:18 INFO Executor: Running task 13.0 in stage 3.0 (TID 31)
+23/06/28 20:25:18 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 1744830464-1879048192, partition values: [empty row]
+23/06/28 20:25:19 INFO MemoryStore: Block rdd_16_1 stored as values in memory (estimated size 53.1 MB, free 601.0 MB)
+23/06/28 20:25:19 INFO BlockManagerInfo: Added rdd_16_1 in memory on localhost:44515 (size: 53.1 MB, free: 601.3 MB)
+23/06/28 20:25:19 INFO Executor: Finished task 1.0 in stage 3.0 (TID 19). 1914 bytes result sent to driver
+23/06/28 20:25:19 INFO TaskSetManager: Starting task 14.0 in stage 3.0 (TID 32, localhost, executor driver, partition 14, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:25:19 INFO Executor: Running task 14.0 in stage 3.0 (TID 32)
+23/06/28 20:25:19 INFO TaskSetManager: Finished task 1.0 in stage 3.0 (TID 19) in 52602 ms on localhost (executor driver) (7/16)
+23/06/28 20:25:19 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 1879048192-2013265920, partition values: [empty row]
+23/06/28 20:25:19 INFO MemoryStore: Block rdd_16_0 stored as values in memory (estimated size 52.4 MB, free 548.6 MB)
+23/06/28 20:25:19 INFO BlockManagerInfo: Added rdd_16_0 in memory on localhost:44515 (size: 52.4 MB, free: 548.9 MB)
+23/06/28 20:25:19 INFO Executor: Finished task 0.0 in stage 3.0 (TID 18). 1914 bytes result sent to driver
+23/06/28 20:25:19 INFO TaskSetManager: Starting task 15.0 in stage 3.0 (TID 33, localhost, executor driver, partition 15, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:25:19 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 18) in 52743 ms on localhost (executor driver) (8/16)
+23/06/28 20:25:19 INFO Executor: Running task 15.0 in stage 3.0 (TID 33)
+23/06/28 20:25:19 INFO FileScanRDD: Reading File path: file:///data/data.csv, range: 2013265920-2139729213, partition values: [empty row]
+23/06/28 20:25:50 INFO MemoryStore: Block rdd_16_8 stored as values in memory (estimated size 43.3 MB, free 505.3 MB)
+23/06/28 20:25:50 INFO BlockManagerInfo: Added rdd_16_8 in memory on localhost:44515 (size: 43.3 MB, free: 505.6 MB)
+23/06/28 20:25:50 INFO Executor: Finished task 8.0 in stage 3.0 (TID 26). 1914 bytes result sent to driver
+23/06/28 20:25:50 INFO TaskSetManager: Finished task 8.0 in stage 3.0 (TID 26) in 37419 ms on localhost (executor driver) (9/16)
+23/06/28 20:25:51 INFO MemoryStore: Block rdd_16_10 stored as values in memory (estimated size 48.8 MB, free 456.4 MB)
+23/06/28 20:25:51 INFO BlockManagerInfo: Added rdd_16_10 in memory on localhost:44515 (size: 48.8 MB, free: 456.8 MB)
+23/06/28 20:25:51 INFO Executor: Finished task 10.0 in stage 3.0 (TID 28). 1914 bytes result sent to driver
+23/06/28 20:25:51 INFO TaskSetManager: Finished task 10.0 in stage 3.0 (TID 28) in 35872 ms on localhost (executor driver) (10/16)
+23/06/28 20:25:51 INFO MemoryStore: Block rdd_16_11 stored as values in memory (estimated size 43.9 MB, free 412.6 MB)
+23/06/28 20:25:51 INFO BlockManagerInfo: Added rdd_16_11 in memory on localhost:44515 (size: 43.9 MB, free: 412.9 MB)
+23/06/28 20:25:51 INFO Executor: Finished task 11.0 in stage 3.0 (TID 29). 1914 bytes result sent to driver
+23/06/28 20:25:51 INFO TaskSetManager: Finished task 11.0 in stage 3.0 (TID 29) in 35844 ms on localhost (executor driver) (11/16)
+23/06/28 20:25:51 INFO MemoryStore: Block rdd_16_9 stored as values in memory (estimated size 41.8 MB, free 370.8 MB)
+23/06/28 20:25:51 INFO BlockManagerInfo: Added rdd_16_9 in memory on localhost:44515 (size: 41.8 MB, free: 371.1 MB)
+23/06/28 20:25:51 INFO Executor: Finished task 9.0 in stage 3.0 (TID 27). 1914 bytes result sent to driver
+23/06/28 20:25:51 INFO TaskSetManager: Finished task 9.0 in stage 3.0 (TID 27) in 36392 ms on localhost (executor driver) (12/16)
+23/06/28 20:25:52 INFO MemoryStore: Block rdd_16_15 stored as values in memory (estimated size 60.9 MB, free 309.8 MB)
+23/06/28 20:25:52 INFO BlockManagerInfo: Added rdd_16_15 in memory on localhost:44515 (size: 60.9 MB, free: 310.2 MB)
+23/06/28 20:25:52 INFO Executor: Finished task 15.0 in stage 3.0 (TID 33). 1914 bytes result sent to driver
+23/06/28 20:25:52 INFO TaskSetManager: Finished task 15.0 in stage 3.0 (TID 33) in 33253 ms on localhost (executor driver) (13/16)
+23/06/28 20:25:52 INFO MemoryStore: Block rdd_16_12 stored as values in memory (estimated size 51.9 MB, free 258.0 MB)
+23/06/28 20:25:52 INFO BlockManagerInfo: Added rdd_16_12 in memory on localhost:44515 (size: 51.9 MB, free: 258.3 MB)
+23/06/28 20:25:52 INFO Executor: Finished task 12.0 in stage 3.0 (TID 30). 1914 bytes result sent to driver
+23/06/28 20:25:52 INFO TaskSetManager: Finished task 12.0 in stage 3.0 (TID 30) in 36651 ms on localhost (executor driver) (14/16)
+23/06/28 20:25:53 INFO MemoryStore: Block rdd_16_13 stored as values in memory (estimated size 60.6 MB, free 197.3 MB)
+23/06/28 20:25:53 INFO BlockManagerInfo: Added rdd_16_13 in memory on localhost:44515 (size: 60.6 MB, free: 197.6 MB)
+23/06/28 20:25:53 INFO Executor: Finished task 13.0 in stage 3.0 (TID 31). 1914 bytes result sent to driver
+23/06/28 20:25:53 INFO TaskSetManager: Finished task 13.0 in stage 3.0 (TID 31) in 35468 ms on localhost (executor driver) (15/16)
+23/06/28 20:25:54 INFO MemoryStore: Block rdd_16_14 stored as values in memory (estimated size 57.9 MB, free 139.4 MB)
+23/06/28 20:25:54 INFO BlockManagerInfo: Added rdd_16_14 in memory on localhost:44515 (size: 57.9 MB, free: 139.8 MB)
+23/06/28 20:25:54 INFO Executor: Finished task 14.0 in stage 3.0 (TID 32). 1914 bytes result sent to driver
+23/06/28 20:25:54 INFO TaskSetManager: Finished task 14.0 in stage 3.0 (TID 32) in 34914 ms on localhost (executor driver) (16/16)
+23/06/28 20:25:54 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool 
+23/06/28 20:25:54 INFO DAGScheduler: ShuffleMapStage 3 (sql at NativeMethodAccessorImpl.java:0) finished in 87.547 s
+23/06/28 20:25:54 INFO DAGScheduler: looking for newly runnable stages
+23/06/28 20:25:54 INFO DAGScheduler: running: Set()
+23/06/28 20:25:54 INFO DAGScheduler: waiting: Set(ResultStage 4)
+23/06/28 20:25:54 INFO DAGScheduler: failed: Set()
+23/06/28 20:25:54 INFO DAGScheduler: Submitting ResultStage 4 (MapPartitionsRDD[24] at sql at NativeMethodAccessorImpl.java:0), which has no missing parents
+23/06/28 20:25:54 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 7.1 KB, free 139.4 MB)
+23/06/28 20:25:54 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 3.8 KB, free 139.4 MB)
+23/06/28 20:25:54 INFO BlockManagerInfo: Added broadcast_7_piece0 in memory on localhost:44515 (size: 3.8 KB, free: 139.8 MB)
+23/06/28 20:25:54 INFO SparkContext: Created broadcast 7 from broadcast at DAGScheduler.scala:1161
+23/06/28 20:25:54 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 4 (MapPartitionsRDD[24] at sql at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+23/06/28 20:25:54 INFO TaskSchedulerImpl: Adding task set 4.0 with 1 tasks
+23/06/28 20:25:54 INFO TaskSetManager: Starting task 0.0 in stage 4.0 (TID 34, localhost, executor driver, partition 0, NODE_LOCAL, 7767 bytes)
+23/06/28 20:25:54 INFO Executor: Running task 0.0 in stage 4.0 (TID 34)
+23/06/28 20:25:54 INFO ShuffleBlockFetcherIterator: Getting 16 non-empty blocks including 16 local blocks and 0 remote blocks
+23/06/28 20:25:54 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 6 ms
+23/06/28 20:25:54 INFO Executor: Finished task 0.0 in stage 4.0 (TID 34). 1825 bytes result sent to driver
+23/06/28 20:25:54 INFO TaskSetManager: Finished task 0.0 in stage 4.0 (TID 34) in 48 ms on localhost (executor driver) (1/1)
+23/06/28 20:25:54 INFO TaskSchedulerImpl: Removed TaskSet 4.0, whose tasks have all completed, from pool 
+23/06/28 20:25:54 INFO DAGScheduler: ResultStage 4 (sql at NativeMethodAccessorImpl.java:0) finished in 0.056 s
+23/06/28 20:25:54 INFO DAGScheduler: Job 3 finished: sql at NativeMethodAccessorImpl.java:0, took 87.635997 s
+23/06/28 20:25:54 INFO CodeGenerator: Code generated in 6.949296 ms
+23/06/28 20:25:54 INFO SparkContext: Starting job: collect at utils.scala:204
+23/06/28 20:25:54 INFO DAGScheduler: Registering RDD 29 (collect at utils.scala:204)
+23/06/28 20:25:54 INFO DAGScheduler: Got job 4 (collect at utils.scala:204) with 1 output partitions
+23/06/28 20:25:54 INFO DAGScheduler: Final stage: ResultStage 6 (collect at utils.scala:204)
+23/06/28 20:25:54 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 5)
+23/06/28 20:25:54 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 5)
+23/06/28 20:25:54 INFO DAGScheduler: Submitting ShuffleMapStage 5 (MapPartitionsRDD[29] at collect at utils.scala:204), which has no missing parents
+23/06/28 20:25:54 INFO MemoryStore: Block broadcast_8 stored as values in memory (estimated size 53.1 KB, free 139.4 MB)
+23/06/28 20:25:54 INFO MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 20.5 KB, free 139.4 MB)
+23/06/28 20:25:54 INFO BlockManagerInfo: Added broadcast_8_piece0 in memory on localhost:44515 (size: 20.5 KB, free: 139.7 MB)
+23/06/28 20:25:54 INFO SparkContext: Created broadcast 8 from broadcast at DAGScheduler.scala:1161
+23/06/28 20:25:54 INFO DAGScheduler: Submitting 16 missing tasks from ShuffleMapStage 5 (MapPartitionsRDD[29] at collect at utils.scala:204) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+23/06/28 20:25:54 INFO TaskSchedulerImpl: Adding task set 5.0 with 16 tasks
+23/06/28 20:25:54 INFO TaskSetManager: Starting task 0.0 in stage 5.0 (TID 35, localhost, executor driver, partition 0, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:25:54 INFO TaskSetManager: Starting task 1.0 in stage 5.0 (TID 36, localhost, executor driver, partition 1, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:25:54 INFO TaskSetManager: Starting task 2.0 in stage 5.0 (TID 37, localhost, executor driver, partition 2, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:25:54 INFO TaskSetManager: Starting task 3.0 in stage 5.0 (TID 38, localhost, executor driver, partition 3, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:25:54 INFO TaskSetManager: Starting task 4.0 in stage 5.0 (TID 39, localhost, executor driver, partition 4, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:25:54 INFO TaskSetManager: Starting task 5.0 in stage 5.0 (TID 40, localhost, executor driver, partition 5, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:25:54 INFO TaskSetManager: Starting task 6.0 in stage 5.0 (TID 41, localhost, executor driver, partition 6, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:25:54 INFO TaskSetManager: Starting task 7.0 in stage 5.0 (TID 42, localhost, executor driver, partition 7, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:25:54 INFO Executor: Running task 1.0 in stage 5.0 (TID 36)
+23/06/28 20:25:54 INFO Executor: Running task 0.0 in stage 5.0 (TID 35)
+23/06/28 20:25:54 INFO Executor: Running task 2.0 in stage 5.0 (TID 37)
+23/06/28 20:25:54 INFO Executor: Running task 3.0 in stage 5.0 (TID 38)
+23/06/28 20:25:54 INFO Executor: Running task 4.0 in stage 5.0 (TID 39)
+23/06/28 20:25:54 INFO Executor: Running task 5.0 in stage 5.0 (TID 40)
+23/06/28 20:25:54 INFO Executor: Running task 6.0 in stage 5.0 (TID 41)
+23/06/28 20:25:54 INFO Executor: Running task 7.0 in stage 5.0 (TID 42)
+23/06/28 20:25:54 INFO BlockManager: Found block rdd_16_3 locally
+23/06/28 20:25:54 INFO BlockManager: Found block rdd_16_0 locally
+23/06/28 20:25:54 INFO BlockManager: Found block rdd_16_6 locally
+23/06/28 20:25:54 INFO BlockManager: Found block rdd_16_1 locally
+23/06/28 20:25:54 INFO Executor: Finished task 0.0 in stage 5.0 (TID 35). 1871 bytes result sent to driver
+23/06/28 20:25:54 INFO BlockManager: Found block rdd_16_7 locally
+23/06/28 20:25:54 INFO BlockManager: Found block rdd_16_2 locally
+23/06/28 20:25:54 INFO BlockManager: Found block rdd_16_4 locally
+23/06/28 20:25:54 INFO BlockManager: Found block rdd_16_5 locally
+23/06/28 20:25:54 INFO TaskSetManager: Starting task 8.0 in stage 5.0 (TID 43, localhost, executor driver, partition 8, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:25:54 INFO Executor: Running task 8.0 in stage 5.0 (TID 43)
+23/06/28 20:25:54 INFO TaskSetManager: Finished task 0.0 in stage 5.0 (TID 35) in 19 ms on localhost (executor driver) (1/16)
+23/06/28 20:25:54 INFO Executor: Finished task 6.0 in stage 5.0 (TID 41). 1871 bytes result sent to driver
+23/06/28 20:25:54 INFO Executor: Finished task 3.0 in stage 5.0 (TID 38). 1871 bytes result sent to driver
+23/06/28 20:25:54 INFO Executor: Finished task 1.0 in stage 5.0 (TID 36). 1871 bytes result sent to driver
+23/06/28 20:25:54 INFO TaskSetManager: Finished task 6.0 in stage 5.0 (TID 41) in 24 ms on localhost (executor driver) (2/16)
+23/06/28 20:25:54 INFO BlockManager: Found block rdd_16_8 locally
+23/06/28 20:25:54 INFO TaskSetManager: Starting task 9.0 in stage 5.0 (TID 44, localhost, executor driver, partition 9, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:25:54 INFO TaskSetManager: Starting task 10.0 in stage 5.0 (TID 45, localhost, executor driver, partition 10, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:25:54 INFO TaskSetManager: Starting task 11.0 in stage 5.0 (TID 46, localhost, executor driver, partition 11, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:25:54 INFO TaskSetManager: Finished task 1.0 in stage 5.0 (TID 36) in 27 ms on localhost (executor driver) (3/16)
+23/06/28 20:25:54 INFO TaskSetManager: Finished task 3.0 in stage 5.0 (TID 38) in 26 ms on localhost (executor driver) (4/16)
+23/06/28 20:25:54 INFO Executor: Running task 9.0 in stage 5.0 (TID 44)
+23/06/28 20:25:54 INFO Executor: Finished task 8.0 in stage 5.0 (TID 43). 1871 bytes result sent to driver
+23/06/28 20:25:54 INFO Executor: Running task 10.0 in stage 5.0 (TID 45)
+23/06/28 20:25:54 INFO TaskSetManager: Starting task 12.0 in stage 5.0 (TID 47, localhost, executor driver, partition 12, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:25:54 INFO TaskSetManager: Finished task 8.0 in stage 5.0 (TID 43) in 16 ms on localhost (executor driver) (5/16)
+23/06/28 20:25:54 INFO BlockManager: Found block rdd_16_10 locally
+23/06/28 20:25:54 INFO BlockManager: Found block rdd_16_9 locally
+23/06/28 20:25:54 INFO Executor: Finished task 7.0 in stage 5.0 (TID 42). 1871 bytes result sent to driver
+23/06/28 20:25:54 INFO Executor: Running task 11.0 in stage 5.0 (TID 46)
+23/06/28 20:25:54 INFO Executor: Finished task 4.0 in stage 5.0 (TID 39). 1871 bytes result sent to driver
+23/06/28 20:25:54 INFO Executor: Running task 12.0 in stage 5.0 (TID 47)
+23/06/28 20:25:54 INFO TaskSetManager: Starting task 13.0 in stage 5.0 (TID 48, localhost, executor driver, partition 13, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:25:54 INFO Executor: Finished task 10.0 in stage 5.0 (TID 45). 1871 bytes result sent to driver
+23/06/28 20:25:54 INFO TaskSetManager: Starting task 14.0 in stage 5.0 (TID 49, localhost, executor driver, partition 14, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:25:54 INFO TaskSetManager: Starting task 15.0 in stage 5.0 (TID 50, localhost, executor driver, partition 15, PROCESS_LOCAL, 8288 bytes)
+23/06/28 20:25:54 INFO TaskSetManager: Finished task 7.0 in stage 5.0 (TID 42) in 44 ms on localhost (executor driver) (6/16)
+23/06/28 20:25:54 INFO TaskSetManager: Finished task 4.0 in stage 5.0 (TID 39) in 44 ms on localhost (executor driver) (7/16)
+23/06/28 20:25:54 INFO TaskSetManager: Finished task 10.0 in stage 5.0 (TID 45) in 20 ms on localhost (executor driver) (8/16)
+23/06/28 20:25:54 INFO Executor: Finished task 5.0 in stage 5.0 (TID 40). 1871 bytes result sent to driver
+23/06/28 20:25:54 INFO Executor: Finished task 2.0 in stage 5.0 (TID 37). 1871 bytes result sent to driver
+23/06/28 20:25:54 INFO BlockManager: Found block rdd_16_12 locally
+23/06/28 20:25:54 INFO BlockManager: Found block rdd_16_11 locally
+23/06/28 20:25:54 INFO TaskSetManager: Finished task 5.0 in stage 5.0 (TID 40) in 47 ms on localhost (executor driver) (9/16)
+23/06/28 20:25:54 INFO Executor: Running task 14.0 in stage 5.0 (TID 49)
+23/06/28 20:25:54 INFO Executor: Finished task 9.0 in stage 5.0 (TID 44). 1871 bytes result sent to driver
+23/06/28 20:25:54 INFO BlockManager: Found block rdd_16_14 locally
+23/06/28 20:25:54 INFO Executor: Running task 15.0 in stage 5.0 (TID 50)
+23/06/28 20:25:54 INFO Executor: Running task 13.0 in stage 5.0 (TID 48)
+23/06/28 20:25:54 INFO Executor: Finished task 12.0 in stage 5.0 (TID 47). 1871 bytes result sent to driver
+23/06/28 20:25:54 INFO TaskSetManager: Finished task 2.0 in stage 5.0 (TID 37) in 59 ms on localhost (executor driver) (10/16)
+23/06/28 20:25:54 INFO Executor: Finished task 11.0 in stage 5.0 (TID 46). 1871 bytes result sent to driver
+23/06/28 20:25:54 INFO TaskSetManager: Finished task 12.0 in stage 5.0 (TID 47) in 27 ms on localhost (executor driver) (11/16)
+23/06/28 20:25:54 INFO TaskSetManager: Finished task 11.0 in stage 5.0 (TID 46) in 35 ms on localhost (executor driver) (12/16)
+23/06/28 20:25:54 INFO TaskSetManager: Finished task 9.0 in stage 5.0 (TID 44) in 38 ms on localhost (executor driver) (13/16)
+23/06/28 20:25:54 INFO BlockManager: Found block rdd_16_15 locally
+23/06/28 20:25:54 INFO BlockManager: Found block rdd_16_13 locally
+23/06/28 20:25:54 INFO Executor: Finished task 13.0 in stage 5.0 (TID 48). 1871 bytes result sent to driver
+23/06/28 20:25:54 INFO Executor: Finished task 15.0 in stage 5.0 (TID 50). 1871 bytes result sent to driver
+23/06/28 20:25:54 INFO TaskSetManager: Finished task 13.0 in stage 5.0 (TID 48) in 29 ms on localhost (executor driver) (14/16)
+23/06/28 20:25:54 INFO TaskSetManager: Finished task 15.0 in stage 5.0 (TID 50) in 28 ms on localhost (executor driver) (15/16)
+23/06/28 20:25:54 INFO Executor: Finished task 14.0 in stage 5.0 (TID 49). 1871 bytes result sent to driver
+23/06/28 20:25:54 INFO TaskSetManager: Finished task 14.0 in stage 5.0 (TID 49) in 30 ms on localhost (executor driver) (16/16)
+23/06/28 20:25:54 INFO TaskSchedulerImpl: Removed TaskSet 5.0, whose tasks have all completed, from pool 
+23/06/28 20:25:54 INFO DAGScheduler: ShuffleMapStage 5 (collect at utils.scala:204) finished in 0.093 s
+23/06/28 20:25:54 INFO DAGScheduler: looking for newly runnable stages
+23/06/28 20:25:54 INFO DAGScheduler: running: Set()
+23/06/28 20:25:54 INFO DAGScheduler: waiting: Set(ResultStage 6)
+23/06/28 20:25:54 INFO DAGScheduler: failed: Set()
+23/06/28 20:25:54 INFO DAGScheduler: Submitting ResultStage 6 (MapPartitionsRDD[32] at collect at utils.scala:204), which has no missing parents
+23/06/28 20:25:54 INFO MemoryStore: Block broadcast_9 stored as values in memory (estimated size 7.1 KB, free 139.3 MB)
+23/06/28 20:25:54 INFO MemoryStore: Block broadcast_9_piece0 stored as bytes in memory (estimated size 3.8 KB, free 139.3 MB)
+23/06/28 20:25:54 INFO BlockManagerInfo: Added broadcast_9_piece0 in memory on localhost:44515 (size: 3.8 KB, free: 139.7 MB)
+23/06/28 20:25:54 INFO SparkContext: Created broadcast 9 from broadcast at DAGScheduler.scala:1161
+23/06/28 20:25:54 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 6 (MapPartitionsRDD[32] at collect at utils.scala:204) (first 15 tasks are for partitions Vector(0))
+23/06/28 20:25:54 INFO TaskSchedulerImpl: Adding task set 6.0 with 1 tasks
+23/06/28 20:25:54 INFO TaskSetManager: Starting task 0.0 in stage 6.0 (TID 51, localhost, executor driver, partition 0, NODE_LOCAL, 7767 bytes)
+23/06/28 20:25:54 INFO Executor: Running task 0.0 in stage 6.0 (TID 51)
+23/06/28 20:25:54 INFO ShuffleBlockFetcherIterator: Getting 16 non-empty blocks including 16 local blocks and 0 remote blocks
+23/06/28 20:25:54 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+23/06/28 20:25:54 INFO Executor: Finished task 0.0 in stage 6.0 (TID 51). 1782 bytes result sent to driver
+23/06/28 20:25:54 INFO TaskSetManager: Finished task 0.0 in stage 6.0 (TID 51) in 10 ms on localhost (executor driver) (1/1)
+23/06/28 20:25:54 INFO TaskSchedulerImpl: Removed TaskSet 6.0, whose tasks have all completed, from pool 
+23/06/28 20:25:54 INFO DAGScheduler: ResultStage 6 (collect at utils.scala:204) finished in 0.015 s
+23/06/28 20:25:54 INFO DAGScheduler: Job 4 finished: collect at utils.scala:204, took 0.114696 s
+23/06/28 20:53:08 INFO CodeGenerator: Code generated in 43.324896 ms
+23/06/28 20:53:08 INFO SparkContext: Starting job: collect at utils.scala:204
+23/06/28 20:53:08 INFO DAGScheduler: Got job 5 (collect at utils.scala:204) with 1 output partitions
+23/06/28 20:53:08 INFO DAGScheduler: Final stage: ResultStage 7 (collect at utils.scala:204)
+23/06/28 20:53:08 INFO DAGScheduler: Parents of final stage: List()
+23/06/28 20:53:08 INFO DAGScheduler: Missing parents: List()
+23/06/28 20:53:08 INFO DAGScheduler: Submitting ResultStage 7 (MapPartitionsRDD[37] at collect at utils.scala:204), which has no missing parents
+23/06/28 20:53:08 INFO MemoryStore: Block broadcast_10 stored as values in memory (estimated size 49.6 KB, free 139.3 MB)
+23/06/28 20:53:08 INFO MemoryStore: Block broadcast_10_piece0 stored as bytes in memory (estimated size 18.7 KB, free 139.3 MB)
+23/06/28 20:53:08 INFO BlockManagerInfo: Added broadcast_10_piece0 in memory on localhost:44515 (size: 18.7 KB, free: 139.7 MB)
+23/06/28 20:53:08 INFO SparkContext: Created broadcast 10 from broadcast at DAGScheduler.scala:1161
+23/06/28 20:53:08 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 7 (MapPartitionsRDD[37] at collect at utils.scala:204) (first 15 tasks are for partitions Vector(0))
+23/06/28 20:53:08 INFO TaskSchedulerImpl: Adding task set 7.0 with 1 tasks
+23/06/28 20:53:08 INFO TaskSetManager: Starting task 0.0 in stage 7.0 (TID 52, localhost, executor driver, partition 0, PROCESS_LOCAL, 8299 bytes)
+23/06/28 20:53:08 INFO Executor: Running task 0.0 in stage 7.0 (TID 52)
+23/06/28 20:53:08 INFO BlockManager: Found block rdd_16_0 locally
+23/06/28 20:53:08 INFO CodeGenerator: Code generated in 46.435639 ms
+23/06/28 20:53:08 INFO Executor: 1 block locks were not released by TID = 52:
+[rdd_16_0]
+23/06/28 20:53:08 INFO Executor: Finished task 0.0 in stage 7.0 (TID 52). 1880 bytes result sent to driver
+23/06/28 20:53:08 INFO TaskSetManager: Finished task 0.0 in stage 7.0 (TID 52) in 99 ms on localhost (executor driver) (1/1)
+23/06/28 20:53:08 INFO TaskSchedulerImpl: Removed TaskSet 7.0, whose tasks have all completed, from pool 
+23/06/28 20:53:08 INFO DAGScheduler: ResultStage 7 (collect at utils.scala:204) finished in 0.116 s
+23/06/28 20:53:08 INFO DAGScheduler: Job 5 finished: collect at utils.scala:204, took 0.118601 s
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 117
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 188
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 214
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 247
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 208
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 193
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 239
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 211
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 235
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 237
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 251
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 240
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 179
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 187
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 175
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 206
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 180
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 220
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 223
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 232
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 241
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 195
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 234
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 183
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 185
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 186
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 200
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 192
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 178
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 246
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 207
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 244
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 203
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 233
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 213
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 177
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 205
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 164
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 190
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 222
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 229
+23/06/28 20:53:52 INFO BlockManagerInfo: Removed broadcast_10_piece0 on localhost:44515 in memory (size: 18.7 KB, free: 139.7 MB)
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned shuffle 1
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 184
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 217
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 248
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 216
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 181
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 224
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 243
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 212
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 219
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 197
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 242
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 202
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 227
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 161
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 230
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 215
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 169
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 160
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 182
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 174
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 189
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 236
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 168
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 198
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 163
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 196
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 204
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 176
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 159
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 171
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 238
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 166
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 218
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 194
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 170
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 173
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 209
+23/06/28 20:53:52 INFO BlockManagerInfo: Removed broadcast_7_piece0 on localhost:44515 in memory (size: 3.8 KB, free: 139.7 MB)
+23/06/28 20:53:52 INFO BlockManagerInfo: Removed broadcast_8_piece0 on localhost:44515 in memory (size: 20.5 KB, free: 139.8 MB)
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 249
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 165
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 167
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 221
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 201
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 172
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 199
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 210
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 245
+23/06/28 20:53:52 INFO BlockManagerInfo: Removed broadcast_9_piece0 on localhost:44515 in memory (size: 3.8 KB, free: 139.8 MB)
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 250
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 228
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 191
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 162
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 231
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 127
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 133
+23/06/28 20:53:52 INFO BlockManagerInfo: Removed broadcast_6_piece0 on localhost:44515 in memory (size: 20.5 KB, free: 139.8 MB)
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 118
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 102
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 126
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 148
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 101
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 142
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 130
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 135
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 124
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 121
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 100
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 103
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 97
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 111
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 119
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 115
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 92
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 139
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 157
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 146
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 144
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 129
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 120
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 141
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 93
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 110
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 138
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 125
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 145
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 128
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 113
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 134
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 158
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 114
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 91
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 155
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 152
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 136
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 116
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 122
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 143
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 94
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 156
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 132
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 131
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 96
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned shuffle 0
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 99
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 109
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 112
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 140
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 98
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 150
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 137
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 149
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 90
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 123
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 95
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 153
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 151
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 147
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 89
+23/06/28 20:53:52 INFO ContextCleaner: Cleaned accumulator 154
+23/06/28 21:45:17 INFO SparkContext: Starting job: collect at utils.scala:204
+23/06/28 21:45:17 INFO DAGScheduler: Got job 6 (collect at utils.scala:204) with 1 output partitions
+23/06/28 21:45:17 INFO DAGScheduler: Final stage: ResultStage 8 (collect at utils.scala:204)
+23/06/28 21:45:17 INFO DAGScheduler: Parents of final stage: List()
+23/06/28 21:45:17 INFO DAGScheduler: Missing parents: List()
+23/06/28 21:45:17 INFO DAGScheduler: Submitting ResultStage 8 (MapPartitionsRDD[42] at collect at utils.scala:204), which has no missing parents
+23/06/28 21:45:17 INFO MemoryStore: Block broadcast_11 stored as values in memory (estimated size 49.6 KB, free 139.5 MB)
+23/06/28 21:45:17 INFO MemoryStore: Block broadcast_11_piece0 stored as bytes in memory (estimated size 18.8 KB, free 139.4 MB)
+23/06/28 21:45:17 INFO BlockManagerInfo: Added broadcast_11_piece0 in memory on localhost:44515 (size: 18.8 KB, free: 139.8 MB)
+23/06/28 21:45:17 INFO SparkContext: Created broadcast 11 from broadcast at DAGScheduler.scala:1161
+23/06/28 21:45:17 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 8 (MapPartitionsRDD[42] at collect at utils.scala:204) (first 15 tasks are for partitions Vector(0))
+23/06/28 21:45:17 INFO TaskSchedulerImpl: Adding task set 8.0 with 1 tasks
+23/06/28 21:45:17 INFO TaskSetManager: Starting task 0.0 in stage 8.0 (TID 53, localhost, executor driver, partition 0, PROCESS_LOCAL, 8299 bytes)
+23/06/28 21:45:17 INFO Executor: Running task 0.0 in stage 8.0 (TID 53)
+23/06/28 21:45:17 INFO BlockManager: Found block rdd_16_0 locally
+23/06/28 21:45:17 INFO Executor: 1 block locks were not released by TID = 53:
+[rdd_16_0]
+23/06/28 21:45:17 INFO Executor: Finished task 0.0 in stage 8.0 (TID 53). 2370 bytes result sent to driver
+23/06/28 21:45:17 INFO TaskSetManager: Finished task 0.0 in stage 8.0 (TID 53) in 19 ms on localhost (executor driver) (1/1)
+23/06/28 21:45:17 INFO TaskSchedulerImpl: Removed TaskSet 8.0, whose tasks have all completed, from pool 
+23/06/28 21:45:17 INFO DAGScheduler: ResultStage 8 (collect at utils.scala:204) finished in 0.100 s
+23/06/28 21:45:17 INFO DAGScheduler: Job 6 finished: collect at utils.scala:204, took 0.104663 s
+23/06/28 21:46:41 INFO SparkContext: Starting job: collect at utils.scala:204
+23/06/28 21:46:41 INFO DAGScheduler: Got job 7 (collect at utils.scala:204) with 1 output partitions
+23/06/28 21:46:41 INFO DAGScheduler: Final stage: ResultStage 9 (collect at utils.scala:204)
+23/06/28 21:46:41 INFO DAGScheduler: Parents of final stage: List()
+23/06/28 21:46:41 INFO DAGScheduler: Missing parents: List()
+23/06/28 21:46:41 INFO DAGScheduler: Submitting ResultStage 9 (MapPartitionsRDD[47] at collect at utils.scala:204), which has no missing parents
+23/06/28 21:46:41 INFO MemoryStore: Block broadcast_12 stored as values in memory (estimated size 49.6 KB, free 139.4 MB)
+23/06/28 21:46:41 INFO MemoryStore: Block broadcast_12_piece0 stored as bytes in memory (estimated size 18.8 KB, free 139.4 MB)
+23/06/28 21:46:41 INFO BlockManagerInfo: Added broadcast_12_piece0 in memory on localhost:44515 (size: 18.8 KB, free: 139.7 MB)
+23/06/28 21:46:41 INFO SparkContext: Created broadcast 12 from broadcast at DAGScheduler.scala:1161
+23/06/28 21:46:41 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 9 (MapPartitionsRDD[47] at collect at utils.scala:204) (first 15 tasks are for partitions Vector(0))
+23/06/28 21:46:41 INFO TaskSchedulerImpl: Adding task set 9.0 with 1 tasks
+23/06/28 21:46:41 INFO TaskSetManager: Starting task 0.0 in stage 9.0 (TID 54, localhost, executor driver, partition 0, PROCESS_LOCAL, 8299 bytes)
+23/06/28 21:46:41 INFO Executor: Running task 0.0 in stage 9.0 (TID 54)
+23/06/28 21:46:41 INFO BlockManager: Found block rdd_16_0 locally
+23/06/28 21:46:41 INFO Executor: 1 block locks were not released by TID = 54:
+[rdd_16_0]
+23/06/28 21:46:41 INFO Executor: Finished task 0.0 in stage 9.0 (TID 54). 1880 bytes result sent to driver
+23/06/28 21:46:41 INFO TaskSetManager: Finished task 0.0 in stage 9.0 (TID 54) in 10 ms on localhost (executor driver) (1/1)
+23/06/28 21:46:41 INFO TaskSchedulerImpl: Removed TaskSet 9.0, whose tasks have all completed, from pool 
+23/06/28 21:46:41 INFO DAGScheduler: ResultStage 9 (collect at utils.scala:204) finished in 0.021 s
+23/06/28 21:46:41 INFO DAGScheduler: Job 7 finished: collect at utils.scala:204, took 0.024199 s
+23/06/28 21:46:42 INFO SparkContext: Starting job: collect at utils.scala:204
+23/06/28 21:46:42 INFO DAGScheduler: Got job 8 (collect at utils.scala:204) with 1 output partitions
+23/06/28 21:46:42 INFO DAGScheduler: Final stage: ResultStage 10 (collect at utils.scala:204)
+23/06/28 21:46:42 INFO DAGScheduler: Parents of final stage: List()
+23/06/28 21:46:42 INFO DAGScheduler: Missing parents: List()
+23/06/28 21:46:42 INFO DAGScheduler: Submitting ResultStage 10 (MapPartitionsRDD[52] at collect at utils.scala:204), which has no missing parents
+23/06/28 21:46:42 INFO MemoryStore: Block broadcast_13 stored as values in memory (estimated size 49.6 KB, free 139.3 MB)
+23/06/28 21:46:42 INFO MemoryStore: Block broadcast_13_piece0 stored as bytes in memory (estimated size 18.8 KB, free 139.3 MB)
+23/06/28 21:46:42 INFO BlockManagerInfo: Added broadcast_13_piece0 in memory on localhost:44515 (size: 18.8 KB, free: 139.7 MB)
+23/06/28 21:46:42 INFO SparkContext: Created broadcast 13 from broadcast at DAGScheduler.scala:1161
+23/06/28 21:46:42 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 10 (MapPartitionsRDD[52] at collect at utils.scala:204) (first 15 tasks are for partitions Vector(0))
+23/06/28 21:46:42 INFO TaskSchedulerImpl: Adding task set 10.0 with 1 tasks
+23/06/28 21:46:42 INFO TaskSetManager: Starting task 0.0 in stage 10.0 (TID 55, localhost, executor driver, partition 0, PROCESS_LOCAL, 8299 bytes)
+23/06/28 21:46:42 INFO Executor: Running task 0.0 in stage 10.0 (TID 55)
+23/06/28 21:46:42 INFO BlockManager: Found block rdd_16_0 locally
+23/06/28 21:46:42 INFO Executor: 1 block locks were not released by TID = 55:
+[rdd_16_0]
+23/06/28 21:46:42 INFO Executor: Finished task 0.0 in stage 10.0 (TID 55). 1880 bytes result sent to driver
+23/06/28 21:46:42 INFO TaskSetManager: Finished task 0.0 in stage 10.0 (TID 55) in 8 ms on localhost (executor driver) (1/1)
+23/06/28 21:46:42 INFO TaskSchedulerImpl: Removed TaskSet 10.0, whose tasks have all completed, from pool 
+23/06/28 21:46:42 INFO DAGScheduler: ResultStage 10 (collect at utils.scala:204) finished in 0.018 s
+23/06/28 21:46:42 INFO DAGScheduler: Job 8 finished: collect at utils.scala:204, took 0.022793 s
+23/06/28 21:46:45 INFO SparkContext: Starting job: collect at utils.scala:204
+23/06/28 21:46:45 INFO DAGScheduler: Got job 9 (collect at utils.scala:204) with 1 output partitions
+23/06/28 21:46:45 INFO DAGScheduler: Final stage: ResultStage 11 (collect at utils.scala:204)
+23/06/28 21:46:45 INFO DAGScheduler: Parents of final stage: List()
+23/06/28 21:46:45 INFO DAGScheduler: Missing parents: List()
+23/06/28 21:46:45 INFO DAGScheduler: Submitting ResultStage 11 (MapPartitionsRDD[57] at collect at utils.scala:204), which has no missing parents
+23/06/28 21:46:45 INFO MemoryStore: Block broadcast_14 stored as values in memory (estimated size 49.6 KB, free 139.3 MB)
+23/06/28 21:46:45 INFO MemoryStore: Block broadcast_14_piece0 stored as bytes in memory (estimated size 18.8 KB, free 139.2 MB)
+23/06/28 21:46:45 INFO BlockManagerInfo: Added broadcast_14_piece0 in memory on localhost:44515 (size: 18.8 KB, free: 139.7 MB)
+23/06/28 21:46:45 INFO SparkContext: Created broadcast 14 from broadcast at DAGScheduler.scala:1161
+23/06/28 21:46:45 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 11 (MapPartitionsRDD[57] at collect at utils.scala:204) (first 15 tasks are for partitions Vector(0))
+23/06/28 21:46:45 INFO TaskSchedulerImpl: Adding task set 11.0 with 1 tasks
+23/06/28 21:46:45 INFO TaskSetManager: Starting task 0.0 in stage 11.0 (TID 56, localhost, executor driver, partition 0, PROCESS_LOCAL, 8299 bytes)
+23/06/28 21:46:45 INFO Executor: Running task 0.0 in stage 11.0 (TID 56)
+23/06/28 21:46:45 INFO BlockManager: Found block rdd_16_0 locally
+23/06/28 21:46:45 INFO Executor: 1 block locks were not released by TID = 56:
+[rdd_16_0]
+23/06/28 21:46:45 INFO Executor: Finished task 0.0 in stage 11.0 (TID 56). 38334 bytes result sent to driver
+23/06/28 21:46:45 INFO TaskSetManager: Finished task 0.0 in stage 11.0 (TID 56) in 29 ms on localhost (executor driver) (1/1)
+23/06/28 21:46:45 INFO TaskSchedulerImpl: Removed TaskSet 11.0, whose tasks have all completed, from pool 
+23/06/28 21:46:45 INFO DAGScheduler: ResultStage 11 (collect at utils.scala:204) finished in 0.039 s
+23/06/28 21:46:45 INFO DAGScheduler: Job 9 finished: collect at utils.scala:204, took 0.044766 s
+23/06/28 21:46:46 INFO SparkContext: Starting job: collect at utils.scala:204
+23/06/28 21:46:46 INFO DAGScheduler: Got job 10 (collect at utils.scala:204) with 1 output partitions
+23/06/28 21:46:46 INFO DAGScheduler: Final stage: ResultStage 12 (collect at utils.scala:204)
+23/06/28 21:46:46 INFO DAGScheduler: Parents of final stage: List()
+23/06/28 21:46:46 INFO DAGScheduler: Missing parents: List()
+23/06/28 21:46:46 INFO DAGScheduler: Submitting ResultStage 12 (MapPartitionsRDD[62] at collect at utils.scala:204), which has no missing parents
+23/06/28 21:46:46 INFO MemoryStore: Block broadcast_15 stored as values in memory (estimated size 49.6 KB, free 139.2 MB)
+23/06/28 21:46:46 INFO MemoryStore: Block broadcast_15_piece0 stored as bytes in memory (estimated size 18.7 KB, free 139.2 MB)
+23/06/28 21:46:46 INFO BlockManagerInfo: Added broadcast_15_piece0 in memory on localhost:44515 (size: 18.7 KB, free: 139.7 MB)
+23/06/28 21:46:46 INFO SparkContext: Created broadcast 15 from broadcast at DAGScheduler.scala:1161
+23/06/28 21:46:46 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 12 (MapPartitionsRDD[62] at collect at utils.scala:204) (first 15 tasks are for partitions Vector(0))
+23/06/28 21:46:46 INFO TaskSchedulerImpl: Adding task set 12.0 with 1 tasks
+23/06/28 21:46:46 INFO TaskSetManager: Starting task 0.0 in stage 12.0 (TID 57, localhost, executor driver, partition 0, PROCESS_LOCAL, 8299 bytes)
+23/06/28 21:46:46 INFO Executor: Running task 0.0 in stage 12.0 (TID 57)
+23/06/28 21:46:46 INFO BlockManager: Found block rdd_16_0 locally
+23/06/28 21:46:46 INFO Executor: 1 block locks were not released by TID = 57:
+[rdd_16_0]
+23/06/28 21:46:46 INFO Executor: Finished task 0.0 in stage 12.0 (TID 57). 38334 bytes result sent to driver
+23/06/28 21:46:46 INFO TaskSetManager: Finished task 0.0 in stage 12.0 (TID 57) in 16 ms on localhost (executor driver) (1/1)
+23/06/28 21:46:46 INFO TaskSchedulerImpl: Removed TaskSet 12.0, whose tasks have all completed, from pool 
+23/06/28 21:46:46 INFO DAGScheduler: ResultStage 12 (collect at utils.scala:204) finished in 0.022 s
+23/06/28 21:46:46 INFO DAGScheduler: Job 10 finished: collect at utils.scala:204, took 0.024243 s
+23/06/28 21:48:21 INFO SparkContext: Starting job: collect at utils.scala:204
+23/06/28 21:48:21 INFO DAGScheduler: Got job 11 (collect at utils.scala:204) with 1 output partitions
+23/06/28 21:48:21 INFO DAGScheduler: Final stage: ResultStage 13 (collect at utils.scala:204)
+23/06/28 21:48:21 INFO DAGScheduler: Parents of final stage: List()
+23/06/28 21:48:21 INFO DAGScheduler: Missing parents: List()
+23/06/28 21:48:21 INFO DAGScheduler: Submitting ResultStage 13 (MapPartitionsRDD[67] at collect at utils.scala:204), which has no missing parents
+23/06/28 21:48:21 INFO MemoryStore: Block broadcast_16 stored as values in memory (estimated size 49.6 KB, free 139.1 MB)
+23/06/28 21:48:21 INFO MemoryStore: Block broadcast_16_piece0 stored as bytes in memory (estimated size 18.8 KB, free 139.1 MB)
+23/06/28 21:48:21 INFO BlockManagerInfo: Added broadcast_16_piece0 in memory on localhost:44515 (size: 18.8 KB, free: 139.7 MB)
+23/06/28 21:48:21 INFO SparkContext: Created broadcast 16 from broadcast at DAGScheduler.scala:1161
+23/06/28 21:48:21 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 13 (MapPartitionsRDD[67] at collect at utils.scala:204) (first 15 tasks are for partitions Vector(0))
+23/06/28 21:48:21 INFO TaskSchedulerImpl: Adding task set 13.0 with 1 tasks
+23/06/28 21:48:21 INFO TaskSetManager: Starting task 0.0 in stage 13.0 (TID 58, localhost, executor driver, partition 0, PROCESS_LOCAL, 8299 bytes)
+23/06/28 21:48:21 INFO Executor: Running task 0.0 in stage 13.0 (TID 58)
+23/06/28 21:48:21 INFO BlockManager: Found block rdd_16_0 locally
+23/06/28 21:48:21 INFO Executor: 1 block locks were not released by TID = 58:
+[rdd_16_0]
+23/06/28 21:48:21 INFO Executor: Finished task 0.0 in stage 13.0 (TID 58). 38334 bytes result sent to driver
+23/06/28 21:48:21 INFO TaskSetManager: Finished task 0.0 in stage 13.0 (TID 58) in 9 ms on localhost (executor driver) (1/1)
+23/06/28 21:48:21 INFO TaskSchedulerImpl: Removed TaskSet 13.0, whose tasks have all completed, from pool 
+23/06/28 21:48:21 INFO DAGScheduler: ResultStage 13 (collect at utils.scala:204) finished in 0.016 s
+23/06/28 21:48:21 INFO DAGScheduler: Job 11 finished: collect at utils.scala:204, took 0.018279 s
+23/06/28 21:48:22 INFO SparkContext: Starting job: collect at utils.scala:204
+23/06/28 21:48:22 INFO DAGScheduler: Got job 12 (collect at utils.scala:204) with 1 output partitions
+23/06/28 21:48:22 INFO DAGScheduler: Final stage: ResultStage 14 (collect at utils.scala:204)
+23/06/28 21:48:22 INFO DAGScheduler: Parents of final stage: List()
+23/06/28 21:48:22 INFO DAGScheduler: Missing parents: List()
+23/06/28 21:48:22 INFO DAGScheduler: Submitting ResultStage 14 (MapPartitionsRDD[72] at collect at utils.scala:204), which has no missing parents
+23/06/28 21:48:22 INFO MemoryStore: Block broadcast_17 stored as values in memory (estimated size 49.6 KB, free 139.1 MB)
+23/06/28 21:48:22 INFO MemoryStore: Block broadcast_17_piece0 stored as bytes in memory (estimated size 18.7 KB, free 139.0 MB)
+23/06/28 21:48:22 INFO BlockManagerInfo: Added broadcast_17_piece0 in memory on localhost:44515 (size: 18.7 KB, free: 139.7 MB)
+23/06/28 21:48:22 INFO SparkContext: Created broadcast 17 from broadcast at DAGScheduler.scala:1161
+23/06/28 21:48:22 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 14 (MapPartitionsRDD[72] at collect at utils.scala:204) (first 15 tasks are for partitions Vector(0))
+23/06/28 21:48:22 INFO TaskSchedulerImpl: Adding task set 14.0 with 1 tasks
+23/06/28 21:48:22 INFO TaskSetManager: Starting task 0.0 in stage 14.0 (TID 59, localhost, executor driver, partition 0, PROCESS_LOCAL, 8299 bytes)
+23/06/28 21:48:22 INFO Executor: Running task 0.0 in stage 14.0 (TID 59)
+23/06/28 21:48:22 INFO BlockManager: Found block rdd_16_0 locally
+23/06/28 21:48:22 INFO Executor: 1 block locks were not released by TID = 59:
+[rdd_16_0]
+23/06/28 21:48:22 INFO Executor: Finished task 0.0 in stage 14.0 (TID 59). 38334 bytes result sent to driver
+23/06/28 21:48:22 INFO TaskSetManager: Finished task 0.0 in stage 14.0 (TID 59) in 10 ms on localhost (executor driver) (1/1)
+23/06/28 21:48:22 INFO TaskSchedulerImpl: Removed TaskSet 14.0, whose tasks have all completed, from pool 
+23/06/28 21:48:22 INFO DAGScheduler: ResultStage 14 (collect at utils.scala:204) finished in 0.014 s
+23/06/28 21:48:22 INFO DAGScheduler: Job 12 finished: collect at utils.scala:204, took 0.016511 s
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 262
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 292
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 299
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 349
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 384
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 396
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 283
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 281
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 264
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 411
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 371
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 307
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 326
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 315
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 295
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 391
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 409
+23/06/28 21:53:52 INFO BlockManagerInfo: Removed broadcast_12_piece0 on localhost:44515 in memory (size: 18.8 KB, free: 139.7 MB)
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 291
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 322
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 421
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 316
+23/06/28 21:53:52 INFO BlockManagerInfo: Removed broadcast_17_piece0 on localhost:44515 in memory (size: 18.7 KB, free: 139.7 MB)
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 398
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 402
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 405
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 352
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 341
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 412
+23/06/28 21:53:52 INFO BlockManagerInfo: Removed broadcast_11_piece0 on localhost:44515 in memory (size: 18.8 KB, free: 139.7 MB)
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 258
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 370
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 340
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 424
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 273
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 260
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 354
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 435
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 268
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 361
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 332
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 360
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 277
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 359
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 416
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 392
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 276
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 381
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 302
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 308
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 317
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 367
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 399
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 309
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 305
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 363
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 313
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 418
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 344
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 323
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 330
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 301
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 306
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 254
+23/06/28 21:53:52 INFO BlockManagerInfo: Removed broadcast_14_piece0 on localhost:44515 in memory (size: 18.8 KB, free: 139.7 MB)
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 432
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 382
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 380
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 314
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 372
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 333
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 436
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 386
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 366
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 401
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 327
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 410
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 311
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 403
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 356
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 420
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 422
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 378
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 328
+23/06/28 21:53:52 INFO BlockManagerInfo: Removed broadcast_13_piece0 on localhost:44515 in memory (size: 18.8 KB, free: 139.7 MB)
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 257
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 437
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 342
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 293
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 297
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 343
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 375
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 428
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 394
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 406
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 336
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 259
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 379
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 325
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 275
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 324
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 300
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 267
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 430
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 320
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 383
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 395
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 287
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 368
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 334
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 331
+23/06/28 21:53:52 INFO BlockManagerInfo: Removed broadcast_16_piece0 on localhost:44515 in memory (size: 18.8 KB, free: 139.8 MB)
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 278
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 312
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 385
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 318
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 294
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 348
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 419
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 329
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 439
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 364
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 426
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 290
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 433
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 347
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 400
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 288
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 373
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 362
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 390
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 271
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 321
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 345
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 393
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 438
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 304
+23/06/28 21:53:52 INFO BlockManagerInfo: Removed broadcast_15_piece0 on localhost:44515 in memory (size: 18.7 KB, free: 139.8 MB)
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 397
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 263
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 440
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 425
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 270
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 286
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 376
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 374
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 434
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 358
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 261
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 282
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 351
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 266
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 427
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 285
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 355
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 417
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 255
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 338
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 389
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 404
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 408
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 407
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 365
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 429
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 337
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 274
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 346
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 353
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 350
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 296
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 284
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 413
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 339
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 303
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 377
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 335
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 256
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 269
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 319
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 369
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 423
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 357
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 431
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 265
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 289
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 298
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 310
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 272
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 225
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 279
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 280
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 252
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 253
+23/06/28 21:53:52 INFO ContextCleaner: Cleaned accumulator 226
+23/06/28 22:00:33 INFO CodeGenerator: Code generated in 26.756149 ms
+23/06/28 22:00:33 INFO SparkContext: Starting job: collect at utils.scala:204
+23/06/28 22:00:33 INFO DAGScheduler: Got job 13 (collect at utils.scala:204) with 16 output partitions
+23/06/28 22:00:33 INFO DAGScheduler: Final stage: ResultStage 15 (collect at utils.scala:204)
+23/06/28 22:00:33 INFO DAGScheduler: Parents of final stage: List()
+23/06/28 22:00:33 INFO DAGScheduler: Missing parents: List()
+23/06/28 22:00:33 INFO DAGScheduler: Submitting ResultStage 15 (MapPartitionsRDD[77] at collect at utils.scala:204), which has no missing parents
+23/06/28 22:00:33 INFO MemoryStore: Block broadcast_18 stored as values in memory (estimated size 64.6 KB, free 139.4 MB)
+23/06/28 22:00:33 INFO MemoryStore: Block broadcast_18_piece0 stored as bytes in memory (estimated size 22.4 KB, free 139.4 MB)
+23/06/28 22:00:33 INFO BlockManagerInfo: Added broadcast_18_piece0 in memory on localhost:44515 (size: 22.4 KB, free: 139.8 MB)
+23/06/28 22:00:33 INFO SparkContext: Created broadcast 18 from broadcast at DAGScheduler.scala:1161
+23/06/28 22:00:33 INFO DAGScheduler: Submitting 16 missing tasks from ResultStage 15 (MapPartitionsRDD[77] at collect at utils.scala:204) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+23/06/28 22:00:33 INFO TaskSchedulerImpl: Adding task set 15.0 with 16 tasks
+23/06/28 22:00:33 INFO TaskSetManager: Starting task 0.0 in stage 15.0 (TID 60, localhost, executor driver, partition 0, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:00:33 INFO TaskSetManager: Starting task 1.0 in stage 15.0 (TID 61, localhost, executor driver, partition 1, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:00:33 INFO TaskSetManager: Starting task 2.0 in stage 15.0 (TID 62, localhost, executor driver, partition 2, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:00:33 INFO TaskSetManager: Starting task 3.0 in stage 15.0 (TID 63, localhost, executor driver, partition 3, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:00:33 INFO TaskSetManager: Starting task 4.0 in stage 15.0 (TID 64, localhost, executor driver, partition 4, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:00:33 INFO TaskSetManager: Starting task 5.0 in stage 15.0 (TID 65, localhost, executor driver, partition 5, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:00:33 INFO TaskSetManager: Starting task 6.0 in stage 15.0 (TID 66, localhost, executor driver, partition 6, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:00:33 INFO TaskSetManager: Starting task 7.0 in stage 15.0 (TID 67, localhost, executor driver, partition 7, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:00:33 INFO Executor: Running task 0.0 in stage 15.0 (TID 60)
+23/06/28 22:00:33 INFO Executor: Running task 1.0 in stage 15.0 (TID 61)
+23/06/28 22:00:33 INFO Executor: Running task 2.0 in stage 15.0 (TID 62)
+23/06/28 22:00:33 INFO Executor: Running task 3.0 in stage 15.0 (TID 63)
+23/06/28 22:00:33 INFO Executor: Running task 4.0 in stage 15.0 (TID 64)
+23/06/28 22:00:33 INFO Executor: Running task 5.0 in stage 15.0 (TID 65)
+23/06/28 22:00:33 INFO Executor: Running task 6.0 in stage 15.0 (TID 66)
+23/06/28 22:00:33 INFO Executor: Running task 7.0 in stage 15.0 (TID 67)
+23/06/28 22:00:33 INFO BlockManager: Found block rdd_16_6 locally
+23/06/28 22:00:33 INFO BlockManager: Found block rdd_16_0 locally
+23/06/28 22:00:33 INFO BlockManager: Found block rdd_16_5 locally
+23/06/28 22:00:33 INFO BlockManager: Found block rdd_16_7 locally
+23/06/28 22:00:33 INFO BlockManager: Found block rdd_16_3 locally
+23/06/28 22:00:33 INFO BlockManager: Found block rdd_16_1 locally
+23/06/28 22:00:33 INFO BlockManager: Found block rdd_16_2 locally
+23/06/28 22:00:33 INFO BlockManager: Found block rdd_16_4 locally
+23/06/28 22:00:35 INFO MemoryStore: Block taskresult_61 stored as bytes in memory (estimated size 4.4 MB, free 135.1 MB)
+23/06/28 22:00:35 INFO BlockManagerInfo: Added taskresult_61 in memory on localhost:44515 (size: 4.4 MB, free: 135.4 MB)
+23/06/28 22:00:35 INFO Executor: Finished task 1.0 in stage 15.0 (TID 61). 4561336 bytes result sent via BlockManager)
+23/06/28 22:00:35 INFO TaskSetManager: Starting task 8.0 in stage 15.0 (TID 68, localhost, executor driver, partition 8, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:00:35 INFO Executor: Running task 8.0 in stage 15.0 (TID 68)
+23/06/28 22:00:35 INFO BlockManager: Found block rdd_16_8 locally
+23/06/28 22:00:35 INFO TransportClientFactory: Successfully created connection to localhost/127.0.0.1:44515 after 15 ms (0 ms spent in bootstraps)
+23/06/28 22:00:35 INFO TaskSetManager: Finished task 1.0 in stage 15.0 (TID 61) in 2242 ms on localhost (executor driver) (1/16)
+23/06/28 22:00:35 INFO BlockManagerInfo: Removed taskresult_61 on localhost:44515 in memory (size: 4.4 MB, free: 139.8 MB)
+23/06/28 22:00:35 INFO MemoryStore: Block taskresult_67 stored as bytes in memory (estimated size 6.6 MB, free 132.8 MB)
+23/06/28 22:00:35 INFO BlockManagerInfo: Added taskresult_67 in memory on localhost:44515 (size: 6.6 MB, free: 133.2 MB)
+23/06/28 22:00:35 INFO Executor: Finished task 7.0 in stage 15.0 (TID 67). 6894445 bytes result sent via BlockManager)
+23/06/28 22:00:35 INFO TaskSetManager: Starting task 9.0 in stage 15.0 (TID 69, localhost, executor driver, partition 9, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:00:35 INFO Executor: Running task 9.0 in stage 15.0 (TID 69)
+23/06/28 22:00:35 INFO BlockManager: Found block rdd_16_9 locally
+23/06/28 22:00:36 INFO MemoryStore: Block taskresult_62 stored as bytes in memory (estimated size 8.3 MB, free 124.6 MB)
+23/06/28 22:00:36 INFO BlockManagerInfo: Added taskresult_62 in memory on localhost:44515 (size: 8.3 MB, free: 124.9 MB)
+23/06/28 22:00:36 INFO Executor: Finished task 2.0 in stage 15.0 (TID 62). 8673073 bytes result sent via BlockManager)
+23/06/28 22:00:36 INFO TaskSetManager: Starting task 10.0 in stage 15.0 (TID 70, localhost, executor driver, partition 10, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:00:36 INFO Executor: Running task 10.0 in stage 15.0 (TID 70)
+23/06/28 22:00:36 INFO TaskSetManager: Finished task 7.0 in stage 15.0 (TID 67) in 2840 ms on localhost (executor driver) (2/16)
+23/06/28 22:00:36 INFO BlockManager: Found block rdd_16_10 locally
+23/06/28 22:00:36 INFO BlockManagerInfo: Removed taskresult_67 on localhost:44515 in memory (size: 6.6 MB, free: 131.5 MB)
+23/06/28 22:00:36 INFO TaskSetManager: Finished task 2.0 in stage 15.0 (TID 62) in 2908 ms on localhost (executor driver) (3/16)
+23/06/28 22:00:36 INFO BlockManagerInfo: Removed taskresult_62 on localhost:44515 in memory (size: 8.3 MB, free: 139.8 MB)
+23/06/28 22:00:36 INFO MemoryStore: Block taskresult_63 stored as bytes in memory (estimated size 9.1 MB, free 130.4 MB)
+23/06/28 22:00:36 INFO BlockManagerInfo: Added taskresult_63 in memory on localhost:44515 (size: 9.1 MB, free: 130.7 MB)
+23/06/28 22:00:36 INFO Executor: Finished task 3.0 in stage 15.0 (TID 63). 9499871 bytes result sent via BlockManager)
+23/06/28 22:00:36 INFO TaskSetManager: Starting task 11.0 in stage 15.0 (TID 71, localhost, executor driver, partition 11, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:00:36 INFO Executor: Running task 11.0 in stage 15.0 (TID 71)
+23/06/28 22:00:36 INFO BlockManager: Found block rdd_16_11 locally
+23/06/28 22:00:36 INFO TaskSetManager: Finished task 3.0 in stage 15.0 (TID 63) in 2941 ms on localhost (executor driver) (4/16)
+23/06/28 22:00:36 INFO BlockManagerInfo: Removed taskresult_63 on localhost:44515 in memory (size: 9.1 MB, free: 139.8 MB)
+23/06/28 22:00:36 INFO MemoryStore: Block taskresult_60 stored as bytes in memory (estimated size 6.7 MB, free 132.7 MB)
+23/06/28 22:00:36 INFO BlockManagerInfo: Added taskresult_60 in memory on localhost:44515 (size: 6.7 MB, free: 133.0 MB)
+23/06/28 22:00:36 INFO Executor: Finished task 0.0 in stage 15.0 (TID 60). 7062640 bytes result sent via BlockManager)
+23/06/28 22:00:36 INFO TaskSetManager: Starting task 12.0 in stage 15.0 (TID 72, localhost, executor driver, partition 12, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:00:36 INFO Executor: Running task 12.0 in stage 15.0 (TID 72)
+23/06/28 22:00:36 INFO BlockManager: Found block rdd_16_12 locally
+23/06/28 22:00:36 INFO TaskSetManager: Finished task 0.0 in stage 15.0 (TID 60) in 3045 ms on localhost (executor driver) (5/16)
+23/06/28 22:00:36 INFO BlockManagerInfo: Removed taskresult_60 on localhost:44515 in memory (size: 6.7 MB, free: 139.8 MB)
+23/06/28 22:00:36 INFO MemoryStore: Block taskresult_65 stored as bytes in memory (estimated size 10.9 MB, free 128.6 MB)
+23/06/28 22:00:36 INFO BlockManagerInfo: Added taskresult_65 in memory on localhost:44515 (size: 10.9 MB, free: 128.9 MB)
+23/06/28 22:00:36 INFO Executor: Finished task 5.0 in stage 15.0 (TID 65). 11387961 bytes result sent via BlockManager)
+23/06/28 22:00:36 INFO TaskSetManager: Starting task 13.0 in stage 15.0 (TID 73, localhost, executor driver, partition 13, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:00:36 INFO Executor: Running task 13.0 in stage 15.0 (TID 73)
+23/06/28 22:00:36 INFO BlockManager: Found block rdd_16_13 locally
+23/06/28 22:00:36 INFO MemoryStore: Block taskresult_66 stored as bytes in memory (estimated size 13.8 MB, free 114.8 MB)
+23/06/28 22:00:36 INFO BlockManagerInfo: Added taskresult_66 in memory on localhost:44515 (size: 13.8 MB, free: 115.1 MB)
+23/06/28 22:00:36 INFO Executor: Finished task 6.0 in stage 15.0 (TID 66). 14452445 bytes result sent via BlockManager)
+23/06/28 22:00:36 INFO TaskSetManager: Starting task 14.0 in stage 15.0 (TID 74, localhost, executor driver, partition 14, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:00:36 INFO Executor: Running task 14.0 in stage 15.0 (TID 74)
+23/06/28 22:00:36 INFO BlockManager: Found block rdd_16_14 locally
+23/06/28 22:00:36 INFO TaskSetManager: Finished task 5.0 in stage 15.0 (TID 65) in 3426 ms on localhost (executor driver) (6/16)
+23/06/28 22:00:36 INFO BlockManagerInfo: Removed taskresult_65 on localhost:44515 in memory (size: 10.9 MB, free: 126.0 MB)
+23/06/28 22:00:36 INFO MemoryStore: Block taskresult_64 stored as bytes in memory (estimated size 16.3 MB, free 109.3 MB)
+23/06/28 22:00:36 INFO BlockManagerInfo: Added taskresult_64 in memory on localhost:44515 (size: 16.3 MB, free: 109.7 MB)
+23/06/28 22:00:36 INFO Executor: Finished task 4.0 in stage 15.0 (TID 64). 17103691 bytes result sent via BlockManager)
+23/06/28 22:00:36 INFO TaskSetManager: Starting task 15.0 in stage 15.0 (TID 75, localhost, executor driver, partition 15, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:00:36 INFO Executor: Running task 15.0 in stage 15.0 (TID 75)
+23/06/28 22:00:36 INFO BlockManager: Found block rdd_16_15 locally
+23/06/28 22:00:36 INFO TaskSetManager: Finished task 6.0 in stage 15.0 (TID 66) in 3476 ms on localhost (executor driver) (7/16)
+23/06/28 22:00:36 INFO BlockManagerInfo: Removed taskresult_66 on localhost:44515 in memory (size: 13.8 MB, free: 123.4 MB)
+23/06/28 22:00:36 INFO TaskSetManager: Finished task 4.0 in stage 15.0 (TID 64) in 3597 ms on localhost (executor driver) (8/16)
+23/06/28 22:00:36 INFO BlockManagerInfo: Removed taskresult_64 on localhost:44515 in memory (size: 16.3 MB, free: 139.8 MB)
+23/06/28 22:00:37 INFO MemoryStore: Block taskresult_68 stored as bytes in memory (estimated size 8.5 MB, free 130.9 MB)
+23/06/28 22:00:37 INFO BlockManagerInfo: Added taskresult_68 in memory on localhost:44515 (size: 8.5 MB, free: 131.3 MB)
+23/06/28 22:00:37 INFO Executor: Finished task 8.0 in stage 15.0 (TID 68). 8914995 bytes result sent via BlockManager)
+23/06/28 22:00:37 INFO TaskSetManager: Finished task 8.0 in stage 15.0 (TID 68) in 1987 ms on localhost (executor driver) (9/16)
+23/06/28 22:00:37 INFO BlockManagerInfo: Removed taskresult_68 on localhost:44515 in memory (size: 8.5 MB, free: 139.8 MB)
+23/06/28 22:00:37 INFO MemoryStore: Block taskresult_72 stored as bytes in memory (estimated size 9.6 MB, free 129.8 MB)
+23/06/28 22:00:37 INFO BlockManagerInfo: Added taskresult_72 in memory on localhost:44515 (size: 9.6 MB, free: 130.1 MB)
+23/06/28 22:00:37 INFO Executor: Finished task 12.0 in stage 15.0 (TID 72). 10094268 bytes result sent via BlockManager)
+23/06/28 22:00:37 INFO TaskSetManager: Finished task 12.0 in stage 15.0 (TID 72) in 1612 ms on localhost (executor driver) (10/16)
+23/06/28 22:00:37 INFO BlockManagerInfo: Removed taskresult_72 on localhost:44515 in memory (size: 9.6 MB, free: 139.8 MB)
+23/06/28 22:00:37 INFO MemoryStore: Block taskresult_69 stored as bytes in memory (estimated size 10.8 MB, free 128.6 MB)
+23/06/28 22:00:37 INFO BlockManagerInfo: Added taskresult_69 in memory on localhost:44515 (size: 10.8 MB, free: 128.9 MB)
+23/06/28 22:00:37 INFO Executor: Finished task 9.0 in stage 15.0 (TID 69). 11368451 bytes result sent via BlockManager)
+23/06/28 22:00:37 INFO TaskSetManager: Finished task 9.0 in stage 15.0 (TID 69) in 2023 ms on localhost (executor driver) (11/16)
+23/06/28 22:00:37 INFO BlockManagerInfo: Removed taskresult_69 on localhost:44515 in memory (size: 10.8 MB, free: 139.8 MB)
+23/06/28 22:00:38 INFO MemoryStore: Block taskresult_71 stored as bytes in memory (estimated size 11.4 MB, free 128.0 MB)
+23/06/28 22:00:38 INFO BlockManagerInfo: Added taskresult_71 in memory on localhost:44515 (size: 11.4 MB, free: 128.4 MB)
+23/06/28 22:00:38 INFO Executor: Finished task 11.0 in stage 15.0 (TID 71). 11937394 bytes result sent via BlockManager)
+23/06/28 22:00:38 INFO MemoryStore: Block taskresult_70 stored as bytes in memory (estimated size 20.1 MB, free 108.0 MB)
+23/06/28 22:00:38 INFO BlockManagerInfo: Added taskresult_70 in memory on localhost:44515 (size: 20.1 MB, free: 108.3 MB)
+23/06/28 22:00:38 INFO Executor: Finished task 10.0 in stage 15.0 (TID 70). 21053366 bytes result sent via BlockManager)
+23/06/28 22:00:38 INFO TaskSetManager: Finished task 11.0 in stage 15.0 (TID 71) in 1985 ms on localhost (executor driver) (12/16)
+23/06/28 22:00:38 INFO BlockManagerInfo: Removed taskresult_71 on localhost:44515 in memory (size: 11.4 MB, free: 119.7 MB)
+23/06/28 22:00:38 INFO TaskSetManager: Finished task 10.0 in stage 15.0 (TID 70) in 2105 ms on localhost (executor driver) (13/16)
+23/06/28 22:00:38 INFO BlockManagerInfo: Removed taskresult_70 on localhost:44515 in memory (size: 20.1 MB, free: 139.8 MB)
+23/06/28 22:00:38 INFO MemoryStore: Block taskresult_75 stored as bytes in memory (estimated size 17.8 MB, free 121.6 MB)
+23/06/28 22:00:38 INFO BlockManagerInfo: Added taskresult_75 in memory on localhost:44515 (size: 17.8 MB, free: 121.9 MB)
+23/06/28 22:00:38 INFO Executor: Finished task 15.0 in stage 15.0 (TID 75). 18690658 bytes result sent via BlockManager)
+23/06/28 22:00:38 INFO TaskSetManager: Finished task 15.0 in stage 15.0 (TID 75) in 1607 ms on localhost (executor driver) (14/16)
+23/06/28 22:00:38 INFO BlockManagerInfo: Removed taskresult_75 on localhost:44515 in memory (size: 17.8 MB, free: 139.8 MB)
+23/06/28 22:00:38 INFO MemoryStore: Block taskresult_73 stored as bytes in memory (estimated size 29.2 MB, free 110.2 MB)
+23/06/28 22:00:38 INFO BlockManagerInfo: Added taskresult_73 in memory on localhost:44515 (size: 29.2 MB, free: 110.5 MB)
+23/06/28 22:00:38 INFO Executor: Finished task 13.0 in stage 15.0 (TID 73). 30629174 bytes result sent via BlockManager)
+23/06/28 22:00:38 INFO TaskSetManager: Finished task 13.0 in stage 15.0 (TID 73) in 2204 ms on localhost (executor driver) (15/16)
+23/06/28 22:00:38 INFO BlockManagerInfo: Removed taskresult_73 on localhost:44515 in memory (size: 29.2 MB, free: 139.8 MB)
+23/06/28 22:00:38 INFO MemoryStore: Block taskresult_74 stored as bytes in memory (estimated size 34.0 MB, free 105.4 MB)
+23/06/28 22:00:38 INFO BlockManagerInfo: Added taskresult_74 in memory on localhost:44515 (size: 34.0 MB, free: 105.7 MB)
+23/06/28 22:00:38 INFO Executor: Finished task 14.0 in stage 15.0 (TID 74). 35688392 bytes result sent via BlockManager)
+23/06/28 22:00:38 INFO TaskSetManager: Finished task 14.0 in stage 15.0 (TID 74) in 2292 ms on localhost (executor driver) (16/16)
+23/06/28 22:00:38 INFO TaskSchedulerImpl: Removed TaskSet 15.0, whose tasks have all completed, from pool 
+23/06/28 22:00:38 INFO DAGScheduler: ResultStage 15 (collect at utils.scala:204) finished in 5.719 s
+23/06/28 22:00:38 INFO BlockManagerInfo: Removed taskresult_74 on localhost:44515 in memory (size: 34.0 MB, free: 139.8 MB)
+23/06/28 22:00:38 INFO DAGScheduler: Job 13 finished: collect at utils.scala:204, took 5.723803 s
+23/06/28 22:00:40 INFO ContextCleaner: Cleaned accumulator 461
+23/06/28 22:00:40 INFO ContextCleaner: Cleaned accumulator 445
+23/06/28 22:00:40 INFO ContextCleaner: Cleaned accumulator 447
+23/06/28 22:00:40 INFO ContextCleaner: Cleaned accumulator 459
+23/06/28 22:00:40 INFO ContextCleaner: Cleaned accumulator 458
+23/06/28 22:00:40 INFO ContextCleaner: Cleaned accumulator 467
+23/06/28 22:00:40 INFO ContextCleaner: Cleaned accumulator 465
+23/06/28 22:00:40 INFO ContextCleaner: Cleaned accumulator 468
+23/06/28 22:00:40 INFO ContextCleaner: Cleaned accumulator 449
+23/06/28 22:00:40 INFO ContextCleaner: Cleaned accumulator 466
+23/06/28 22:00:40 INFO ContextCleaner: Cleaned accumulator 456
+23/06/28 22:00:40 INFO ContextCleaner: Cleaned accumulator 453
+23/06/28 22:00:40 INFO ContextCleaner: Cleaned accumulator 450
+23/06/28 22:00:40 INFO ContextCleaner: Cleaned accumulator 448
+23/06/28 22:00:40 INFO ContextCleaner: Cleaned accumulator 455
+23/06/28 22:00:40 INFO ContextCleaner: Cleaned accumulator 463
+23/06/28 22:00:40 INFO BlockManagerInfo: Removed broadcast_18_piece0 on localhost:44515 in memory (size: 22.4 KB, free: 139.8 MB)
+23/06/28 22:00:40 INFO ContextCleaner: Cleaned accumulator 462
+23/06/28 22:00:40 INFO ContextCleaner: Cleaned accumulator 451
+23/06/28 22:00:40 INFO ContextCleaner: Cleaned accumulator 452
+23/06/28 22:00:40 INFO ContextCleaner: Cleaned accumulator 460
+23/06/28 22:00:40 INFO ContextCleaner: Cleaned accumulator 457
+23/06/28 22:00:40 INFO ContextCleaner: Cleaned accumulator 454
+23/06/28 22:00:40 INFO ContextCleaner: Cleaned accumulator 446
+23/06/28 22:00:40 INFO ContextCleaner: Cleaned accumulator 469
+23/06/28 22:00:40 INFO ContextCleaner: Cleaned accumulator 464
+23/06/28 22:03:44 INFO CodeGenerator: Code generated in 13.900069 ms
+23/06/28 22:03:44 INFO CodeGenerator: Code generated in 15.472946 ms
+23/06/28 22:03:44 INFO SparkContext: Starting job: collect at utils.scala:204
+23/06/28 22:03:44 INFO DAGScheduler: Got job 14 (collect at utils.scala:204) with 16 output partitions
+23/06/28 22:03:44 INFO DAGScheduler: Final stage: ResultStage 16 (collect at utils.scala:204)
+23/06/28 22:03:44 INFO DAGScheduler: Parents of final stage: List()
+23/06/28 22:03:44 INFO DAGScheduler: Missing parents: List()
+23/06/28 22:03:44 INFO DAGScheduler: Submitting ResultStage 16 (MapPartitionsRDD[82] at collect at utils.scala:204), which has no missing parents
+23/06/28 22:03:44 INFO MemoryStore: Block broadcast_19 stored as values in memory (estimated size 57.5 KB, free 139.5 MB)
+23/06/28 22:03:44 INFO MemoryStore: Block broadcast_19_piece0 stored as bytes in memory (estimated size 21.2 KB, free 139.4 MB)
+23/06/28 22:03:44 INFO BlockManagerInfo: Added broadcast_19_piece0 in memory on localhost:44515 (size: 21.2 KB, free: 139.8 MB)
+23/06/28 22:03:44 INFO SparkContext: Created broadcast 19 from broadcast at DAGScheduler.scala:1161
+23/06/28 22:03:44 INFO DAGScheduler: Submitting 16 missing tasks from ResultStage 16 (MapPartitionsRDD[82] at collect at utils.scala:204) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+23/06/28 22:03:44 INFO TaskSchedulerImpl: Adding task set 16.0 with 16 tasks
+23/06/28 22:03:44 INFO TaskSetManager: Starting task 0.0 in stage 16.0 (TID 76, localhost, executor driver, partition 0, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:03:44 INFO TaskSetManager: Starting task 1.0 in stage 16.0 (TID 77, localhost, executor driver, partition 1, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:03:44 INFO TaskSetManager: Starting task 2.0 in stage 16.0 (TID 78, localhost, executor driver, partition 2, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:03:44 INFO TaskSetManager: Starting task 3.0 in stage 16.0 (TID 79, localhost, executor driver, partition 3, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:03:44 INFO TaskSetManager: Starting task 4.0 in stage 16.0 (TID 80, localhost, executor driver, partition 4, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:03:44 INFO TaskSetManager: Starting task 5.0 in stage 16.0 (TID 81, localhost, executor driver, partition 5, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:03:44 INFO TaskSetManager: Starting task 6.0 in stage 16.0 (TID 82, localhost, executor driver, partition 6, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:03:44 INFO TaskSetManager: Starting task 7.0 in stage 16.0 (TID 83, localhost, executor driver, partition 7, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:03:44 INFO Executor: Running task 0.0 in stage 16.0 (TID 76)
+23/06/28 22:03:44 INFO Executor: Running task 1.0 in stage 16.0 (TID 77)
+23/06/28 22:03:44 INFO Executor: Running task 2.0 in stage 16.0 (TID 78)
+23/06/28 22:03:44 INFO Executor: Running task 5.0 in stage 16.0 (TID 81)
+23/06/28 22:03:44 INFO Executor: Running task 7.0 in stage 16.0 (TID 83)
+23/06/28 22:03:44 INFO Executor: Running task 4.0 in stage 16.0 (TID 80)
+23/06/28 22:03:44 INFO Executor: Running task 3.0 in stage 16.0 (TID 79)
+23/06/28 22:03:44 INFO Executor: Running task 6.0 in stage 16.0 (TID 82)
+23/06/28 22:03:44 INFO BlockManager: Found block rdd_16_0 locally
+23/06/28 22:03:44 INFO BlockManager: Found block rdd_16_4 locally
+23/06/28 22:03:44 INFO BlockManager: Found block rdd_16_2 locally
+23/06/28 22:03:44 INFO BlockManager: Found block rdd_16_6 locally
+23/06/28 22:03:44 INFO BlockManager: Found block rdd_16_3 locally
+23/06/28 22:03:44 INFO BlockManager: Found block rdd_16_1 locally
+23/06/28 22:03:44 INFO BlockManager: Found block rdd_16_5 locally
+23/06/28 22:03:44 INFO BlockManager: Found block rdd_16_7 locally
+23/06/28 22:03:44 INFO CodeGenerator: Code generated in 17.669474 ms
+23/06/28 22:03:45 INFO Executor: Finished task 1.0 in stage 16.0 (TID 77). 987241 bytes result sent to driver
+23/06/28 22:03:45 INFO TaskSetManager: Starting task 8.0 in stage 16.0 (TID 84, localhost, executor driver, partition 8, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:03:45 INFO TaskSetManager: Finished task 1.0 in stage 16.0 (TID 77) in 867 ms on localhost (executor driver) (1/16)
+23/06/28 22:03:45 INFO Executor: Running task 8.0 in stage 16.0 (TID 84)
+23/06/28 22:03:45 INFO BlockManager: Found block rdd_16_8 locally
+23/06/28 22:03:45 INFO MemoryStore: Block taskresult_83 stored as bytes in memory (estimated size 1530.8 KB, free 137.9 MB)
+23/06/28 22:03:45 INFO BlockManagerInfo: Added taskresult_83 in memory on localhost:44515 (size: 1530.8 KB, free: 138.3 MB)
+23/06/28 22:03:45 INFO Executor: Finished task 7.0 in stage 16.0 (TID 83). 1567558 bytes result sent via BlockManager)
+23/06/28 22:03:45 INFO TaskSetManager: Starting task 9.0 in stage 16.0 (TID 85, localhost, executor driver, partition 9, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:03:45 INFO Executor: Running task 9.0 in stage 16.0 (TID 85)
+23/06/28 22:03:45 INFO BlockManager: Found block rdd_16_9 locally
+23/06/28 22:03:45 INFO TaskSetManager: Finished task 7.0 in stage 16.0 (TID 83) in 947 ms on localhost (executor driver) (2/16)
+23/06/28 22:03:45 INFO BlockManagerInfo: Removed taskresult_83 on localhost:44515 in memory (size: 1530.8 KB, free: 139.8 MB)
+23/06/28 22:03:45 INFO MemoryStore: Block taskresult_81 stored as bytes in memory (estimated size 2.2 MB, free 137.2 MB)
+23/06/28 22:03:45 INFO BlockManagerInfo: Added taskresult_81 in memory on localhost:44515 (size: 2.2 MB, free: 137.5 MB)
+23/06/28 22:03:45 INFO Executor: Finished task 5.0 in stage 16.0 (TID 81). 2354869 bytes result sent via BlockManager)
+23/06/28 22:03:45 INFO TaskSetManager: Starting task 10.0 in stage 16.0 (TID 86, localhost, executor driver, partition 10, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:03:45 INFO Executor: Running task 10.0 in stage 16.0 (TID 86)
+23/06/28 22:03:45 INFO BlockManager: Found block rdd_16_10 locally
+23/06/28 22:03:45 INFO TaskSetManager: Finished task 5.0 in stage 16.0 (TID 81) in 1052 ms on localhost (executor driver) (3/16)
+23/06/28 22:03:45 INFO BlockManagerInfo: Removed taskresult_81 on localhost:44515 in memory (size: 2.2 MB, free: 139.8 MB)
+23/06/28 22:03:46 INFO MemoryStore: Block taskresult_78 stored as bytes in memory (estimated size 2042.3 KB, free 137.4 MB)
+23/06/28 22:03:46 INFO BlockManagerInfo: Added taskresult_78 in memory on localhost:44515 (size: 2042.3 KB, free: 137.8 MB)
+23/06/28 22:03:46 INFO Executor: Finished task 2.0 in stage 16.0 (TID 78). 2091347 bytes result sent via BlockManager)
+23/06/28 22:03:46 INFO TaskSetManager: Starting task 11.0 in stage 16.0 (TID 87, localhost, executor driver, partition 11, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:03:46 INFO Executor: Running task 11.0 in stage 16.0 (TID 87)
+23/06/28 22:03:46 INFO BlockManager: Found block rdd_16_11 locally
+23/06/28 22:03:46 INFO TaskSetManager: Finished task 2.0 in stage 16.0 (TID 78) in 1118 ms on localhost (executor driver) (4/16)
+23/06/28 22:03:46 INFO BlockManagerInfo: Removed taskresult_78 on localhost:44515 in memory (size: 2042.3 KB, free: 139.8 MB)
+23/06/28 22:03:46 INFO MemoryStore: Block taskresult_79 stored as bytes in memory (estimated size 2.8 MB, free 136.6 MB)
+23/06/28 22:03:46 INFO BlockManagerInfo: Added taskresult_79 in memory on localhost:44515 (size: 2.8 MB, free: 136.9 MB)
+23/06/28 22:03:46 INFO Executor: Finished task 3.0 in stage 16.0 (TID 79). 2977780 bytes result sent via BlockManager)
+23/06/28 22:03:46 INFO TaskSetManager: Starting task 12.0 in stage 16.0 (TID 88, localhost, executor driver, partition 12, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:03:46 INFO Executor: Running task 12.0 in stage 16.0 (TID 88)
+23/06/28 22:03:46 INFO MemoryStore: Block taskresult_80 stored as bytes in memory (estimated size 4.7 MB, free 131.9 MB)
+23/06/28 22:03:46 INFO BlockManager: Found block rdd_16_12 locally
+23/06/28 22:03:46 INFO BlockManagerInfo: Added taskresult_80 in memory on localhost:44515 (size: 4.7 MB, free: 132.2 MB)
+23/06/28 22:03:46 INFO Executor: Finished task 4.0 in stage 16.0 (TID 80). 4904321 bytes result sent via BlockManager)
+23/06/28 22:03:46 INFO TaskSetManager: Starting task 13.0 in stage 16.0 (TID 89, localhost, executor driver, partition 13, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:03:46 INFO Executor: Running task 13.0 in stage 16.0 (TID 89)
+23/06/28 22:03:46 INFO TaskSetManager: Finished task 3.0 in stage 16.0 (TID 79) in 1153 ms on localhost (executor driver) (5/16)
+23/06/28 22:03:46 INFO BlockManager: Found block rdd_16_13 locally
+23/06/28 22:03:46 INFO BlockManagerInfo: Removed taskresult_79 on localhost:44515 in memory (size: 2.8 MB, free: 135.1 MB)
+23/06/28 22:03:46 INFO MemoryStore: Block taskresult_76 stored as bytes in memory (estimated size 1225.8 KB, free 133.6 MB)
+23/06/28 22:03:46 INFO BlockManagerInfo: Added taskresult_76 in memory on localhost:44515 (size: 1225.8 KB, free: 133.9 MB)
+23/06/28 22:03:46 INFO Executor: Finished task 0.0 in stage 16.0 (TID 76). 1255250 bytes result sent via BlockManager)
+23/06/28 22:03:46 INFO TaskSetManager: Starting task 14.0 in stage 16.0 (TID 90, localhost, executor driver, partition 14, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:03:46 INFO Executor: Running task 14.0 in stage 16.0 (TID 90)
+23/06/28 22:03:46 INFO BlockManager: Found block rdd_16_14 locally
+23/06/28 22:03:46 INFO TaskSetManager: Finished task 4.0 in stage 16.0 (TID 80) in 1191 ms on localhost (executor driver) (6/16)
+23/06/28 22:03:46 INFO TaskSetManager: Finished task 0.0 in stage 16.0 (TID 76) in 1195 ms on localhost (executor driver) (7/16)
+23/06/28 22:03:46 INFO MemoryStore: Block taskresult_82 stored as bytes in memory (estimated size 3.0 MB, free 130.5 MB)
+23/06/28 22:03:46 INFO BlockManagerInfo: Added taskresult_82 in memory on localhost:44515 (size: 3.0 MB, free: 130.9 MB)
+23/06/28 22:03:46 INFO Executor: Finished task 6.0 in stage 16.0 (TID 82). 3180892 bytes result sent via BlockManager)
+23/06/28 22:03:46 INFO BlockManagerInfo: Removed taskresult_80 on localhost:44515 in memory (size: 4.7 MB, free: 135.5 MB)
+23/06/28 22:03:46 INFO TaskSetManager: Starting task 15.0 in stage 16.0 (TID 91, localhost, executor driver, partition 15, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:03:46 INFO Executor: Running task 15.0 in stage 16.0 (TID 91)
+23/06/28 22:03:46 INFO BlockManager: Found block rdd_16_15 locally
+23/06/28 22:03:46 INFO BlockManagerInfo: Removed taskresult_76 on localhost:44515 in memory (size: 1225.8 KB, free: 136.7 MB)
+23/06/28 22:03:46 INFO TaskSetManager: Finished task 6.0 in stage 16.0 (TID 82) in 1225 ms on localhost (executor driver) (8/16)
+23/06/28 22:03:46 INFO BlockManagerInfo: Removed taskresult_82 on localhost:44515 in memory (size: 3.0 MB, free: 139.8 MB)
+23/06/28 22:03:46 INFO MemoryStore: Block taskresult_84 stored as bytes in memory (estimated size 2.4 MB, free 137.1 MB)
+23/06/28 22:03:46 INFO BlockManagerInfo: Added taskresult_84 in memory on localhost:44515 (size: 2.4 MB, free: 137.4 MB)
+23/06/28 22:03:46 INFO Executor: Finished task 8.0 in stage 16.0 (TID 84). 2497497 bytes result sent via BlockManager)
+23/06/28 22:03:46 INFO TaskSetManager: Finished task 8.0 in stage 16.0 (TID 84) in 590 ms on localhost (executor driver) (9/16)
+23/06/28 22:03:46 INFO BlockManagerInfo: Removed taskresult_84 on localhost:44515 in memory (size: 2.4 MB, free: 139.8 MB)
+23/06/28 22:03:46 INFO MemoryStore: Block taskresult_87 stored as bytes in memory (estimated size 2.7 MB, free 136.7 MB)
+23/06/28 22:03:46 INFO BlockManagerInfo: Added taskresult_87 in memory on localhost:44515 (size: 2.7 MB, free: 137.1 MB)
+23/06/28 22:03:46 INFO Executor: Finished task 11.0 in stage 16.0 (TID 87). 2823740 bytes result sent via BlockManager)
+23/06/28 22:03:46 INFO TaskSetManager: Finished task 11.0 in stage 16.0 (TID 87) in 443 ms on localhost (executor driver) (10/16)
+23/06/28 22:03:46 INFO BlockManagerInfo: Removed taskresult_87 on localhost:44515 in memory (size: 2.7 MB, free: 139.8 MB)
+23/06/28 22:03:46 INFO MemoryStore: Block taskresult_85 stored as bytes in memory (estimated size 2.8 MB, free 136.6 MB)
+23/06/28 22:03:46 INFO BlockManagerInfo: Added taskresult_85 in memory on localhost:44515 (size: 2.8 MB, free: 137.0 MB)
+23/06/28 22:03:46 INFO Executor: Finished task 9.0 in stage 16.0 (TID 85). 2924751 bytes result sent via BlockManager)
+23/06/28 22:03:46 INFO MemoryStore: Block taskresult_88 stored as bytes in memory (estimated size 2.5 MB, free 134.1 MB)
+23/06/28 22:03:46 INFO BlockManagerInfo: Added taskresult_88 in memory on localhost:44515 (size: 2.5 MB, free: 134.4 MB)
+23/06/28 22:03:46 INFO Executor: Finished task 12.0 in stage 16.0 (TID 88). 2655435 bytes result sent via BlockManager)
+23/06/28 22:03:46 INFO TaskSetManager: Finished task 9.0 in stage 16.0 (TID 85) in 642 ms on localhost (executor driver) (11/16)
+23/06/28 22:03:46 INFO BlockManagerInfo: Removed taskresult_85 on localhost:44515 in memory (size: 2.8 MB, free: 137.2 MB)
+23/06/28 22:03:46 INFO TaskSetManager: Finished task 12.0 in stage 16.0 (TID 88) in 445 ms on localhost (executor driver) (12/16)
+23/06/28 22:03:46 INFO BlockManagerInfo: Removed taskresult_88 on localhost:44515 in memory (size: 2.5 MB, free: 139.8 MB)
+23/06/28 22:03:46 INFO MemoryStore: Block taskresult_86 stored as bytes in memory (estimated size 5.8 MB, free 133.7 MB)
+23/06/28 22:03:46 INFO BlockManagerInfo: Added taskresult_86 in memory on localhost:44515 (size: 5.8 MB, free: 134.0 MB)
+23/06/28 22:03:46 INFO Executor: Finished task 10.0 in stage 16.0 (TID 86). 6041681 bytes result sent via BlockManager)
+23/06/28 22:03:46 INFO TaskSetManager: Finished task 10.0 in stage 16.0 (TID 86) in 568 ms on localhost (executor driver) (13/16)
+23/06/28 22:03:46 INFO BlockManagerInfo: Removed taskresult_86 on localhost:44515 in memory (size: 5.8 MB, free: 139.8 MB)
+23/06/28 22:03:46 INFO MemoryStore: Block taskresult_91 stored as bytes in memory (estimated size 5.5 MB, free 134.0 MB)
+23/06/28 22:03:46 INFO BlockManagerInfo: Added taskresult_91 in memory on localhost:44515 (size: 5.5 MB, free: 134.3 MB)
+23/06/28 22:03:46 INFO Executor: Finished task 15.0 in stage 16.0 (TID 91). 5739246 bytes result sent via BlockManager)
+23/06/28 22:03:46 INFO TaskSetManager: Finished task 15.0 in stage 16.0 (TID 91) in 445 ms on localhost (executor driver) (14/16)
+23/06/28 22:03:46 INFO BlockManagerInfo: Removed taskresult_91 on localhost:44515 in memory (size: 5.5 MB, free: 139.8 MB)
+23/06/28 22:03:46 INFO MemoryStore: Block taskresult_89 stored as bytes in memory (estimated size 8.4 MB, free 131.0 MB)
+23/06/28 22:03:46 INFO BlockManagerInfo: Added taskresult_89 in memory on localhost:44515 (size: 8.4 MB, free: 131.3 MB)
+23/06/28 22:03:46 INFO Executor: Finished task 13.0 in stage 16.0 (TID 89). 8823855 bytes result sent via BlockManager)
+23/06/28 22:03:46 INFO TaskSetManager: Finished task 13.0 in stage 16.0 (TID 89) in 583 ms on localhost (executor driver) (15/16)
+23/06/28 22:03:46 INFO BlockManagerInfo: Removed taskresult_89 on localhost:44515 in memory (size: 8.4 MB, free: 139.8 MB)
+23/06/28 22:03:46 INFO MemoryStore: Block taskresult_90 stored as bytes in memory (estimated size 10.6 MB, free 128.8 MB)
+23/06/28 22:03:46 INFO BlockManagerInfo: Added taskresult_90 in memory on localhost:44515 (size: 10.6 MB, free: 129.1 MB)
+23/06/28 22:03:46 INFO Executor: Finished task 14.0 in stage 16.0 (TID 90). 11150261 bytes result sent via BlockManager)
+23/06/28 22:03:46 INFO TaskSetManager: Finished task 14.0 in stage 16.0 (TID 90) in 660 ms on localhost (executor driver) (16/16)
+23/06/28 22:03:46 INFO TaskSchedulerImpl: Removed TaskSet 16.0, whose tasks have all completed, from pool 
+23/06/28 22:03:46 INFO DAGScheduler: ResultStage 16 (collect at utils.scala:204) finished in 1.840 s
+23/06/28 22:03:46 INFO DAGScheduler: Job 14 finished: collect at utils.scala:204, took 1.843948 s
+23/06/28 22:03:46 INFO BlockManagerInfo: Removed taskresult_90 on localhost:44515 in memory (size: 10.6 MB, free: 139.8 MB)
+23/06/28 22:03:46 INFO BlockManagerInfo: Removed broadcast_19_piece0 on localhost:44515 in memory (size: 21.2 KB, free: 139.8 MB)
+23/06/28 22:03:46 INFO ContextCleaner: Cleaned accumulator 498
+23/06/28 22:03:46 INFO ContextCleaner: Cleaned accumulator 491
+23/06/28 22:03:46 INFO ContextCleaner: Cleaned accumulator 495
+23/06/28 22:03:46 INFO ContextCleaner: Cleaned accumulator 486
+23/06/28 22:03:46 INFO ContextCleaner: Cleaned accumulator 489
+23/06/28 22:03:46 INFO ContextCleaner: Cleaned accumulator 493
+23/06/28 22:03:46 INFO ContextCleaner: Cleaned accumulator 485
+23/06/28 22:03:46 INFO ContextCleaner: Cleaned accumulator 474
+23/06/28 22:03:46 INFO ContextCleaner: Cleaned accumulator 477
+23/06/28 22:03:46 INFO ContextCleaner: Cleaned accumulator 476
+23/06/28 22:03:46 INFO ContextCleaner: Cleaned accumulator 482
+23/06/28 22:03:46 INFO ContextCleaner: Cleaned accumulator 475
+23/06/28 22:03:46 INFO ContextCleaner: Cleaned accumulator 483
+23/06/28 22:03:46 INFO ContextCleaner: Cleaned accumulator 478
+23/06/28 22:03:46 INFO ContextCleaner: Cleaned accumulator 480
+23/06/28 22:03:46 INFO ContextCleaner: Cleaned accumulator 488
+23/06/28 22:03:46 INFO ContextCleaner: Cleaned accumulator 487
+23/06/28 22:03:46 INFO ContextCleaner: Cleaned accumulator 484
+23/06/28 22:03:46 INFO ContextCleaner: Cleaned accumulator 492
+23/06/28 22:03:46 INFO ContextCleaner: Cleaned accumulator 490
+23/06/28 22:03:46 INFO ContextCleaner: Cleaned accumulator 481
+23/06/28 22:03:46 INFO ContextCleaner: Cleaned accumulator 479
+23/06/28 22:03:46 INFO ContextCleaner: Cleaned accumulator 496
+23/06/28 22:03:46 INFO ContextCleaner: Cleaned accumulator 494
+23/06/28 22:03:46 INFO ContextCleaner: Cleaned accumulator 497
+23/06/28 22:05:58 INFO SparkContext: Starting job: collect at utils.scala:204
+23/06/28 22:05:58 INFO DAGScheduler: Got job 15 (collect at utils.scala:204) with 16 output partitions
+23/06/28 22:05:58 INFO DAGScheduler: Final stage: ResultStage 17 (collect at utils.scala:204)
+23/06/28 22:05:58 INFO DAGScheduler: Parents of final stage: List()
+23/06/28 22:05:58 INFO DAGScheduler: Missing parents: List()
+23/06/28 22:05:58 INFO DAGScheduler: Submitting ResultStage 17 (MapPartitionsRDD[87] at collect at utils.scala:204), which has no missing parents
+23/06/28 22:05:58 INFO MemoryStore: Block broadcast_20 stored as values in memory (estimated size 57.5 KB, free 139.5 MB)
+23/06/28 22:05:58 INFO MemoryStore: Block broadcast_20_piece0 stored as bytes in memory (estimated size 21.2 KB, free 139.4 MB)
+23/06/28 22:05:58 INFO BlockManagerInfo: Added broadcast_20_piece0 in memory on localhost:44515 (size: 21.2 KB, free: 139.8 MB)
+23/06/28 22:05:58 INFO SparkContext: Created broadcast 20 from broadcast at DAGScheduler.scala:1161
+23/06/28 22:05:58 INFO DAGScheduler: Submitting 16 missing tasks from ResultStage 17 (MapPartitionsRDD[87] at collect at utils.scala:204) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+23/06/28 22:05:58 INFO TaskSchedulerImpl: Adding task set 17.0 with 16 tasks
+23/06/28 22:05:58 INFO TaskSetManager: Starting task 0.0 in stage 17.0 (TID 92, localhost, executor driver, partition 0, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:05:58 INFO TaskSetManager: Starting task 1.0 in stage 17.0 (TID 93, localhost, executor driver, partition 1, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:05:58 INFO TaskSetManager: Starting task 2.0 in stage 17.0 (TID 94, localhost, executor driver, partition 2, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:05:58 INFO TaskSetManager: Starting task 3.0 in stage 17.0 (TID 95, localhost, executor driver, partition 3, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:05:58 INFO TaskSetManager: Starting task 4.0 in stage 17.0 (TID 96, localhost, executor driver, partition 4, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:05:58 INFO TaskSetManager: Starting task 5.0 in stage 17.0 (TID 97, localhost, executor driver, partition 5, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:05:58 INFO TaskSetManager: Starting task 6.0 in stage 17.0 (TID 98, localhost, executor driver, partition 6, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:05:58 INFO TaskSetManager: Starting task 7.0 in stage 17.0 (TID 99, localhost, executor driver, partition 7, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:05:58 INFO Executor: Running task 0.0 in stage 17.0 (TID 92)
+23/06/28 22:05:58 INFO Executor: Running task 1.0 in stage 17.0 (TID 93)
+23/06/28 22:05:58 INFO Executor: Running task 2.0 in stage 17.0 (TID 94)
+23/06/28 22:05:58 INFO BlockManager: Found block rdd_16_0 locally
+23/06/28 22:05:58 INFO BlockManager: Found block rdd_16_2 locally
+23/06/28 22:05:58 INFO BlockManager: Found block rdd_16_1 locally
+23/06/28 22:05:58 INFO Executor: Running task 3.0 in stage 17.0 (TID 95)
+23/06/28 22:05:58 INFO Executor: Running task 4.0 in stage 17.0 (TID 96)
+23/06/28 22:05:58 INFO BlockManager: Found block rdd_16_3 locally
+23/06/28 22:05:58 INFO Executor: Running task 5.0 in stage 17.0 (TID 97)
+23/06/28 22:05:58 INFO BlockManager: Found block rdd_16_4 locally
+23/06/28 22:05:58 INFO Executor: Running task 6.0 in stage 17.0 (TID 98)
+23/06/28 22:05:58 INFO BlockManager: Found block rdd_16_6 locally
+23/06/28 22:05:58 INFO Executor: Running task 7.0 in stage 17.0 (TID 99)
+23/06/28 22:05:58 INFO BlockManager: Found block rdd_16_5 locally
+23/06/28 22:05:58 INFO BlockManager: Found block rdd_16_7 locally
+23/06/28 22:05:58 INFO MemoryStore: Block taskresult_94 stored as bytes in memory (estimated size 2042.3 KB, free 137.4 MB)
+23/06/28 22:05:58 INFO BlockManagerInfo: Added taskresult_94 in memory on localhost:44515 (size: 2042.3 KB, free: 137.8 MB)
+23/06/28 22:05:58 INFO Executor: Finished task 2.0 in stage 17.0 (TID 94). 2091347 bytes result sent via BlockManager)
+23/06/28 22:05:58 INFO TaskSetManager: Starting task 8.0 in stage 17.0 (TID 100, localhost, executor driver, partition 8, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:05:58 INFO MemoryStore: Block taskresult_97 stored as bytes in memory (estimated size 2.2 MB, free 135.2 MB)
+23/06/28 22:05:58 INFO BlockManagerInfo: Added taskresult_97 in memory on localhost:44515 (size: 2.2 MB, free: 135.5 MB)
+23/06/28 22:05:58 INFO Executor: Finished task 5.0 in stage 17.0 (TID 97). 2354869 bytes result sent via BlockManager)
+23/06/28 22:05:58 INFO TaskSetManager: Starting task 9.0 in stage 17.0 (TID 101, localhost, executor driver, partition 9, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:05:58 INFO Executor: Running task 9.0 in stage 17.0 (TID 101)
+23/06/28 22:05:58 INFO Executor: Finished task 1.0 in stage 17.0 (TID 93). 987198 bytes result sent to driver
+23/06/28 22:05:58 INFO Executor: Running task 8.0 in stage 17.0 (TID 100)
+23/06/28 22:05:58 INFO TaskSetManager: Starting task 10.0 in stage 17.0 (TID 102, localhost, executor driver, partition 10, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:05:58 INFO TaskSetManager: Finished task 1.0 in stage 17.0 (TID 93) in 516 ms on localhost (executor driver) (1/16)
+23/06/28 22:05:58 INFO BlockManager: Found block rdd_16_9 locally
+23/06/28 22:05:58 INFO BlockManager: Found block rdd_16_8 locally
+23/06/28 22:05:58 INFO TaskSetManager: Finished task 2.0 in stage 17.0 (TID 94) in 526 ms on localhost (executor driver) (2/16)
+23/06/28 22:05:58 INFO BlockManagerInfo: Removed taskresult_94 on localhost:44515 in memory (size: 2042.3 KB, free: 137.5 MB)
+23/06/28 22:05:58 INFO Executor: Running task 10.0 in stage 17.0 (TID 102)
+23/06/28 22:05:58 INFO TaskSetManager: Finished task 5.0 in stage 17.0 (TID 97) in 532 ms on localhost (executor driver) (3/16)
+23/06/28 22:05:58 INFO BlockManager: Found block rdd_16_10 locally
+23/06/28 22:05:58 INFO BlockManagerInfo: Removed taskresult_97 on localhost:44515 in memory (size: 2.2 MB, free: 139.8 MB)
+23/06/28 22:05:58 INFO MemoryStore: Block taskresult_92 stored as bytes in memory (estimated size 1225.9 KB, free 138.2 MB)
+23/06/28 22:05:58 INFO BlockManagerInfo: Added taskresult_92 in memory on localhost:44515 (size: 1225.9 KB, free: 138.6 MB)
+23/06/28 22:05:58 INFO Executor: Finished task 0.0 in stage 17.0 (TID 92). 1255293 bytes result sent via BlockManager)
+23/06/28 22:05:58 INFO MemoryStore: Block taskresult_95 stored as bytes in memory (estimated size 2.8 MB, free 135.4 MB)
+23/06/28 22:05:58 INFO BlockManagerInfo: Added taskresult_95 in memory on localhost:44515 (size: 2.8 MB, free: 135.7 MB)
+23/06/28 22:05:58 INFO Executor: Finished task 3.0 in stage 17.0 (TID 95). 2977780 bytes result sent via BlockManager)
+23/06/28 22:05:58 INFO TaskSetManager: Starting task 11.0 in stage 17.0 (TID 103, localhost, executor driver, partition 11, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:05:58 INFO Executor: Running task 11.0 in stage 17.0 (TID 103)
+23/06/28 22:05:58 INFO TaskSetManager: Starting task 12.0 in stage 17.0 (TID 104, localhost, executor driver, partition 12, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:05:58 INFO Executor: Running task 12.0 in stage 17.0 (TID 104)
+23/06/28 22:05:58 INFO BlockManager: Found block rdd_16_11 locally
+23/06/28 22:05:58 INFO BlockManager: Found block rdd_16_12 locally
+23/06/28 22:05:58 INFO TaskSetManager: Finished task 0.0 in stage 17.0 (TID 92) in 671 ms on localhost (executor driver) (4/16)
+23/06/28 22:05:58 INFO BlockManagerInfo: Removed taskresult_92 on localhost:44515 in memory (size: 1225.9 KB, free: 136.9 MB)
+23/06/28 22:05:58 INFO MemoryStore: Block taskresult_98 stored as bytes in memory (estimated size 3.0 MB, free 133.6 MB)
+23/06/28 22:05:58 INFO BlockManagerInfo: Added taskresult_98 in memory on localhost:44515 (size: 3.0 MB, free: 133.9 MB)
+23/06/28 22:05:58 INFO MemoryStore: Block taskresult_96 stored as bytes in memory (estimated size 4.7 MB, free 128.9 MB)
+23/06/28 22:05:58 INFO BlockManagerInfo: Added taskresult_96 in memory on localhost:44515 (size: 4.7 MB, free: 129.2 MB)
+23/06/28 22:05:58 INFO Executor: Finished task 4.0 in stage 17.0 (TID 96). 4904321 bytes result sent via BlockManager)
+23/06/28 22:05:58 INFO Executor: Finished task 6.0 in stage 17.0 (TID 98). 3180892 bytes result sent via BlockManager)
+23/06/28 22:05:58 INFO TaskSetManager: Starting task 13.0 in stage 17.0 (TID 105, localhost, executor driver, partition 13, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:05:58 INFO TaskSetManager: Starting task 14.0 in stage 17.0 (TID 106, localhost, executor driver, partition 14, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:05:58 INFO TaskSetManager: Finished task 3.0 in stage 17.0 (TID 95) in 736 ms on localhost (executor driver) (5/16)
+23/06/28 22:05:58 INFO Executor: Running task 13.0 in stage 17.0 (TID 105)
+23/06/28 22:05:58 INFO BlockManager: Found block rdd_16_13 locally
+23/06/28 22:05:58 INFO Executor: Running task 14.0 in stage 17.0 (TID 106)
+23/06/28 22:05:58 INFO MemoryStore: Block taskresult_99 stored as bytes in memory (estimated size 1530.8 KB, free 127.4 MB)
+23/06/28 22:05:58 INFO BlockManagerInfo: Added taskresult_99 in memory on localhost:44515 (size: 1530.8 KB, free: 127.7 MB)
+23/06/28 22:05:58 INFO Executor: Finished task 7.0 in stage 17.0 (TID 99). 1567558 bytes result sent via BlockManager)
+23/06/28 22:05:58 INFO BlockManager: Found block rdd_16_14 locally
+23/06/28 22:05:58 INFO TaskSetManager: Starting task 15.0 in stage 17.0 (TID 107, localhost, executor driver, partition 15, PROCESS_LOCAL, 8299 bytes)
+23/06/28 22:05:58 INFO Executor: Running task 15.0 in stage 17.0 (TID 107)
+23/06/28 22:05:58 INFO TaskSetManager: Finished task 6.0 in stage 17.0 (TID 98) in 779 ms on localhost (executor driver) (6/16)
+23/06/28 22:05:58 INFO BlockManagerInfo: Removed taskresult_98 on localhost:44515 in memory (size: 3.0 MB, free: 130.7 MB)
+23/06/28 22:05:58 INFO BlockManager: Found block rdd_16_15 locally
+23/06/28 22:05:58 INFO BlockManagerInfo: Removed taskresult_95 on localhost:44515 in memory (size: 2.8 MB, free: 133.6 MB)
+23/06/28 22:05:58 INFO TaskSetManager: Finished task 4.0 in stage 17.0 (TID 96) in 819 ms on localhost (executor driver) (7/16)
+23/06/28 22:05:58 INFO BlockManagerInfo: Removed taskresult_96 on localhost:44515 in memory (size: 4.7 MB, free: 138.3 MB)
+23/06/28 22:05:58 INFO TaskSetManager: Finished task 7.0 in stage 17.0 (TID 99) in 822 ms on localhost (executor driver) (8/16)
+23/06/28 22:05:58 INFO BlockManagerInfo: Removed taskresult_99 on localhost:44515 in memory (size: 1530.8 KB, free: 139.8 MB)
+23/06/28 22:05:59 INFO MemoryStore: Block taskresult_101 stored as bytes in memory (estimated size 2.8 MB, free 136.6 MB)
+23/06/28 22:05:59 INFO BlockManagerInfo: Added taskresult_101 in memory on localhost:44515 (size: 2.8 MB, free: 137.0 MB)
+23/06/28 22:05:59 INFO Executor: Finished task 9.0 in stage 17.0 (TID 101). 2924751 bytes result sent via BlockManager)
+23/06/28 22:05:59 INFO TaskSetManager: Finished task 9.0 in stage 17.0 (TID 101) in 571 ms on localhost (executor driver) (9/16)
+23/06/28 22:05:59 INFO BlockManagerInfo: Removed taskresult_101 on localhost:44515 in memory (size: 2.8 MB, free: 139.8 MB)
+23/06/28 22:05:59 INFO MemoryStore: Block taskresult_100 stored as bytes in memory (estimated size 2.4 MB, free 137.1 MB)
+23/06/28 22:05:59 INFO BlockManagerInfo: Added taskresult_100 in memory on localhost:44515 (size: 2.4 MB, free: 137.4 MB)
+23/06/28 22:05:59 INFO Executor: Finished task 8.0 in stage 17.0 (TID 100). 2497497 bytes result sent via BlockManager)
+23/06/28 22:05:59 INFO TaskSetManager: Finished task 8.0 in stage 17.0 (TID 100) in 640 ms on localhost (executor driver) (10/16)
+23/06/28 22:05:59 INFO BlockManagerInfo: Removed taskresult_100 on localhost:44515 in memory (size: 2.4 MB, free: 139.8 MB)
+23/06/28 22:05:59 INFO MemoryStore: Block taskresult_102 stored as bytes in memory (estimated size 5.8 MB, free 133.7 MB)
+23/06/28 22:05:59 INFO BlockManagerInfo: Added taskresult_102 in memory on localhost:44515 (size: 5.8 MB, free: 134.0 MB)
+23/06/28 22:05:59 INFO Executor: Finished task 10.0 in stage 17.0 (TID 102). 6041681 bytes result sent via BlockManager)
+23/06/28 22:05:59 INFO MemoryStore: Block taskresult_103 stored as bytes in memory (estimated size 2.7 MB, free 131.0 MB)
+23/06/28 22:05:59 INFO BlockManagerInfo: Added taskresult_103 in memory on localhost:44515 (size: 2.7 MB, free: 131.3 MB)
+23/06/28 22:05:59 INFO Executor: Finished task 11.0 in stage 17.0 (TID 103). 2823740 bytes result sent via BlockManager)
+23/06/28 22:05:59 INFO TaskSetManager: Finished task 10.0 in stage 17.0 (TID 102) in 783 ms on localhost (executor driver) (11/16)
+23/06/28 22:05:59 INFO TaskSetManager: Finished task 11.0 in stage 17.0 (TID 103) in 695 ms on localhost (executor driver) (12/16)
+23/06/28 22:05:59 INFO BlockManagerInfo: Removed taskresult_102 on localhost:44515 in memory (size: 5.8 MB, free: 137.1 MB)
+23/06/28 22:05:59 INFO BlockManagerInfo: Removed taskresult_103 on localhost:44515 in memory (size: 2.7 MB, free: 139.8 MB)
+23/06/28 22:05:59 INFO MemoryStore: Block taskresult_104 stored as bytes in memory (estimated size 2.5 MB, free 136.9 MB)
+23/06/28 22:05:59 INFO BlockManagerInfo: Added taskresult_104 in memory on localhost:44515 (size: 2.5 MB, free: 137.2 MB)
+23/06/28 22:05:59 INFO Executor: Finished task 12.0 in stage 17.0 (TID 104). 2655435 bytes result sent via BlockManager)
+23/06/28 22:05:59 INFO TaskSetManager: Finished task 12.0 in stage 17.0 (TID 104) in 753 ms on localhost (executor driver) (13/16)
+23/06/28 22:05:59 INFO BlockManagerInfo: Removed taskresult_104 on localhost:44515 in memory (size: 2.5 MB, free: 139.8 MB)
+23/06/28 22:05:59 INFO MemoryStore: Block taskresult_105 stored as bytes in memory (estimated size 8.4 MB, free 131.0 MB)
+23/06/28 22:05:59 INFO BlockManagerInfo: Added taskresult_105 in memory on localhost:44515 (size: 8.4 MB, free: 131.3 MB)
+23/06/28 22:05:59 INFO Executor: Finished task 13.0 in stage 17.0 (TID 105). 8823855 bytes result sent via BlockManager)
+23/06/28 22:05:59 INFO MemoryStore: Block taskresult_107 stored as bytes in memory (estimated size 5.5 MB, free 125.5 MB)
+23/06/28 22:05:59 INFO BlockManagerInfo: Added taskresult_107 in memory on localhost:44515 (size: 5.5 MB, free: 125.9 MB)
+23/06/28 22:05:59 INFO Executor: Finished task 15.0 in stage 17.0 (TID 107). 5739246 bytes result sent via BlockManager)
+23/06/28 22:05:59 INFO TaskSetManager: Finished task 13.0 in stage 17.0 (TID 105) in 796 ms on localhost (executor driver) (14/16)
+23/06/28 22:05:59 INFO BlockManagerInfo: Removed taskresult_105 on localhost:44515 in memory (size: 8.4 MB, free: 134.3 MB)
+23/06/28 22:05:59 INFO TaskSetManager: Finished task 15.0 in stage 17.0 (TID 107) in 788 ms on localhost (executor driver) (15/16)
+23/06/28 22:05:59 INFO BlockManagerInfo: Removed taskresult_107 on localhost:44515 in memory (size: 5.5 MB, free: 139.8 MB)
+23/06/28 22:05:59 INFO MemoryStore: Block taskresult_106 stored as bytes in memory (estimated size 10.6 MB, free 128.8 MB)
+23/06/28 22:05:59 INFO BlockManagerInfo: Added taskresult_106 in memory on localhost:44515 (size: 10.6 MB, free: 129.1 MB)
+23/06/28 22:05:59 INFO Executor: Finished task 14.0 in stage 17.0 (TID 106). 11150261 bytes result sent via BlockManager)
+23/06/28 22:05:59 INFO TaskSetManager: Finished task 14.0 in stage 17.0 (TID 106) in 955 ms on localhost (executor driver) (16/16)
+23/06/28 22:05:59 INFO DAGScheduler: ResultStage 17 (collect at utils.scala:204) finished in 1.708 s
+23/06/28 22:05:59 INFO TaskSchedulerImpl: Removed TaskSet 17.0, whose tasks have all completed, from pool 
+23/06/28 22:05:59 INFO DAGScheduler: Job 15 finished: collect at utils.scala:204, took 1.713321 s
+23/06/28 22:05:59 INFO BlockManagerInfo: Removed taskresult_106 on localhost:44515 in memory (size: 10.6 MB, free: 139.8 MB)
+23/06/28 22:06:01 INFO ContextCleaner: Cleaned accumulator 527
+23/06/28 22:06:01 INFO ContextCleaner: Cleaned accumulator 519
+23/06/28 22:06:01 INFO ContextCleaner: Cleaned accumulator 524
+23/06/28 22:06:01 INFO ContextCleaner: Cleaned accumulator 525
+23/06/28 22:06:01 INFO ContextCleaner: Cleaned accumulator 515
+23/06/28 22:06:01 INFO ContextCleaner: Cleaned accumulator 507
+23/06/28 22:06:01 INFO ContextCleaner: Cleaned accumulator 513
+23/06/28 22:06:01 INFO ContextCleaner: Cleaned accumulator 512
+23/06/28 22:06:01 INFO ContextCleaner: Cleaned accumulator 520
+23/06/28 22:06:01 INFO ContextCleaner: Cleaned accumulator 516
+23/06/28 22:06:01 INFO ContextCleaner: Cleaned accumulator 510
+23/06/28 22:06:01 INFO ContextCleaner: Cleaned accumulator 504
+23/06/28 22:06:01 INFO ContextCleaner: Cleaned accumulator 517
+23/06/28 22:06:01 INFO ContextCleaner: Cleaned accumulator 505
+23/06/28 22:06:01 INFO BlockManagerInfo: Removed broadcast_20_piece0 on localhost:44515 in memory (size: 21.2 KB, free: 139.8 MB)
+23/06/28 22:06:01 INFO ContextCleaner: Cleaned accumulator 503
+23/06/28 22:06:01 INFO ContextCleaner: Cleaned accumulator 526
+23/06/28 22:06:01 INFO ContextCleaner: Cleaned accumulator 506
+23/06/28 22:06:01 INFO ContextCleaner: Cleaned accumulator 509
+23/06/28 22:06:01 INFO ContextCleaner: Cleaned accumulator 521
+23/06/28 22:06:01 INFO ContextCleaner: Cleaned accumulator 508
+23/06/28 22:06:01 INFO ContextCleaner: Cleaned accumulator 522
+23/06/28 22:06:01 INFO ContextCleaner: Cleaned accumulator 523
+23/06/28 22:06:01 INFO ContextCleaner: Cleaned accumulator 511
+23/06/28 22:06:01 INFO ContextCleaner: Cleaned accumulator 514
+23/06/28 22:06:01 INFO ContextCleaner: Cleaned accumulator 518
+23/06/28 22:06:38 WARN Executor: Issue communicating with driver in heartbeater
+org.apache.spark.rpc.RpcTimeoutException: Futures timed out after [10000 milliseconds]. This timeout is controlled by spark.executor.heartbeatInterval
+	at org.apache.spark.rpc.RpcTimeout.org$apache$spark$rpc$RpcTimeout$$createRpcTimeoutException(RpcTimeout.scala:47)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:62)
+	at org.apache.spark.rpc.RpcTimeout$$anonfun$addMessageIfTimeout$1.applyOrElse(RpcTimeout.scala:58)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:76)
+	at org.apache.spark.rpc.RpcEndpointRef.askSync(RpcEndpointRef.scala:92)
+	at org.apache.spark.executor.Executor.org$apache$spark$executor$Executor$$reportHeartBeat(Executor.scala:841)
+	at org.apache.spark.executor.Executor$$anon$2$$anonfun$run$1.apply$mcV$sp(Executor.scala:870)
+	at org.apache.spark.executor.Executor$$anon$2$$anonfun$run$1.apply(Executor.scala:870)
+	at org.apache.spark.executor.Executor$$anon$2$$anonfun$run$1.apply(Executor.scala:870)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1945)
+	at org.apache.spark.executor.Executor$$anon$2.run(Executor.scala:870)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.util.concurrent.TimeoutException: Futures timed out after [10000 milliseconds]
+	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:223)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:227)
+	at org.apache.spark.util.ThreadUtils$.awaitResult(ThreadUtils.scala:220)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	... 14 more
+23/06/28 22:06:38 WARN NettyRpcEnv: Ignored failure: java.util.concurrent.TimeoutException: Cannot receive any reply from localhost:36075 in 10000 milliseconds
+23/06/28 22:14:06 INFO CodeGenerator: Code generated in 11.012904 ms
+23/06/28 22:14:06 INFO SparkContext: Starting job: count at NativeMethodAccessorImpl.java:0
+23/06/28 22:14:06 INFO DAGScheduler: Registering RDD 92 (count at NativeMethodAccessorImpl.java:0)
+23/06/28 22:14:06 INFO DAGScheduler: Got job 16 (count at NativeMethodAccessorImpl.java:0) with 1 output partitions
+23/06/28 22:14:06 INFO DAGScheduler: Final stage: ResultStage 19 (count at NativeMethodAccessorImpl.java:0)
+23/06/28 22:14:06 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 18)
+23/06/28 22:14:06 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 18)
+23/06/28 22:14:06 INFO DAGScheduler: Submitting ShuffleMapStage 18 (MapPartitionsRDD[92] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+23/06/28 22:14:06 INFO MemoryStore: Block broadcast_21 stored as values in memory (estimated size 56.8 KB, free 139.5 MB)
+23/06/28 22:14:06 INFO MemoryStore: Block broadcast_21_piece0 stored as bytes in memory (estimated size 21.7 KB, free 139.4 MB)
+23/06/28 22:14:06 INFO BlockManagerInfo: Added broadcast_21_piece0 in memory on localhost:44515 (size: 21.7 KB, free: 139.8 MB)
+23/06/28 22:14:06 INFO SparkContext: Created broadcast 21 from broadcast at DAGScheduler.scala:1161
+23/06/28 22:14:06 INFO DAGScheduler: Submitting 16 missing tasks from ShuffleMapStage 18 (MapPartitionsRDD[92] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+23/06/28 22:14:06 INFO TaskSchedulerImpl: Adding task set 18.0 with 16 tasks
+23/06/28 22:14:06 INFO TaskSetManager: Starting task 0.0 in stage 18.0 (TID 108, localhost, executor driver, partition 0, PROCESS_LOCAL, 8288 bytes)
+23/06/28 22:14:06 INFO TaskSetManager: Starting task 1.0 in stage 18.0 (TID 109, localhost, executor driver, partition 1, PROCESS_LOCAL, 8288 bytes)
+23/06/28 22:14:06 INFO TaskSetManager: Starting task 2.0 in stage 18.0 (TID 110, localhost, executor driver, partition 2, PROCESS_LOCAL, 8288 bytes)
+23/06/28 22:14:06 INFO TaskSetManager: Starting task 3.0 in stage 18.0 (TID 111, localhost, executor driver, partition 3, PROCESS_LOCAL, 8288 bytes)
+23/06/28 22:14:06 INFO TaskSetManager: Starting task 4.0 in stage 18.0 (TID 112, localhost, executor driver, partition 4, PROCESS_LOCAL, 8288 bytes)
+23/06/28 22:14:06 INFO TaskSetManager: Starting task 5.0 in stage 18.0 (TID 113, localhost, executor driver, partition 5, PROCESS_LOCAL, 8288 bytes)
+23/06/28 22:14:06 INFO TaskSetManager: Starting task 6.0 in stage 18.0 (TID 114, localhost, executor driver, partition 6, PROCESS_LOCAL, 8288 bytes)
+23/06/28 22:14:06 INFO TaskSetManager: Starting task 7.0 in stage 18.0 (TID 115, localhost, executor driver, partition 7, PROCESS_LOCAL, 8288 bytes)
+23/06/28 22:14:06 INFO Executor: Running task 1.0 in stage 18.0 (TID 109)
+23/06/28 22:14:06 INFO Executor: Running task 2.0 in stage 18.0 (TID 110)
+23/06/28 22:14:06 INFO Executor: Running task 0.0 in stage 18.0 (TID 108)
+23/06/28 22:14:06 INFO Executor: Running task 4.0 in stage 18.0 (TID 112)
+23/06/28 22:14:06 INFO Executor: Running task 3.0 in stage 18.0 (TID 111)
+23/06/28 22:14:06 INFO Executor: Running task 5.0 in stage 18.0 (TID 113)
+23/06/28 22:14:06 INFO Executor: Running task 6.0 in stage 18.0 (TID 114)
+23/06/28 22:14:06 INFO Executor: Running task 7.0 in stage 18.0 (TID 115)
+23/06/28 22:14:06 INFO BlockManager: Found block rdd_16_4 locally
+23/06/28 22:14:06 INFO BlockManager: Found block rdd_16_6 locally
+23/06/28 22:14:06 INFO BlockManager: Found block rdd_16_1 locally
+23/06/28 22:14:06 INFO BlockManager: Found block rdd_16_0 locally
+23/06/28 22:14:06 INFO BlockManager: Found block rdd_16_2 locally
+23/06/28 22:14:06 INFO BlockManager: Found block rdd_16_3 locally
+23/06/28 22:14:06 INFO BlockManager: Found block rdd_16_5 locally
+23/06/28 22:14:06 INFO BlockManager: Found block rdd_16_7 locally
+23/06/28 22:14:06 INFO CodeGenerator: Code generated in 16.547634 ms
+23/06/28 22:14:07 INFO ContextCleaner: Cleaned accumulator 528
+23/06/28 22:14:07 INFO Executor: Finished task 6.0 in stage 18.0 (TID 114). 1976 bytes result sent to driver
+23/06/28 22:14:07 INFO TaskSetManager: Starting task 8.0 in stage 18.0 (TID 116, localhost, executor driver, partition 8, PROCESS_LOCAL, 8288 bytes)
+23/06/28 22:14:07 INFO TaskSetManager: Finished task 6.0 in stage 18.0 (TID 114) in 424 ms on localhost (executor driver) (1/16)
+23/06/28 22:14:07 INFO Executor: Running task 8.0 in stage 18.0 (TID 116)
+23/06/28 22:14:07 INFO Executor: Finished task 0.0 in stage 18.0 (TID 108). 1976 bytes result sent to driver
+23/06/28 22:14:07 INFO BlockManager: Found block rdd_16_8 locally
+23/06/28 22:14:07 INFO TaskSetManager: Starting task 9.0 in stage 18.0 (TID 117, localhost, executor driver, partition 9, PROCESS_LOCAL, 8288 bytes)
+23/06/28 22:14:07 INFO TaskSetManager: Finished task 0.0 in stage 18.0 (TID 108) in 445 ms on localhost (executor driver) (2/16)
+23/06/28 22:14:07 INFO Executor: Running task 9.0 in stage 18.0 (TID 117)
+23/06/28 22:14:07 INFO Executor: Finished task 4.0 in stage 18.0 (TID 112). 1976 bytes result sent to driver
+23/06/28 22:14:07 INFO TaskSetManager: Starting task 10.0 in stage 18.0 (TID 118, localhost, executor driver, partition 10, PROCESS_LOCAL, 8288 bytes)
+23/06/28 22:14:07 INFO Executor: Running task 10.0 in stage 18.0 (TID 118)
+23/06/28 22:14:07 INFO TaskSetManager: Finished task 4.0 in stage 18.0 (TID 112) in 445 ms on localhost (executor driver) (3/16)
+23/06/28 22:14:07 INFO BlockManager: Found block rdd_16_9 locally
+23/06/28 22:14:07 INFO Executor: Finished task 1.0 in stage 18.0 (TID 109). 1976 bytes result sent to driver
+23/06/28 22:14:07 INFO TaskSetManager: Starting task 11.0 in stage 18.0 (TID 119, localhost, executor driver, partition 11, PROCESS_LOCAL, 8288 bytes)
+23/06/28 22:14:07 INFO Executor: Running task 11.0 in stage 18.0 (TID 119)
+23/06/28 22:14:07 INFO TaskSetManager: Finished task 1.0 in stage 18.0 (TID 109) in 456 ms on localhost (executor driver) (4/16)
+23/06/28 22:14:07 INFO BlockManager: Found block rdd_16_11 locally
+23/06/28 22:14:07 INFO BlockManager: Found block rdd_16_10 locally
+23/06/28 22:14:07 INFO Executor: Finished task 3.0 in stage 18.0 (TID 111). 1976 bytes result sent to driver
+23/06/28 22:14:07 INFO TaskSetManager: Starting task 12.0 in stage 18.0 (TID 120, localhost, executor driver, partition 12, PROCESS_LOCAL, 8288 bytes)
+23/06/28 22:14:07 INFO TaskSetManager: Finished task 3.0 in stage 18.0 (TID 111) in 465 ms on localhost (executor driver) (5/16)
+23/06/28 22:14:07 INFO Executor: Running task 12.0 in stage 18.0 (TID 120)
+23/06/28 22:14:07 INFO BlockManager: Found block rdd_16_12 locally
+23/06/28 22:14:07 INFO Executor: Finished task 5.0 in stage 18.0 (TID 113). 1976 bytes result sent to driver
+23/06/28 22:14:07 INFO TaskSetManager: Starting task 13.0 in stage 18.0 (TID 121, localhost, executor driver, partition 13, PROCESS_LOCAL, 8288 bytes)
+23/06/28 22:14:07 INFO TaskSetManager: Finished task 5.0 in stage 18.0 (TID 113) in 486 ms on localhost (executor driver) (6/16)
+23/06/28 22:14:07 INFO Executor: Finished task 7.0 in stage 18.0 (TID 115). 1976 bytes result sent to driver
+23/06/28 22:14:07 INFO Executor: Running task 13.0 in stage 18.0 (TID 121)
+23/06/28 22:14:07 INFO TaskSetManager: Starting task 14.0 in stage 18.0 (TID 122, localhost, executor driver, partition 14, PROCESS_LOCAL, 8288 bytes)
+23/06/28 22:14:07 INFO Executor: Running task 14.0 in stage 18.0 (TID 122)
+23/06/28 22:14:07 INFO TaskSetManager: Finished task 7.0 in stage 18.0 (TID 115) in 487 ms on localhost (executor driver) (7/16)
+23/06/28 22:14:07 INFO BlockManager: Found block rdd_16_14 locally
+23/06/28 22:14:07 INFO BlockManager: Found block rdd_16_13 locally
+23/06/28 22:14:07 INFO Executor: Finished task 2.0 in stage 18.0 (TID 110). 1976 bytes result sent to driver
+23/06/28 22:14:07 INFO TaskSetManager: Starting task 15.0 in stage 18.0 (TID 123, localhost, executor driver, partition 15, PROCESS_LOCAL, 8288 bytes)
+23/06/28 22:14:07 INFO TaskSetManager: Finished task 2.0 in stage 18.0 (TID 110) in 505 ms on localhost (executor driver) (8/16)
+23/06/28 22:14:07 INFO Executor: Running task 15.0 in stage 18.0 (TID 123)
+23/06/28 22:14:07 INFO BlockManager: Found block rdd_16_15 locally
+23/06/28 22:14:07 INFO Executor: Finished task 9.0 in stage 18.0 (TID 117). 1933 bytes result sent to driver
+23/06/28 22:14:07 INFO TaskSetManager: Finished task 9.0 in stage 18.0 (TID 117) in 207 ms on localhost (executor driver) (9/16)
+23/06/28 22:14:07 INFO Executor: Finished task 11.0 in stage 18.0 (TID 119). 1933 bytes result sent to driver
+23/06/28 22:14:07 INFO TaskSetManager: Finished task 11.0 in stage 18.0 (TID 119) in 209 ms on localhost (executor driver) (10/16)
+23/06/28 22:14:07 INFO Executor: Finished task 12.0 in stage 18.0 (TID 120). 1933 bytes result sent to driver
+23/06/28 22:14:07 INFO TaskSetManager: Finished task 12.0 in stage 18.0 (TID 120) in 217 ms on localhost (executor driver) (11/16)
+23/06/28 22:14:07 INFO Executor: Finished task 10.0 in stage 18.0 (TID 118). 1933 bytes result sent to driver
+23/06/28 22:14:07 INFO TaskSetManager: Finished task 10.0 in stage 18.0 (TID 118) in 250 ms on localhost (executor driver) (12/16)
+23/06/28 22:14:07 INFO Executor: Finished task 8.0 in stage 18.0 (TID 116). 1933 bytes result sent to driver
+23/06/28 22:14:07 INFO TaskSetManager: Finished task 8.0 in stage 18.0 (TID 116) in 288 ms on localhost (executor driver) (13/16)
+23/06/28 22:14:07 INFO Executor: Finished task 15.0 in stage 18.0 (TID 123). 1933 bytes result sent to driver
+23/06/28 22:14:07 INFO TaskSetManager: Finished task 15.0 in stage 18.0 (TID 123) in 216 ms on localhost (executor driver) (14/16)
+23/06/28 22:14:07 INFO Executor: Finished task 14.0 in stage 18.0 (TID 122). 1933 bytes result sent to driver
+23/06/28 22:14:07 INFO TaskSetManager: Finished task 14.0 in stage 18.0 (TID 122) in 238 ms on localhost (executor driver) (15/16)
+23/06/28 22:14:07 INFO Executor: Finished task 13.0 in stage 18.0 (TID 121). 1933 bytes result sent to driver
+23/06/28 22:14:07 INFO TaskSetManager: Finished task 13.0 in stage 18.0 (TID 121) in 249 ms on localhost (executor driver) (16/16)
+23/06/28 22:14:07 INFO TaskSchedulerImpl: Removed TaskSet 18.0, whose tasks have all completed, from pool 
+23/06/28 22:14:07 INFO DAGScheduler: ShuffleMapStage 18 (count at NativeMethodAccessorImpl.java:0) finished in 0.777 s
+23/06/28 22:14:07 INFO DAGScheduler: looking for newly runnable stages
+23/06/28 22:14:07 INFO DAGScheduler: running: Set()
+23/06/28 22:14:07 INFO DAGScheduler: waiting: Set(ResultStage 19)
+23/06/28 22:14:07 INFO DAGScheduler: failed: Set()
+23/06/28 22:14:07 INFO DAGScheduler: Submitting ResultStage 19 (MapPartitionsRDD[95] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+23/06/28 22:14:07 INFO MemoryStore: Block broadcast_22 stored as values in memory (estimated size 7.1 KB, free 139.4 MB)
+23/06/28 22:14:07 INFO MemoryStore: Block broadcast_22_piece0 stored as bytes in memory (estimated size 3.8 KB, free 139.4 MB)
+23/06/28 22:14:07 INFO BlockManagerInfo: Added broadcast_22_piece0 in memory on localhost:44515 (size: 3.8 KB, free: 139.8 MB)
+23/06/28 22:14:07 INFO SparkContext: Created broadcast 22 from broadcast at DAGScheduler.scala:1161
+23/06/28 22:14:07 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 19 (MapPartitionsRDD[95] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+23/06/28 22:14:07 INFO TaskSchedulerImpl: Adding task set 19.0 with 1 tasks
+23/06/28 22:14:07 INFO TaskSetManager: Starting task 0.0 in stage 19.0 (TID 124, localhost, executor driver, partition 0, NODE_LOCAL, 7767 bytes)
+23/06/28 22:14:07 INFO Executor: Running task 0.0 in stage 19.0 (TID 124)
+23/06/28 22:14:07 INFO ShuffleBlockFetcherIterator: Getting 16 non-empty blocks including 16 local blocks and 0 remote blocks
+23/06/28 22:14:07 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+23/06/28 22:14:07 INFO Executor: Finished task 0.0 in stage 19.0 (TID 124). 1782 bytes result sent to driver
+23/06/28 22:14:07 INFO TaskSetManager: Finished task 0.0 in stage 19.0 (TID 124) in 10 ms on localhost (executor driver) (1/1)
+23/06/28 22:14:07 INFO TaskSchedulerImpl: Removed TaskSet 19.0, whose tasks have all completed, from pool 
+23/06/28 22:14:07 INFO DAGScheduler: ResultStage 19 (count at NativeMethodAccessorImpl.java:0) finished in 0.013 s
+23/06/28 22:14:07 INFO DAGScheduler: Job 16 finished: count at NativeMethodAccessorImpl.java:0, took 0.794674 s
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 569
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 575
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 577
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 593
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 587
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 576
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 590
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 594
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 588
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 584
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 571
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 573
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 591
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 585
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 589
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 592
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 581
+23/06/28 22:23:52 INFO BlockManagerInfo: Removed broadcast_22_piece0 on localhost:44515 in memory (size: 3.8 KB, free: 139.8 MB)
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 574
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 582
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 570
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 583
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 579
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 578
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 586
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 572
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 580
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 559
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 535
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 556
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 566
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 500
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 567
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 502
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 560
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 564
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 557
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 537
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 499
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 538
+23/06/28 22:23:52 INFO BlockManagerInfo: Removed broadcast_21_piece0 on localhost:44515 in memory (size: 21.7 KB, free: 139.8 MB)
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 565
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 552
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 544
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 536
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 561
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 553
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 534
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 563
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 554
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 555
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 562
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 548
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 539
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 550
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 568
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 549
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 530
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 543
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 529
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 501
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 545
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 540
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 546
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 533
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 532
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned shuffle 2
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 542
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 558
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 551
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 531
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 547
+23/06/28 22:23:52 INFO ContextCleaner: Cleaned accumulator 541
+23/06/28 22:43:09 INFO SparkContext: Invoking stop() from shutdown hook
+23/06/28 22:43:09 INFO SparkUI: Stopped Spark web UI at http://localhost:4040
+23/06/28 22:43:09 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+23/06/28 22:43:09 INFO MemoryStore: MemoryStore cleared
+23/06/28 22:43:09 INFO BlockManager: BlockManager stopped
+23/06/28 22:43:09 INFO BlockManagerMaster: BlockManagerMaster stopped
+23/06/28 22:43:09 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+23/06/28 22:43:09 INFO SparkContext: Successfully stopped SparkContext
+23/06/28 22:43:09 INFO ShutdownHookManager: Shutdown hook called
+23/06/28 22:43:09 INFO ShutdownHookManager: Deleting directory /tmp/spark-9977ccbc-f52c-4c08-8d2b-d5dedfe27cf1
+23/06/28 22:43:09 INFO ShutdownHookManager: Deleting directory /tmp/spark-a8b5c49b-3ca7-4a00-bfeb-a16f5072f439

@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1687989422712.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "7EEE9227",
+    "lastKnownWriteTime" : 94782080581360,
+    "last_content_update" : 1687989422712,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "id" : "bdee1d0327cc48289fce1c4bbde1280a",
+        "name" : "df.filtered",
+        "title" : "df.filtered"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "object_explorer"
+}

@@ -1,0 +1,357 @@
+---
+title: "Analiza skupa podataka o emisijama CO2 registrovanih putničkih vozila"
+author: "Andrea Sabo Cibolja"
+date: "`r format(Sys.time(), '%d. %B %Y')`"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+# Uvod
+U ovom izveštaju su predstavljeni su rezultati kreiranja modela za analizu emisije CO2 registrovanih putničkih vozila državama Evrope*.
+
+### Skup podataka o registrovanim automobilima
+
+Skup podataka o registrovanim automobilima je preuzet sa sajta [eea.europa.eu](https://www.eea.europa.eu/data-and-maps/data/co2-cars-emission-20)
+
+Ovaj skup podatka sadrži informacije o svakom putničkom vozilo koje je registrovano. Informacije mogu da budu iskorišćene za predviđanje koliko bi to putničko vozilo moglo da emituje CO2 u g/km po .
+
+### Preuzimanje neophodnih paketa za analizu podataka 
+```{r Loading necessary libraries, eval=T, include=T}
+#kages("tiinstall.packages("sparklyr")
+#install.pacdyverse")
+#install.packages("gridExtra")
+```
+
+```{r Loading nec, eval=T, include=T}
+#install.packages("systemfonts")
+#install.packages("svglite")
+#install.packages("kableExtra")
+```
+
+### Uključivanje neophodnih biblioteka
+```{r Loading libraries, eval=T, include=T}
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(magrittr)
+library(knitr)
+library(kableExtra)
+library(sparklyr)
+library(cowplot)
+```
+
+
+
+### Instaliraje i priprema spark okruženja
+
+
+```{r Spark connecting, eval=T, include=T}
+#spark_install(version = "3.3.2")
+sc <- sparklyr::spark_connect(master = "local")
+```
+
+
+### Učitavanje skupa podataka
+
+```{r Loading dataset, eval=T, include=T}
+
+datasetPath <- "../data/data.csv"
+df <- spark_read_csv(sc, name = "my_data", path = datasetPath, header = TRUE, infer_schema = TRUE)
+```
+
+### Prečišćavanje podataka
+
+```{r Transforming data, eval=T, include=T}
+df.filtered <- df %>% filter(!(is.na(Mk) || is.na(Cn) || is.na(ec_cm3) || is.na(m_kg) || is.na(Mt) || is.na(At1_mm) || is.na(Ft) || is.na(ep_KW) || is.na(Erwltp_gkm) || is.na(W_mm) || is.na(At2_mm) || is.na(Ewltp_gkm)))
+
+#df.filtered <- select(df.filtered, ID, Mk, Cn, m_kg, Mt, At1_mm, At2_mm, W_mm, Ft, Ewltp_gkm, ec_cm3, ep_KW, z_Whkm, Erwltp_gkm, Fuel_consumption)
+#colnames(df)
+df.selected <- df.filtered %>% select( m_kg, Mt, Ewltp_gkm, ec_cm3, ep_KW)
+
+```
+### Kategorizacija emisija CO2 prema percentilama
+
+```{r Classification of Ewltp_gkm based od percentiles, eval=TRUE, include=TRUE}
+
+df.modified <- df.selected %>% mutate(Ewltp_gkm_desc = case_when(Ewltp_gkm <150 ~ "low",
+                                                            TRUE ~ "high"))
+df.modified.selected <- select(df.modified, m_kg, Mt, Ewltp_gkm_desc, ec_cm3, ep_KW)
+colnames(df.modified.selected)
+```
+
+```{r Number of columns, echo=T, eval=T, include=T}
+num_columns_raw <- sparklyr::sdf_ncol(df)
+num_rows_raw <- sparklyr::sdf_nrow(df)
+
+cat("Number of columns raw:", num_columns_raw, "\n")
+cat("Number of rows raw:", num_rows_raw, "\n")
+
+num_columns <- sparklyr::sdf_ncol(df.modified.selected)
+num_rows <- sparklyr::sdf_nrow(df.modified.selected)
+
+cat("Number of columns:", num_columns, "\n")
+cat("Number of rows:", num_rows, "\n")
+```
+
+
+**Dimenzije učitanog skupa podataka:  `r format(sdf_nrow(df), scientific=F)` x `r format(sdf_ncol(df), scientific=F)`**
+
+**Dimenzije prečišćenog skupa podataka: `r format(sdf_nrow(df.modified.selected), scientific=F)` x `r format(sdf_ncol(df.modified.selected), scientific=F)`**
+
+
+```{r Displaying first 10 rows, echo=F}
+knitr::kable(head(df.modified.selected, n=10L),
+             col.names = c(
+                           "Mass in running order(kg)",
+                           "WLTP test mass",
+                           "Specific CO2 emmissions (g/km)",
+                           "Engine capacity (cm3)",
+                           "Engine power (kW)"
+                           ),
+             label = "Tabelarni prikaz prečišćenih podataka",
+             format = "html",
+             align = "ccccc"
+             ) %>% kableExtra::kable_styling(bootstrap_options = "bordered", full_width = F, font_size = 12)
+
+```
+# Klasifikacija podataka
+
+### Deljenje podataka na test i na training skup
+```{r Splitting dataset into training and testing datasets, eval=T, include=T}
+
+df.clustering <- sdf_random_split(df.modified.selected, seed=1, training=0.8, test=0.2)
+df.training <- df.clustering$training
+df.test <- df.clustering$test
+
+```
+
+
+
+### Treniranje modela logističke regresije sa različitim vrednostima broja maksimalnih iteracija
+
+Trenira se više puta model za različiti broj iteracija
+```{r Defining max iterations, eval=T, include=T, results='hold', warning=F}
+it <- c(1,3,5,8,10,20,50)
+
+log.reg.weighted.precision <- numeric(length(it))
+log.reg.weighted.recall <- numeric(length(it))
+log.reg.weighted.f.measure <- numeric(length(it))
+log.reg.area.under.roc <- numeric(length(it))
+log.reg.accuracy <- numeric(length(it))
+#df.filtered <- select(df.filtered, m_kg, Mt, Ewltp_gkm, ec_cm3, ep_KW)
+
+#formula <- Ewltp_gkm~Mk+Cn+m_kg+Mt+At1_mm+At2_mm+W_mm+Ft + ec_cm3+ep_KW+z_Whkm+Erwltp_gkm+Fuel_consumption
+formula <- Ewltp_gkm_desc~m_kg+ec_cm3+ep_KW+Mt
+
+logreg <-vector(length =6)
+
+
+```
+
+```{r logistic regression, eval=T, include=T}
+for(i in 1:length(it)){
+  logreg <- ml_logistic_regression(x= df.training,
+                                   formula= formula,
+                                   max_iter = it[i],
+                                   family = "binomial")
+  evaluation <- ml_evaluate(logreg, dataset=df.test)
+    log.reg.weighted.precision[i] <- evaluation$weighted_precision()
+    log.reg.weighted.recall[i] <- evaluation$weighted_recall()
+    log.reg.weighted.f.measure[i] <- evaluation$weighted_f_measure()
+    log.reg.area.under.roc[i] <- evaluation$area_under_roc()
+    log.reg.accuracy[i] <- evaluation$accuracy()
+}
+```
+
+
+### Prikaz tačnosti modela logističke regresije u zavisnosti od broja iteracija
+```{r Graphing the dependency of clustering model accuracy based on the number of maximal iterations, include=T, echo=F, fig.align='center', fig.height=20, fig.width=20}
+df <- data.frame(i=it,
+                 wp=log.reg.weighted.precision,
+                 wr=log.reg.weighted.recall,
+                 wf=log.reg.weighted.f.measure,
+                 aur=log.reg.area.under.roc,
+                 a=log.reg.accuracy)
+p1 <- df %>%
+ggplot(aes(i, wp, color=wp)) +
+  geom_line(size=2) +
+  scale_x_continuous(breaks=it) +
+  scale_y_continuous(breaks=log.reg.weighted.precision) +
+  scale_color_gradient(low = "#c4b4de", high="#590bd6") +
+  theme(text = element_text(size = 16)) +
+  labs(x="Maksimalni broj iteracija", y="Preciznost \nTP/(TP + FN)", title = "`1. Zavisnost preciznosti od maksimalnog broja iteracija")
+
+p2 <- df %>%
+ggplot(aes(i, wr, color=wr)) +
+  geom_line(size=2) +
+  scale_x_continuous(breaks=it) +
+  scale_y_continuous(breaks=log.reg.weighted.recall) +
+  scale_color_gradient(low = "#c4b4de", high="#590bd6") +
+  theme(text = element_text(size = 16)) +
+  labs(x="Maksimalni broj iteracija", y="Osetljivost \nTN/(TN+FP)", title = "2. Zavisnost osetljivosti od maksimalnog broja iteracija")
+
+p3 <- df %>%
+  ggplot(aes(i, wf, color=wf)) +
+  geom_line(size=2) +
+  scale_x_continuous(breaks=it) +
+  scale_y_continuous(breaks=log.reg.weighted.f.measure) +
+  scale_color_gradient(low = "#c4b4de", high="#590bd6") +
+  theme(text = element_text(size = 16)) +
+  labs(x="Maksimalni broj iteracija", y="F mera \n2*(Preciznost*Osetljivost)/(Preciznost+Osetljivost)", title = "3. Zavisnost F mere od maksimalnog broja iteracija")
+
+p4 <- df %>%
+  ggplot(aes(i, aur, color=aur)) +
+  geom_line(size=2) +
+  scale_x_continuous(breaks=it) +
+  scale_y_continuous(breaks=log.reg.area.under.roc) +
+  scale_color_gradient(low = "#c4b4de", high="#590bd6") +
+  theme(text = element_text(size = 16)) +
+  labs(x="Maksismalni broj iteracija", y="Površina ispod ROC krive", title = "4. Zavisnost površine ispod ROC krive od maksimalnog broja iteracija")
+
+p5 <- df %>%
+  ggplot(aes(i, a, color=a)) +
+  geom_line(size=2) +
+  scale_x_continuous(breaks=it) +
+  scale_y_continuous(breaks=log.reg.accuracy) +
+  scale_color_gradient(low = "#c4b4de", high="#590bd6") +
+  theme(text = element_text(size = 16)) +
+  labs(x="Maksismalni broj iteracija", y="Tačnost \n(TP+TN)/(TP+TN+FP+FN)", title = "5. Zavisnost tačnosti od maksimalnog broja iteracija")
+plot_grid(p1, p2, p3, p4,p5,  nrow=3, ncol=2)
+```
+
+Na grafikonu **1** je predstavljena zavisnost preciznosti od maksimalnog broja iteracija algoritma logističke regresije. Govori nam o tome koliko je model sposoban da prepozna da pojava **priprada** određenoj klasi. Na grafiku možemo da uočimo da preciznost do određenog maksimalnog broja iteracija raste, nakon čega se u neznatnoj meri smanji, a zatim ostaje ista.
+
+Na grafikonu **2** je predstavljena zavisnost osetljivosti od maksimalnog broja iteracija algoritma logističke regresije. Govori nam o tome koliko je model sposoban da prepozna da pojava **ne pripada** određenoj klasi. Ista je situacija kao i kod preciznosti, osetljivost do određeog maksimalnog broja iteracija raste, a u slučaju broja iteracija od 20 ostaje ista.
+
+Na grafikonu **3** je predstavljena zavisnost F mere od maksimalnog broja iteracija algoritma logističke regresije. To je ustvari balans izme]u preciznosti i ostljivosti. 
+
+Na grafikonu **4** je prstavljena zavisnost površine ispod ROC (Receiver Operating Characteristic) od maksimalnog broja iteracija algoritma logističke regresije. 
+
+
+### Tačnost različitih klasifikacionih modela različitog tipa klasifikacije (Naive bayes, Metod potpornih vektora, Stablo odlučivanja)
+
+Izračunava se klasifikacija modela pomoću tri različita algoritma. 
+Postupak četvorostruke unakrsne validacije se sastoji od sledećih koraka:
+
+    1.Podaci se podeljuju na četiri jednaka dela.
+    2. Koristi se prvi deo kao test skup, dok se preostala tri dela kombinuju i koriste kao trening skup.
+    3. Model se trenira na trening skupu i evaluira na test skupu.
+    4. Korak 2 i 3 se ponavljaju tri puta, svaki put koristeći drugi deo kao test skup.
+    5. Na kraju se uzima prosečna vrednost rezultata evaluacija dobijenih iz svih četiri iteracije kao konačnu metriku performansi modela.
+```{r Comparing the performance of different clustering models, eval=T, include=T}
+formula <- Ewltp_gkm_desc~m_kg+ec_cm3+ep_KW+Mt
+
+dataset.for.validation <- sdf_random_split(df.modified.selected, seed=1, training=0.8, test=0.2)
+
+naive_bayes.model <- ml_naive_bayes(dataset.for.validation$training, formula = formula)
+
+svc.model <- ml_linear_svc(dataset.for.validation$training, formula = formula)
+
+decision.tree.model <- ml_decision_tree_classifier(dataset.for.validation$training, formula = formula)
+
+#Primena validacionog pristupa
+naive_bayes.accuracy <- ml_evaluate(naive_bayes.model, dataset.for.validation$test)$Accuracy
+svc.accuracy <- ml_evaluate(svc.model, dataset.for.validation$test)$Accuracy
+decision.tree.accuracy <- ml_evaluate(decision.tree.model, dataset.for.validation$test)$Accuracy
+
+#Određivanje performansi za svaki tip klasifikacionog modela primenom k-tostruke unakrsne validacije, k=4
+
+# Četvorostruka unakrsna validacija funkcija
+k.cross.fold.4 <-function(dataset, model, formula){
+  dataset.splited <- sdf_random_split(dataset, seed = 1, s1=0.25, s2=0.25, s3=0.25, s4=0.25)
+  
+  trained1=model(sdf_bind_rows(dataset.splited$s2, dataset.splited$s3, dataset.splited$s4), formula)
+  trained2=model(sdf_bind_rows(dataset.splited$s1, dataset.splited$s3, dataset.splited$s4), formula)
+  trained3=model(sdf_bind_rows(dataset.splited$s1, dataset.splited$s2, dataset.splited$s4), formula)
+  trained4=model(sdf_bind_rows(dataset.splited$s1, dataset.splited$s2, dataset.splited$s3), formula)
+
+  accuracy <- (ml_evaluate(trained1, dataset.splited$s1)$Accuracy + 
+                  ml_evaluate(trained2, dataset.splited$s2)$Accuracy +
+                  ml_evaluate(trained3, dataset.splited$s3)$Accuracy +
+                  ml_evaluate(trained4, dataset.splited$s4)$Accuracy)/4
+
+}
+
+naive_bayes.4.fold.accuracy <- k.cross.fold.4(df.modified.selected, ml_naive_bayes, formula)
+svc.4.fold.accuracy <- k.cross.fold.4(df.modified.selected, ml_linear_svc, formula)
+decision.tree.4.fold.accuracy <- k.cross.fold.4(df.modified.selected, ml_decision_tree_classifier, formula)
+```
+
+### Tabelarni prikaz tačnosti različitih klasifikacionih modela u odnosu na metod testiranja modela
+
+```{r Table view of the performance of different clustering models tested by different validation methods, echo=F}
+knitr::kable(array(c("Naive bayes", "Metod potpornih vektora", "Stablo odlučivanja",
+                     naive_bayes.accuracy, svc.accuracy, decision.tree.accuracy,
+                     naive_bayes.4.fold.accuracy, svc.4.fold.accuracy, decision.tree.4.fold.accuracy),
+                   dim = c(3,3)),
+             col.names = c("Tip modela", "Precizost korišćenjem validacionog skupa", "Preciznost korišćenjem 4-strukog ukrštanja"),
+             label = "Poređenje tačnosti različitih klasifikacionih modela u odnosu na načine validacije",
+             align = "ccc",
+             format = "html"
+             ) %>% kableExtra::kable_styling(bootstrap_options = "bordered", full_width = F, font_size = 16)
+```
+
+## Klasterizacija
+
+### Prečišćavanje podataka za proces klasterizacije
+```{r Transformation of the dataset for the clustering process, eval=T, include=T}
+dataset.clustering <- df.filtered
+colnames(df.filtered)
+dataset.clustering.summary <- dataset.clustering %>% filter(year>=2018 & year<=2022) %>%
+  group_by(year)
+
+colnames(dataset.clustering)
+```
+
+### K-means
+```{r K-means clusterisation, eval=TRUE, include=TRUE}
+formula.clusterisation <- Ewltp_gkm~m_kg+ec_cm3+ep_KW+Mt
+
+model.5   <- ml_kmeans(dataset.clustering, formula.clusterisation, seed = 1, k = 5)
+model.10  <- ml_kmeans(dataset.clustering, formula.clusterisation, seed = 1, k = 10)
+model.15  <- ml_kmeans(dataset.clustering, formula.clusterisation, seed = 1, k = 15)
+model.20  <- ml_kmeans(dataset.clustering, formula.clusterisation, seed = 1, k = 20)
+```
+
+```{r some info}
+model.5$centers 
+```
+
+### Prikaz centroida klastera 
+```{r Graphing the centroids of different clusterisation models, echo=F, fig.align='center', fig.height=10, fig.width=20}
+cp1 <- dataset.clustering %>%
+  ggplot(aes(ec_cm3, Mt, color = Mt)) +
+  geom_jitter(size=2)+
+  geom_point(data = model.5$centers,
+             aes(x = ec_cm3, y = Mt),
+             color = "red",
+             size = 4,
+             shape = 15)+  scale_color_gradientn(colors = rainbow(10)) +
+  theme(text = element_text(size = 16)) +
+  labs(x = "CO2 emmision", y = "Masa vozila u radnom stanju", title = "a) K=5-means")
+
+
+cp2 <- model.10$centers %>%
+  ggplot(aes(ec_cm3, Mt, color=Mt)) +
+  geom_point(size=5) +
+  scale_color_gradientn(colors = rainbow(10)) +
+  theme(text = element_text(size=16)) +
+  labs(x="quantified", y="number of samples", title = "a) K=10-means")
+
+cp3 <- model.15$centers %>%
+  ggplot(aes(ec_cm3, Mt, color=Mt)) +
+  geom_point(size=5) +
+  scale_color_gradientn(colors = rainbow(10)) +
+  theme(text = element_text(size=16)) +
+  labs(x="CO2 emmision", y="Masa vozila u radnom stanju", title = "a) K=15-means")
+
+cp4 <-  model.20$centers %>%
+  ggplot(aes(ec_cm3, Mt, color=Mt)) +
+  geom_point(size=5) +
+  scale_color_gradientn(colors = rainbow(10)) +
+  theme(text = element_text(size=16)) +
+  labs(x="CO2 emmision", y="Masa vozila u radnom stanju", title = "d) K=20-means")
+
+plot_grid(cp1, cp2, cp3, cp4, nrow=2, ncol=2)
+```

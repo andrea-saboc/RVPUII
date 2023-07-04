@@ -1,0 +1,300 @@
+1686095109558:library(sparklyr)
+1686095110522:library(dplyr)
+1686095110559:# Install
+1686095110559:spark_install()
+1686095140850:# Connect
+1686095140851:sc <- sparklyr::spark_connect(master = "local")
+1686095145597:datasetPath <- "/data/dataset.csv"
+1686095145597:df <- spark_read_csv(sc, name = "my_data", path = datasetPath, header = TRUE, infer_schema = TRUE)
+1686095151273:glimpse(df)
+1686095151531:head(df)
+1686095151751:spark_disconnect(sc)
+1686095813337:library(sparklyr)
+1686095813338:library(dplyr)
+1686095813339:# Install
+1686095813340:spark_install()
+1686095855486:# Connect
+1686095855486:sc <- sparklyr::spark_connect(master = "local")
+1686095860346:datasetPath <- "/data/dataset.csv"
+1686095860347:df <- spark_read_csv(sc, name = "my_data", path = datasetPath, header = TRUE, infer_schema = TRUE)
+1686095866248:glimpse(df)
+1686095866439:head(df)
+1686095866616:spark_disconnect(sc)
+1687890991431:library(sparklyr)
+1687890995853:library(dplyr)
+1687891014318:# Install
+1687891014319:spark_install()
+1687891481070:# Install
+1687891481071:spark_install()
+1687891726788:# Install
+1687891726792:spark_install()
+1687891886056:library(sparklyr)
+1687891888906:library(dplyr)
+1687891892169:()
+1687891897358:()
+1687891902155:# Install
+1687891902156:spark_install()
+1687892069867:library(sparklyr)
+1687892072163:library(dplyr)
+1687892078940:# Install
+1687892078941:spark_install()
+1687892218137:# Connect
+1687892218138:sc <- sparklyr::spark_connect(master = "local")
+1687892226513:# Install
+1687892226514:spark_install()
+1687892356892:library(sparklyr)
+1687892373926:# Install
+1687892373927:spark_install()
+1687892429734:# Connect
+1687892429735:sc <- sparklyr::spark_connect(master = "local")
+1687892546396:datasetPath <- "/data/dataset.csv"
+1687892551098:datasetPath <- "/data/dataset.csv"
+1687892555853:glimpse(df)
+1687892559763:head(df)
+1687892587519:datasetPath <- "/data/dataset1.csv"
+1687892591057:df <- spark_read_csv(sc, name = "my_data", path = datasetPath, header = TRUE, infer_schema = TRUE)
+1687892596746:glimpse(df)
+1687892604812:(df)
+1687892609167:head(df)
+1687892615172:glimpse(df)
+1687892640399:head(df)
+1687983797464:datasetPath <- "/data/data.csv"
+1687983801118:df <- spark_read_csv(sc, name = "my_data", path = datasetPath, header = TRUE, infer_schema = TRUE)
+1687983817859:library(sparklyr)
+1687983819566:library(dplyr)
+1687983819624:# Install
+1687983819625:spark_install()
+1687983821869:# Install
+1687983821869:spark_install()
+1687983826830:# Connect
+1687983826831:sc <- sparklyr::spark_connect(master = "local")
+1687983836173:datasetPath <- "/data/data.csv"
+1687983837624:df <- spark_read_csv(sc, name = "my_data", path = datasetPath, header = TRUE, infer_schema = TRUE)
+1687985489231:plot(cars)
+1687985731295:plot(cars)
+1687986003395:print(colnames(df))
+1687988618636:df.filtered <- df %>% filter(!(is.na(Mk) || is.na(Cn) || is.na(m_kg) || is.na(Mt) || is.na(At1_mm) || is.na(Ft) || is.na(ep_KW) || is.na(Erwltp_gkm) || is.na(W_mm) || is.na(At2_mm)))
+1687988701301:print(nrow(df))
+1687988710403:print(nrow(df))
+1687988717139:print(nrow(df.filtered))
+1687988717288:glimpse(df)
+1687988754183:print(nrow(df.filtered))
+1687988847207:print(dim(df))
+1687988884928:print(ncol(df))
+1687989380715:df.filtered <- select(df.filtered, Mk, Cn, m_kg, Mt, At1_mm, At2_mm, W_mm, Ft, Ewltp_gkm, ec_cm3, ep_KW, z_Whkm, Erwltp_gkm, Fuel_consumption)
+1687989422633:View(df.filtered)
+1687989435872:View(df.filtered)
+1687989436745:View(df.filtered)
+1687989437787:View(df.filtered)
+1687989632884:df.filtered <- df %>% filter(!(is.na(Mk) || is.na(Cn) || is.na(m_kg) || is.na(Mt) || is.na(At1_mm) || is.na(Ft) || is.na(ep_KW) || is.na(Erwltp_gkm) || is.na(W_mm) || is.na(At2_mm))) %>% collect
+1687989824578:df.filtered <- df %>% filter(!(is.na(Mk) || is.na(Cn) || is.na(m_kg) || is.na(Mt) || is.na(At1_mm) || is.na(Ft) || is.na(ep_KW) || is.na(Erwltp_gkm) || is.na(W_mm) || is.na(At2_mm))) %>% select( Mk, Cn, m_kg, Mt, At1_mm, At2_mm, W_mm, Ft, Ewltp_gkm, ec_cm3, ep_KW, z_Whkm, Erwltp_gkm, Fuel_consumption)  %>% collect()
+1687989924506:options(java.parameters = "-Xmx4g")
+1687989924564:options(java.parameters = "-Xmx4g")
+1687989957669:df.filtered <- df %>% filter(!(is.na(Mk) || is.na(Cn) || is.na(m_kg) || is.na(Mt) || is.na(At1_mm) || is.na(Ft) || is.na(ep_KW) || is.na(Erwltp_gkm) || is.na(W_mm) || is.na(At2_mm))) %>% select( Mk, Cn, m_kg, Mt, At1_mm, At2_mm, W_mm, Ft, Ewltp_gkm, ec_cm3, ep_KW, z_Whkm, Erwltp_gkm, Fuel_consumption)  %>% collect()
+1687990274561:print(ncol(sparklyr::sdf_ncol(df_filtered))
+1687990293689:exists()
+1687990300905:print(nrow(sparklyr::sdf_ncol(df_filtered))
+1687990300953:glimpse(df)
+1687990322314:print(nrow(sparklyr::sdf_ncol(df.filtered))
+1687990402113:df.filtered <- df %>% filter(!(is.na(Mk) || is.na(Cn) || is.na(m_kg) || is.na(Mt) || is.na(At1_mm) || is.na(Ft) || is.na(ep_KW) || is.na(Erwltp_gkm) || is.na(W_mm) || is.na(At2_mm))) %>% select( Mk, Cn, m_kg, Mt, At1_mm, At2_mm, W_mm, Ft, Ewltp_gkm, ec_cm3, ep_KW, z_Whkm, Erwltp_gkm, Fuel_consumption)num_columns <- sparklyr::sdf_ncol(df_filtered)
+1687990402162:num_rows <- sparklyr::sdf_nrow(df_filtered)
+1687990423853:df.filtered <- df %>% filter(!(is.na(Mk) || is.na(Cn) || is.na(m_kg) || is.na(Mt) || is.na(At1_mm) || is.na(Ft) || is.na(ep_KW) || is.na(Erwltp_gkm) || is.na(W_mm) || is.na(At2_mm))) %>% select( Mk, Cn, m_kg, Mt, At1_mm, At2_mm, W_mm, Ft, Ewltp_gkm, ec_cm3, ep_KW, z_Whkm, Erwltp_gkm, Fuel_consumption)
+1687990430426:num_columns <- sparklyr::sdf_ncol(df_filtered)
+1687990430481:num_rows <- sparklyr::sdf_nrow(df_filtered)
+1687990443012:num_columns <- sparklyr::sdf_ncol(df.filtered)
+1687990446620:num_rows <- sparklyr::sdf_nrow(df.filtered)
+1687990450370:cat("Number of columns:", num_columns, "\n")
+1687990455186:cat("Number of rows:", num_rows, "\n")
+1688056886809:library(dplyr)
+1688056891766:library(sparklyr)
+1688056894492:library(dplyr)
+1688056899615:# Connect
+1688056899616:sc <- sparklyr::spark_connect(master = "local")
+1688056907953:datasetPath <- "/data/data.csv"
+1688056915461:df <- spark_read_csv(sc, name = "my_data", path = datasetPath, header = TRUE, infer_schema = TRUE)
+1688057577884:print(colnames(df))
+1688057577910:options(java.parameters = "-Xmx4g")
+1688057584788:options(java.parameters = "-Xmx4g")
+1688057593155:df.filtered <- df %>% filter(!(is.na(Mk) || is.na(Cn) || is.na(m_kg) || is.na(Mt) || is.na(At1_mm) || is.na(Ft) || is.na(ep_KW) || is.na(Erwltp_gkm) || is.na(W_mm) || is.na(At2_mm))) %>% select( Mk, Cn, m_kg, Mt, At1_mm, At2_mm, W_mm, Ft, Ewltp_gkm, ec_cm3, ep_KW, z_Whkm, Erwltp_gkm, Fuel_consumption)
+1688057593221:num_columns <- sparklyr::sdf_ncol(df.filtered)
+1688057602835:num_columns <- sparklyr::sdf_ncol(df.filtered)
+1688057602902:num_rows <- sparklyr::sdf_nrow(df.filtered)
+1688057610360:num_rows <- sparklyr::sdf_nrow(df.filtered)
+1688057615613:cat("Number of columns:", num_columns, "\n")
+1688057618449:cat("Number of rows:", num_rows, "\n")
+1688062694235:```
+1688066059099:df <- spark_read_csv(sc, name = "my_data", path = datasetPath, header = TRUE, infer_schema = TRUE)
+1688066177531:print(colnames(df))
+1688066276764:install.packages("sparklyr")
+1688066276769:install.packages("tidyverse")
+1688066353853:install.packages("sparklyr")
+1688066353856:install.packages("tidyverse")
+1688066364147:install.packages("sparklyr")
+1688066368390:install.packages("sparklyr")
+1688066372496:install.packages("sparklyr")
+1688066377995:install.packages("sparklyr")
+1688066398213:library(sparklyr)
+1688066398228:library(dplyr)
+1688066410662:library(sparklyr)
+1688066410663:library(dplyr)
+1688066415194:library(sparklyr)
+1688066415196:library(dplyr)
+1688066451123:num_columns <- spklaryr::sdf_ncol(df.filtered)
+1688066481664:num_columns <- sparklyr::sdf_ncol(df.filtered)
+1688066523309:datasetPath <- "/data/data.csv"
+1688066523313:df <- spark_read_csv(sc, name = "my_data", path = datasetPath, header = TRUE, infer_schema = TRUE)
+1688066529488:spark_install()
+1688066529947:sc <- sparklyr::spark_connect(master = "local")
+1688066542040:datasetPath <- "/data/data.csv"
+1688066542043:df <- spark_read_csv(sc, name = "my_data", path = datasetPath, header = TRUE, infer_schema = TRUE)
+1688066690365:df.filtered <- df %>% filter(!(is.na(Mk) || is.na(Cn) || is.na(m_kg) || is.na(Mt) || is.na(At1_mm) || is.na(Ft) || is.na(ep_KW) || is.na(Erwltp_gkm) || is.na(W_mm) || is.na(At2_mm)))
+1688066690394:df.filtered <- select(df.filtered, Mk, Cn, m_kg, Mt, At1_mm, At2_mm, W_mm, Ft, Ewltp_gkm, ec_cm3, ep_KW, z_Whkm, Erwltp_gkm, Fuel_consumption)
+1688066698552:num_columns <- sparklyr::sdf_ncol(df.filtered)
+1688066698727:num_rows <- sparklyr::sdf_nrow(df.filtered)
+1688066699995:cat("Number of columns:", num_columns, "\n")
+1688066699996:cat("Number of rows:", num_rows, "\n")
+1688066745941:knit_with_parameters('~/izvestaj.Rmd')
+1688067407648:install.packages("sparklyr")
+1688067407847:install.packages("tidyverse")
+1688067538195:knitr::kable(head(water.dataset.filtered, n=10L),
+1688067538196:col.names = c("quantified",
+1688067538197:"water body category",
+1688067538198:"observed property determinand code",
+1688067538199:"number of samples",
+1688067538200:"standard deviation value"),
+1688067538201:label = "Tabelarni prikaz prečišćenih podataka",
+1688067538202:format = "html",
+1688067538203:align = "ccccc"
+1688067538204:) %>%
+1688067538205:kableExtra::kable_styling(bootstrap_options = "bordered", full_width = F, font_size = 16)
+1688067572793:print(colnames(df))
+1688067572835:options(java.parameters = "-Xmx4g")
+1688067808816:knitr::kable(head(water.dataset.filtered, n=10L),
+1688067808818:col.names = c("ID",
+1688067808820:"water body category",
+1688067808822:"observed property determinand code",
+1688067808823:"number of samples",
+1688067808824:"standard deviation value"),
+1688067808825:label = "Tabelarni prikaz prečišćenih podataka",
+1688067808826:format = "html",
+1688067808827:align = "ccccc"
+1688067808828:) %>%
+1688067808830:kableExtra::kable_styling(bootstrap_options = "bordered", full_width = F, font_size = 16)
+1688067891073:knitr::kable(head(water.dataset.filtered, n=10L),
+1688067891074:col.names = c("ID",
+1688067891075:"water body category",
+1688067891076:"observed property determinand code",
+1688067891077:"number of samples",
+1688067891078:"standard deviation value"),
+1688067891080:label = "Tabelarni prikaz prečišćenih podataka",
+1688067891081:format = "html",
+1688067891082:align = "ccccc"
+1688067891083:) %>%
+1688067891084:kableExtra::kable_styling(bootstrap_options = "bordered", full_width = F, font_size = 16)
+1688068095593:knitr::kable(head(df.filtered, n=10L),
+1688068095595:col.names = c("ID",
+1688068095596:"water body category",
+1688068095597:"observed property determinand code",
+1688068095598:"number of samples",
+1688068095599:"standard deviation value"),
+1688068095600:label = "Tabelarni prikaz prečišćenih podataka",
+1688068095601:format = "html",
+1688068095601:align = "ccccc"
+1688068095602:) %>%
+1688068095603:kableExtra::kable_styling(bootstrap_options = "bordered", full_width = F, font_size = 16)
+1688068117479:knitr::kable(head(df.filtered, n=10L),
+1688068117481:col.names = c("ID",
+1688068117482:"water body category",
+1688068117483:"observed property determinand code",
+1688068117484:"number of samples",
+1688068117486:"standard deviation value"),
+1688068117487:label = "Tabelarni prikaz prečišćenih podataka",
+1688068117488:format = "html",
+1688068117488:align = "ccccc"
+1688068117489:) %>% kableExtra::kable_styling(bootstrap_options = "bordered", full_width = F, font_size = 16)
+1688069104598:knitr::kable(head(df.filtered, n=10L),
+1688069104606:col.names = c("ID",
+1688069104608:"water body category",
+1688069104611:"observed property determinand code",
+1688069104613:"number of samples",
+1688069104614:"standard deviation value"),
+1688069104616:label = "Tabelarni prikaz prečišćenih podataka",
+1688069104618:format = "html",
+1688069104620:align = "ccccc"
+1688069104622:) %>% kableExtra::kable_styling(bootstrap_options = "bordered", full_width = F, font_size = 16)
+1688069439138:install.packages("sparklyr")
+1688069439151:install.packages("tidyverse")
+1688070100552:knitr::kable(head(df.filtered, n=10L),
+1688070100553:col.names = c("ID",
+1688070100554:"Make",
+1688070100555:"Model",
+1688070100556:"Mass in running order(kg)",
+1688070100557:"WLTP test mass",
+1688070100558:"Axle width steering axle (mm)",
+1688070100559:"Axle width other axle (mm)",
+1688070100560:"Wheel base (mm)",
+1688070100561:"Fuel type",
+1688070100562:"Specific CO2 emmissions (g/km)",
+1688070100564:"Engine capacity (cm3)",
+1688070100565:"Engine power (kW)",
+1688070100566:"Electric energy consumption (Wh/km)",
+1688070100567:"Emmision reduction through innovative technologies (WLTP)",
+1688070100568:"Fuel consumption"),
+1688070100569:label = "Tabelarni prikaz prečišćenih podataka",
+1688070100570:format = "html",
+1688070100571:align = "ccccc"
+1688070100572:) %>% kableExtra::kable_styling(bootstrap_options = "bordered", full_width = F, font_size = 12)
+1688070103229:knitr::kable(head(df.filtered, n=10L),
+1688070103230:col.names = c("ID",
+1688070103231:"Make",
+1688070103232:"Model",
+1688070103232:"Mass in running order(kg)",
+1688070103233:"WLTP test mass",
+1688070103234:"Axle width steering axle (mm)",
+1688070103235:"Axle width other axle (mm)",
+1688070103236:"Wheel base (mm)",
+1688070103236:"Fuel type",
+1688070103237:"Specific CO2 emmissions (g/km)",
+1688070103238:"Engine capacity (cm3)",
+1688070103238:"Engine power (kW)",
+1688070103239:"Electric energy consumption (Wh/km)",
+1688070103240:"Emmision reduction through innovative technologies (WLTP)",
+1688070103241:"Fuel consumption"),
+1688070103241:label = "Tabelarni prikaz prečišćenih podataka",
+1688070103242:format = "html",
+1688070103243:align = "ccccc"
+1688070103243:) %>% kableExtra::kable_styling(bootstrap_options = "bordered", full_width = F, font_size = 12)
+1688070169713:install.packages("sparklyr")
+1688070169718:install.packages("tidyverse")
+1688070190990:install.packages("tidyverse")
+1688071801948:install.packages("sparklyr")
+1688071802161:install.packages("tidyverse")
+1688071868458:install.packages("sparklyr")
+1688071953119:install.packages("sparklyr")
+1688071953122:install.packages("tidyverse")
+1688072216909:install.packages("sparklyr")
+1688072346172:install.packages("gridExtra")
+1688072610190:install.packages("kableExtra")
+1688075938187:knitr::kable(head(df.filtered, n=10L),
+1688075938189:col.names = c("ID",
+1688075938190:"Make",
+1688075938192:"Model",
+1688075938193:"Mass in running order(kg)",
+1688075938194:"WLTP test mass",
+1688075938196:"Axle width steering axle (mm)",
+1688075938197:"Axle width other axle (mm)",
+1688075938198:"Wheel base (mm)",
+1688075938199:"Fuel type",
+1688075938200:"Specific CO2 emmissions (g/km)",
+1688075938202:"Engine capacity (cm3)",
+1688075938203:"Engine power (kW)",
+1688075938204:"Electric energy consumption (Wh/km)",
+1688075938205:"Emmision reduction through innovative technologies (WLTP)",
+1688075938206:"Fuel consumption"),
+1688075938208:label = "Tabelarni prikaz prečišćenih podataka",
+1688075938209:format = "html",
+1688075938210:align = "ccccc"
+1688075938212:) %>% kableExtra::kable_styling(bootstrap_options = "bordered", full_width = F, font_size = 12)
+1688079514006:installed.packages()
+1688079542888:install.packages("kableExtra")
+1688079636652:install.packages("kableExtra")

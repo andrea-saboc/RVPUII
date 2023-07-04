@@ -1,0 +1,203 @@
+---
+title: "Analiza skupa podataka o emisijama CO2 registrovanih putničkih vozila"
+author: "Andrea Sabo Cibolja"
+date: "`r format(Sys.time(), '%d. %B %Y')`"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+# Uvod
+U ovom izveštaju su predstavljeni su rezultati kreiranja modela za analizu emisije CO2 registrovanih putničkih vozila državama Evrope*.
+
+### Skup podataka o registrovanim automobilima
+
+Skup podataka o registrovanim automobilima je preuzet sa sajta [eea.europa.eu](https://www.eea.europa.eu/data-and-maps/data/co2-cars-emission-20)
+
+Ovaj skup podatka sadrži informacije o svakom putničkom vozilo koje je registrovano. Informacije mogu da budu iskorišćene za predviđanje koliko bi to putničko vozilo moglo da emituje CO2.
+
+### Preuzimanje neophodnih paketa za analizu podataka 
+```{r Loading necessary libraries, eval=T, include=T}
+#kages("tiinstall.packages("sparklyr")
+#install.pacdyverse")
+#install.packages("gridExtra")
+```
+
+```{r Loading nec, eval=T, include=T}
+#install.packages("systemfonts")
+#install.packages("svglite")
+#install.packages("kableExtra")
+```
+
+### Uključivanje neophodnih biblioteka
+```{r , eval=T, include=T}
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(magrittr)
+library(knitr)
+library(kableExtra)
+library(sparklyr)
+library(cowplot)
+```
+
+
+
+### Instaliraje i priprema spark okruženja
+
+
+```{r , eval=T, include=T}
+spark_install(version = "3.3.2")
+sc <- sparklyr::spark_connect(master = "local")
+```
+
+
+### Učitavanje skupa podataka
+
+```{r , eval=T, include=T}
+
+datasetPath <- "/data/data.csv"
+df <- spark_read_csv(sc, name = "my_data", path = datasetPath, header = TRUE, infer_schema = TRUE)
+```
+
+### Prečišćavanje podataka
+
+```{r , eval=T, include=T}
+df.filtered <- df %>% filter(!(is.na(Mk) || is.na(Cn) || is.na(m_kg) || is.na(Mt) || is.na(At1_mm) || is.na(Ft) || is.na(ep_KW) || is.na(Erwltp_gkm) || is.na(W_mm) || is.na(At2_mm)))
+
+df.filtered <- select(df.filtered, ID, Mk, Cn, m_kg, Mt, At1_mm, At2_mm, W_mm, Ft, Ewltp_gkm, ec_cm3, ep_KW, z_Whkm, Erwltp_gkm, Fuel_consumption)
+
+```
+
+```{r , echo=T, eval=T, include=T}
+num_columns <- sparklyr::sdf_ncol(df.filtered)
+num_rows <- sparklyr::sdf_nrow(df.filtered)
+
+cat("Number of columns:", num_columns, "\n")
+cat("Number of rows:", num_rows, "\n")
+```
+
+
+**Dimenzije učitanog skupa podataka:  `r format(sdf_nrow(df), scientific=F)` x `r format(sdf_ncol(df), scientific=F)`**
+
+**Dimenzije prečišćenog skupa podataka: `r format(sdf_nrow(df.filtered), scientific=F)` x `r format(sdf_ncol(df.filtered), scientific=F)`**
+
+### Prikaz prvih 10 redova prečišćenih podataka
+```{r Displaying first 10 rows, echo=F}
+knitr::kable(head(df.filtered, n=10L),
+             col.names = c("ID",
+                           "Make",
+                           "Model",
+                           "Mass in running order(kg)",
+                           "WLTP test mass",
+                           "Axle width steering axle (mm)",
+                           "Axle width other axle (mm)",
+                           "Wheel base (mm)",
+                           "Fuel type",
+                           "Specific CO2 emmissions (g/km)",
+                           "Engine capacity (cm3)",
+                           "Engine power (kW)",
+                           "Electric energy consumption (Wh/km)",
+                           "Emmision reduction through innovative technologies (WLTP)",
+                           "Fuel consumption"),
+             label = "Tabelarni prikaz prečišćenih podataka",
+             format = "html",
+             align = "ccccc"
+             ) %>% kableExtra::kable_styling(bootstrap_options = "bordered", full_width = F, font_size = 12)
+
+```
+# Klasifikacija podataka
+
+### Deljenje podataka na test i na training skup
+```{r Splitting dataset into training and testing datasets, eval=F, include=T}
+
+df.clustering <- sdf_random_split(df.filtered, seed=1, training=0.8, test=0.2)
+df.training <- df.clustering$training
+df.test <- df.clustering$test
+
+```
+
+
+
+### Treniranje modela logističke regresije sa različitim vrednostima broja maksimalnih iteracija
+
+Trenira se više puta model za različiti broj iteracija
+```{r eval=T, results='hold', warning=F}
+it <- c(1,5,8,10,20,50)
+tacnost <- numeric(length(it))
+log.reg.weighted.precision <- it
+log.reg.weighted.recall <- it
+log.reg.weighted.f.measure <- it
+log.reg.area.under.roc <- it
+log.reg.accuracy <- it
+formula <- Ewltp_gkm~Mk+Cn+m_kg+Mt+At1_mm+At2_mm+W_mm+Ft + ec_cm3+ep_KW+z_Whkm+Erwltp_gkm+Fuel_consumption
+
+
+```
+
+```{r eval=F, include=T}
+for(i in 1:6){
+  logreg <- ml_logistic_regression(df.training,
+                                   formula,
+                                   max_iter = it[i],
+                                   family = "binomial")
+    evaluation <- ml_evaluate(logreg, dataset=df.test)
+    log.reg.weighted.precision[i] <- evaluation$weighted_precision()
+    log.reg.weighted.recall[i] <- evaluation$weighted_recall()
+    log.reg.weighted.f.measure[i] <- evaluation$weighted_f_measure()
+    log.reg.area.under.roc[i] <- evaluation$area_under_roc()
+    log.reg.accuracy[i] <- evaluation$accuracy()
+}
+
+```
+
+### Prikaz zavisnosti broja iteracija od tacnosti modela
+```{r Graphing the dependancy of clustering model accuracy based on the number of maximal iterations, include=T, echo=F, fig.align='center', fig.height=10, fig.width=20}
+df <- data.frame(i=max.iterations,
+                 wp=log.reg.weighted.precision,
+                 wr=log.reg.weighted.recall,
+                 wf=log.reg.weighted.f.measure,
+                 aur=log.reg.area.under.roc,
+                 a=log.reg.accuracy)
+p1 <- df %>%
+ggplot(aes(i, wp, color=wp)) +
+  geom_line(size=2) +
+  scale_x_continuous(breaks=max.iterations) +
+  scale_y_continuous(breaks=log.reg.weighted.precision) +
+  scale_color_gradient(low = "#FF2266", high="#6622FF") +
+  theme(text = element_text(size = 16)) +
+  labs(x="Maksimalni broj iteracija", y="Preciznost", title = "a) Zavisnost preciznosti od maksimalnog broja iteracija")
+
+p2 <- df %>%
+ggplot(aes(i, wr, color=wr)) +
+  geom_line(size=2) +
+  scale_x_continuous(breaks=max.iterations) +
+  scale_y_continuous(breaks=log.reg.weighted.recall) +
+  scale_color_gradient(low = "#6622FF", high="#FF2266") +
+  theme(text = element_text(size = 16)) +
+  labs(x="Maksimalni broj iteracija", y="Osetljivost", title = "b) Zavisnost osetljivosti od maksimalnog broja iteracija")
+
+p3 <- df %>%
+  ggplot(aes(i, wf, color=wf)) +
+  geom_line(size=2) +
+  scale_x_continuous(breaks=max.iterations) +
+  scale_y_continuous(breaks=log.reg.weighted.f.measure) +
+  scale_color_gradient(low = "#FF2266", high="#6622FF") +
+  theme(text = element_text(size = 16)) +
+  labs(x="Maksimalni broj iteracija", y="F1", title = "c) Zavisnost F1 mere od maksimalnog broja iteracija")
+
+p4 <- df %>%
+  ggplot(aes(i, aur, color=aur)) +
+  geom_line(size=2) +
+  scale_x_continuous(breaks=max.iterations) +
+  scale_y_continuous(breaks=log.reg.area.under.roc) +
+  scale_color_gradient(low = "#6622FF", high="#FF2266") +
+  theme(text = element_text(size = 16)) +
+  labs(x="Mkaismalni broj iteracija", y="Površina ispod ROC krive", title = "d) Zavisnost površine ispod ROC krive od maksimalnog broja iteracija")
+
+plot_grid(p1, p2, p3, p4, nrow=2, ncol=2)
+```
+
+glimpse(df)
+head(df)
+
